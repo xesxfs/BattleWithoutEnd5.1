@@ -16,7 +16,7 @@ class FlickerButton extends ButtonCell {
 		this.before.x = width / 2 - beforeText.textWidth / 2;
 		this.before.y = height / 2 - beforeText.textHeight / 2;
 
-		var afterText = iGlobal.Global.getTextField(fontSize, 0x000000);
+		var afterText = iGlobal.Global.getTextField(fontSize, 0xFFFFFF);
 		afterText.width = width;
 		afterText.text = text;
 		this.after.addChild(afterText);
@@ -30,7 +30,7 @@ class FlickerButton extends ButtonCell {
 		this.after.visible=true;			
 		if (this.count <= this.flickerTime) {
 			this.filters = [new egret.GlowFilter(5066061, 0.66, 13 + this.count, 13 + this.count)];
-			this.bg.filters =[ new ColorTransform(1 - 0.1 / this.flickerTime * this.count, 1 - 0.3 / this.flickerTime * this.count, 1 - 1 / this.flickerTime * this.count, 0.01 + 1 / this.flickerTime * this.count)];
+			this.bg.filters =[  ColorTransform.transform(1 - 0.1 / this.flickerTime * this.count, 1 - 0.3 / this.flickerTime * this.count, 1 - 1 / this.flickerTime * this.count, 0.01 + 1 / this.flickerTime * this.count)];
 		}
 		if (this.count > this.flickerTime) {
 			this.flag = false;
