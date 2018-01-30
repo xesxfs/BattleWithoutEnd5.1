@@ -1,0 +1,10 @@
+{
+	"skins": {},
+	"autoGenerateExmlsList": true,
+	"exmls": [
+		"resource/eui_skins/BeginScene.exml",
+		"resource/eui_skins/MainScene.exml",
+		"resource/eui_skins/SaveScene.exml"
+	],
+	"path": "resource/default.thm.json"
+}
