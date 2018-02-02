@@ -12,7 +12,7 @@ var StringCell = (function (_super) {
     __extends(StringCell, _super);
     function StringCell(text, width, size) {
         if (width === void 0) { width = 100; }
-        if (size === void 0) { size = 22; }
+        if (size === void 0) { size = 26; }
         var _this = _super.call(this, 0, 0) || this;
         _this.size = 0;
         _this.w = 0;

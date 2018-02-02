@@ -26,7 +26,7 @@ var ButtonCell = (function (_super) {
     ButtonCell.prototype.onMouseOver = function (e) {
         // if (!this.buttonDown) {
         if (!this.buttonDown) {
-            this.setAfter();
+            // this.setAfter();
         }
     };
     ButtonCell.prototype.onMouseOut = function (e) {

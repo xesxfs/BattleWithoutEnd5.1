@@ -18,7 +18,7 @@ var FlickerButton = (function (_super) {
         _this.flickerTime = 30;
         _this.touchEnabled = true;
         _this.bg = new BasicCell(width, height);
-        _this.addChild(_this.bg);
+        // this.addChild(this.bg);
         // this.bg.filters = [ColorTransform.colorTransform]
         var beforeText = iGlobal.Global.getTextField(fontSize);
         beforeText.text = text;

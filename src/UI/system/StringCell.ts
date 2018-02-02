@@ -2,7 +2,7 @@ class StringCell extends BasicCell {
 	private size: number = 0;
 	public w: number = 0;
 	public textField: egret.TextField;
-	public constructor(text: string, width: number = 100, size: number = 22) {
+	public constructor(text: string, width: number = 100, size: number = 26) {
 		super(0, 0);
 		this.size = size;
 		this.w = width;

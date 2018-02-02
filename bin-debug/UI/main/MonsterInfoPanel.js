@@ -11,11 +11,11 @@ r.prototype = e.prototype, t.prototype = new r();
 var MonsterInfoPanel = (function (_super) {
     __extends(MonsterInfoPanel, _super);
     function MonsterInfoPanel() {
-        var _this = _super.call(this, 310, 140) || this;
+        var _this = _super.call(this, 310, 150) || this;
         _this.beginX = 10;
         _this.beginY = 10;
         _this.yGap = 50;
-        _this.sXGap = 50;
+        _this.sXGap = 70;
         _this.RED = "#ff4040";
         _this.BLUE = "#4a60d7";
         _this.YELLOW = "#FFA640";
@@ -31,7 +31,7 @@ var MonsterInfoPanel = (function (_super) {
         this.addChild(monCell);
         monCell.x = this.beginX;
         monCell.y = this.beginY;
-        this._name = new StringCell("Boss Red Fox", 120, 16);
+        this._name = new StringCell("Boss Red Fox", 120, 22);
         this.addChild(this._name);
         this._name.x = this.beginX + this.sXGap;
         this._name.y = this.beginY;
@@ -43,18 +43,18 @@ var MonsterInfoPanel = (function (_super) {
         var hpCell = new StringCell("HP");
         this.addChild(hpCell);
         hpCell.x = this.beginX;
-        hpCell.y = this.beginY + this.yGap + 30;
+        hpCell.y = this.beginY + this.yGap + 25;
         this.hp = new Bar(100, 100, 12522257);
         this.addChild(this.hp);
-        this.hp.x = this.beginX + 35;
-        this.hp.y = this.beginY + this.yGap + 43;
+        this.hp.x = this.beginX + 70;
+        this.hp.y = this.beginY + this.yGap + 40;
         var cpCell = new StringCell("战斗力");
         this.addChild(cpCell);
         cpCell.x = this.beginX;
         cpCell.y = this.beginY + this.yGap * 2 + 5;
         this.cp = new StringCell("100");
         this.addChild(this.cp);
-        this.cp.x = this.beginX + this.sXGap + 20;
+        this.cp.x = this.beginX + this.sXGap + 30;
         this.cp.y = this.beginY + this.yGap * 2 + 5;
         this.buffSprite = new egret.Sprite();
     };
@@ -62,7 +62,7 @@ var MonsterInfoPanel = (function (_super) {
         this.bossIcon = new egret.Bitmap(RES.getRes("boss_icon"));
         this.bossIcon.visible = false;
         this.addChild(this.bossIcon);
-        this.bossIcon.x = this.beginX + 10;
+        this.bossIcon.x = this.beginX + 20;
         this.bossIcon.y = this.beginY + 30;
         this.bossIcon.width = 30;
         this.bossIcon.height = 30;

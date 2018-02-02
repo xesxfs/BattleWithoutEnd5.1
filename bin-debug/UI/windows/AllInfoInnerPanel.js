@@ -12,6 +12,7 @@ var AllInfoInnerPanel = (function (_super) {
     __extends(AllInfoInnerPanel, _super);
     function AllInfoInnerPanel() {
         var _this = _super.call(this) || this;
+        _this.gap = 22;
         _this.init();
         return _this;
     }
@@ -23,7 +24,7 @@ var AllInfoInnerPanel = (function (_super) {
         this.addChild(this.listSprite);
     };
     AllInfoInnerPanel.prototype.addText = function (txt) {
-        var cell = new StringCell(this.getTime() + txt, 385, 16);
+        var cell = new StringCell(this.getTime() + txt, 385, this.gap);
         if (this.list.length > 100) {
             this.listSprite.removeChild(this.list.shift());
         }
@@ -35,20 +36,20 @@ var AllInfoInnerPanel = (function (_super) {
         var length = (this.list.length);
         var i = (0);
         while (i < this.list.length) {
-            this.list[i].y = i * 20;
+            this.list[i].y = i * this.gap;
             this.list[i].x = 10;
             i++;
         }
         if (this.listSprite.height > this.height && this.list.length < 100) {
             // this.y = this.y - 20;
-            this.scrollV += 20;
+            this.scrollV += this.gap;
         }
         this.drawBg();
         this.contentH = this.listSprite.height;
     };
     AllInfoInnerPanel.prototype.getTime = function () {
         var time = new Date();
-        var format = "[" + time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds() + "]";
+        var format = "[" + time.getMinutes() + ":" + time.getSeconds() + "]";
         return format;
     };
     AllInfoInnerPanel.prototype.drawBg = function () {

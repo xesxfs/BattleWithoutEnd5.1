@@ -32,7 +32,7 @@ class BattleSkillPanel extends BasicCell {
 	public update() {
 		var curSpellChance: number = 0;
 		var skillIndex: number = 0;
-		var skillLab: eui.Label = null;
+		var skillLab: StringCell = null;
 		this.remove();
 		var skillList: Array<iData.iSkill.ActiveSkill> = iGlobal.Player.attackSkillList;
 		var skillLength: number = skillList.length;
@@ -46,8 +46,8 @@ class BattleSkillPanel extends BasicCell {
 			}
 			skillIndex = 0;
 			while (skillIndex < skillLength) {
-				skillLab = new eui.Label(skillList[skillIndex].skillData.realName + "  " + (curSpellChance / skillLength * 100 >> 0) / 100 + "%");
-				skillLab.textColor = 0x000000;
+				skillLab = new StringCell(skillList[skillIndex].skillData.realName + "  " + (curSpellChance / skillLength * 100 >> 0) / 100 + "%");
+				// skillLab.textColor = 0x000000;
 				this.attPanel.addChild(skillLab);
 				skillLab.y = this.GAP * skillIndex;
 				skillIndex++;
@@ -68,8 +68,8 @@ class BattleSkillPanel extends BasicCell {
 			}
 			skillIndex = 0;
 			while (skillIndex < skillLength) {
-				skillLab = new eui.Label(skillList[skillIndex].skillData.realName + "  " + (curSpellChance / skillLength * 100 >> 0) / 100 + "%");
-				skillLab.textColor = 0x000000;
+				skillLab = new StringCell(skillList[skillIndex].skillData.realName + "  " + (curSpellChance / skillLength * 100 >> 0) / 100 + "%");
+				// skillLab.textColor = 0x000000;
 				this.defPanel.addChild(skillLab);
 				skillLab.y = this.GAP * skillIndex;
 				skillIndex++;

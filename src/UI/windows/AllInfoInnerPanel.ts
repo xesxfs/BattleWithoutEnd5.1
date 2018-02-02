@@ -2,6 +2,7 @@ class AllInfoInnerPanel extends InnerPanel {
 	public list: Array<StringCell>;
 	public listSprite: egret.Sprite;
 	private bg: egret.Sprite;
+	private gap: number = 22;
 
 	public constructor() {
 		super();
@@ -17,7 +18,7 @@ class AllInfoInnerPanel extends InnerPanel {
 	}
 
 	public addText(txt: string) {
-		var cell = new StringCell(this.getTime() + txt, 385, 16);
+		var cell = new StringCell(this.getTime() + txt, 385, this.gap);
 		if (this.list.length > 100) {
 			this.listSprite.removeChild(this.list.shift());
 		}
@@ -30,13 +31,13 @@ class AllInfoInnerPanel extends InnerPanel {
 		var length: number = (this.list.length);
 		var i: number = (0);
 		while (i < this.list.length) {
-			this.list[i].y = i * 20;
+			this.list[i].y = i * this.gap;
 			this.list[i].x = 10;
 			i++;
 		}
 		if (this.listSprite.height > this.height && this.list.length < 100) {
 			// this.y = this.y - 20;
-			this.scrollV += 20;
+			this.scrollV += this.gap+5;
 		}
 		this.drawBg();
 		this.contentH = this.listSprite.height;
@@ -44,7 +45,7 @@ class AllInfoInnerPanel extends InnerPanel {
 
 	private getTime(): string {
 		var time = new Date();
-		var format = "[" + time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds() + "]";
+		var format = "[" + time.getMinutes() + ":" + time.getSeconds() + "]";
 		return format;
 	}
 

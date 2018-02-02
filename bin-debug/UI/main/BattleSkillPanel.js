@@ -47,8 +47,8 @@ var BattleSkillPanel = (function (_super) {
             }
             skillIndex = 0;
             while (skillIndex < skillLength) {
-                skillLab = new eui.Label(skillList[skillIndex].skillData.realName + "  " + (curSpellChance / skillLength * 100 >> 0) / 100 + "%");
-                skillLab.textColor = 0x000000;
+                skillLab = new StringCell(skillList[skillIndex].skillData.realName + "  " + (curSpellChance / skillLength * 100 >> 0) / 100 + "%");
+                // skillLab.textColor = 0x000000;
                 this.attPanel.addChild(skillLab);
                 skillLab.y = this.GAP * skillIndex;
                 skillIndex++;
@@ -69,8 +69,8 @@ var BattleSkillPanel = (function (_super) {
             }
             skillIndex = 0;
             while (skillIndex < skillLength) {
-                skillLab = new eui.Label(skillList[skillIndex].skillData.realName + "  " + (curSpellChance / skillLength * 100 >> 0) / 100 + "%");
-                skillLab.textColor = 0x000000;
+                skillLab = new StringCell(skillList[skillIndex].skillData.realName + "  " + (curSpellChance / skillLength * 100 >> 0) / 100 + "%");
+                // skillLab.textColor = 0x000000;
                 this.defPanel.addChild(skillLab);
                 skillLab.y = this.GAP * skillIndex;
                 skillIndex++;

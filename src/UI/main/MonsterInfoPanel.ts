@@ -4,7 +4,7 @@ class MonsterInfoPanel extends BasicCell {
 	private beginX: number = 10;
 	private beginY: number = 10;
 	private yGap: number = 50;
-	private sXGap: number = 50;
+	private sXGap: number = 70;
 	private _name: StringCell;
 	private title: StringInfoCell;
 	private hp: Bar;
@@ -21,7 +21,7 @@ class MonsterInfoPanel extends BasicCell {
 	public PINK: string = "#EE6b9c";
 
 	public constructor() {
-		super(310, 140);
+		super(310, 150);
 		this.setPosition();
 	}
 	private setPosition() {
@@ -29,7 +29,7 @@ class MonsterInfoPanel extends BasicCell {
 		this.addChild(monCell);
 		monCell.x = this.beginX;
 		monCell.y = this.beginY;
-		this._name = new StringCell("Boss Red Fox", 120, 16);
+		this._name = new StringCell("Boss Red Fox", 120, 22);
 		this.addChild(this._name);
 		this._name.x = this.beginX + this.sXGap;
 		this._name.y = this.beginY;
@@ -41,18 +41,18 @@ class MonsterInfoPanel extends BasicCell {
 		var hpCell: StringCell = new StringCell("HP");
 		this.addChild(hpCell);
 		hpCell.x = this.beginX;
-		hpCell.y = this.beginY + this.yGap + 30;
+		hpCell.y = this.beginY + this.yGap + 25;
 		this.hp = new Bar(100, 100, 12522257);
 		this.addChild(this.hp);
-		this.hp.x = this.beginX + 35;
-		this.hp.y = this.beginY + this.yGap + 43;
+		this.hp.x = this.beginX + 70;
+		this.hp.y = this.beginY + this.yGap + 40;
 		var cpCell: StringCell = new StringCell("战斗力");
 		this.addChild(cpCell);
 		cpCell.x = this.beginX;
 		cpCell.y = this.beginY + this.yGap * 2 + 5;
 		this.cp = new StringCell("100");
 		this.addChild(this.cp);
-		this.cp.x = this.beginX + this.sXGap + 20;
+		this.cp.x = this.beginX + this.sXGap + 30;
 		this.cp.y = this.beginY + this.yGap * 2 + 5;
 		this.buffSprite = new egret.Sprite();
 	}
@@ -61,7 +61,7 @@ class MonsterInfoPanel extends BasicCell {
 		this.bossIcon = new egret.Bitmap(RES.getRes("boss_icon"));
 		this.bossIcon.visible = false;
 		this.addChild(this.bossIcon);
-		this.bossIcon.x = this.beginX + 10;
+		this.bossIcon.x = this.beginX + 20;
 		this.bossIcon.y = this.beginY + 30;
 		this.bossIcon.width = 30;
 		this.bossIcon.height = 30;

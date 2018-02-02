@@ -11,12 +11,12 @@ r.prototype = e.prototype, t.prototype = new r();
 var PlayerInfoPanel = (function (_super) {
     __extends(PlayerInfoPanel, _super);
     function PlayerInfoPanel() {
-        var _this = _super.call(this, 640, 250) || this;
+        var _this = _super.call(this, 640, 330) || this;
         _this.beginX = 10;
         _this.beginY = 10;
-        _this.sXGap = 50;
-        _this.bXGap = 220;
-        _this.yGap = 30;
+        _this.sXGap = 60;
+        _this.bXGap = 200;
+        _this.yGap = 40;
         _this.setPosition();
         _this.update();
         return _this;
@@ -44,11 +44,11 @@ var PlayerInfoPanel = (function (_super) {
         this.lv = new StringCell("20");
         cellList.push(this.lv);
         cellList.push(new StringCell("HP"));
-        cellList.push(this.hp = new Bar(80, 100, 12522257));
+        cellList.push(this.hp = new Bar(100, 100, 12522257));
         cellList.push(new StringCell("MP"));
-        cellList.push(this.mp = new Bar(80, 100, 424351));
+        cellList.push(this.mp = new Bar(100, 100, 424351));
         cellList.push(new StringCell("EXP"));
-        cellList.push(this.exp = new Bar(80, 100, 7932074));
+        cellList.push(this.exp = new Bar(100, 100, 7932074));
         cellList.push(new StringCell("金钱"));
         cellList.push(this.gold = new StringCell("23424"));
         cellList.push(new StringInfoCell("力量", "增加基础攻击力"));
@@ -87,14 +87,14 @@ var PlayerInfoPanel = (function (_super) {
             cellList[i].y = this.beginY + this.yGap + this.yGap * (i % 14 / 2 >> 0);
             i++;
         }
-        this.hp.x = this.beginX + 50;
+        this.hp.x = this.beginX + 60;
         this.hp.y = this.hp.y + 13;
-        this.mp.x = this.beginX + 50;
+        this.mp.x = this.beginX + 60;
         this.mp.y = this.mp.y + 13;
-        this.exp.x = this.beginX + 50;
+        this.exp.x = this.beginX + 60;
         this.exp.y = this.exp.y + 13;
-        this.crit_mul.x = this.crit_mul.x + 40;
-        this.pro_ignore.x = this.pro_ignore.x + 40;
+        this.crit_mul.x = this.crit_mul.x + 50;
+        this.pro_ignore.x = this.pro_ignore.x + 50;
         this.cp.x = this.cp.x + 20;
     };
     PlayerInfoPanel.prototype.update = function () {

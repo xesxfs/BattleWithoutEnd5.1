@@ -1,9 +1,9 @@
 class PlayerInfoPanel extends BasicCell {
 	private beginX: number = 10;
 	private beginY: number = 10;
-	private sXGap: number = 50;
-	private bXGap: number = 220;
-	private yGap: number = 30;
+	private sXGap: number = 60;
+	private bXGap: number = 200;
+	private yGap: number = 40;
 	private _name: StringCell;
 	private race: StringCell;
 	private age: StringInfoCell;
@@ -28,7 +28,7 @@ class PlayerInfoPanel extends BasicCell {
 	private cp: StringCell;
 
 	public constructor() {
-		super(640, 250);
+		super(640, 330);
 		this.setPosition();
 		this.update();
 	}
@@ -56,11 +56,11 @@ class PlayerInfoPanel extends BasicCell {
 		this.lv = new StringCell("20");
 		cellList.push(this.lv);
 		cellList.push(new StringCell("HP"));
-		cellList.push(this.hp = new Bar(80, 100, 12522257));
+		cellList.push(this.hp = new Bar(100, 100, 12522257));
 		cellList.push(new StringCell("MP"));
-		cellList.push(this.mp = new Bar(80, 100, 424351));
+		cellList.push(this.mp = new Bar(100, 100, 424351));
 		cellList.push(new StringCell("EXP"));
-		cellList.push(this.exp = new Bar(80, 100, 7932074));
+		cellList.push(this.exp = new Bar(100, 100, 7932074));
 		cellList.push(new StringCell("金钱"));
 		cellList.push(this.gold = new StringCell("23424"));
 		cellList.push(new StringInfoCell("力量", "增加基础攻击力"));
@@ -99,14 +99,14 @@ class PlayerInfoPanel extends BasicCell {
 			cellList[i].y = this.beginY + this.yGap + this.yGap * (i % 14 / 2 >> 0);
 			i++;
 		}
-		this.hp.x = this.beginX + 50;
+		this.hp.x = this.beginX + 60;
 		this.hp.y = this.hp.y + 13;
-		this.mp.x = this.beginX + 50;
+		this.mp.x = this.beginX + 60;
 		this.mp.y = this.mp.y + 13;
-		this.exp.x = this.beginX + 50;
+		this.exp.x = this.beginX + 60;
 		this.exp.y = this.exp.y + 13;
-		this.crit_mul.x = this.crit_mul.x + 40;
-		this.pro_ignore.x = this.pro_ignore.x + 40;
+		this.crit_mul.x = this.crit_mul.x + 50;
+		this.pro_ignore.x = this.pro_ignore.x + 50;
 		this.cp.x = this.cp.x + 20;
 	}
 

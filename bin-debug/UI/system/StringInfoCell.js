@@ -16,7 +16,7 @@ var StringInfoCell = (function (_super) {
         _this.w = 0;
         _this.size = 16;
         _this.infoWindow = iGlobal.Global.stringInfoWindow;
-        _this.textField = iGlobal.Global.getTextField(22);
+        _this.textField = iGlobal.Global.getTextField(26);
         _this.info = info;
         _this.w = w;
         _this.addChild(_this.textField);

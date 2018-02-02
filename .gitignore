@@ -2,3 +2,5 @@
 *.js
 resource/assets/game/.DS_Store
 *.js
+bin-debug/UI/main/PetInfoPanel.js
+*.js

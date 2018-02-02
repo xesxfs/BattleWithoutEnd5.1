@@ -40,19 +40,19 @@ var MainScene = (function (_super) {
         MainScene.playerInfoPanel = new PlayerInfoPanel();
         this.addChildAt(MainScene.playerInfoPanel, 0);
         MainScene.playerInfoPanel.x = 10;
-        MainScene.playerInfoPanel.y = 10;
+        // MainScene.playerInfoPanel.y = 10;
     };
     MainScene.prototype.setMonsterInfo = function () {
         MainScene.monsterInfoPanel = new MonsterInfoPanel();
         this.addChildAt(MainScene.monsterInfoPanel, 0);
         MainScene.monsterInfoPanel.x = 10;
-        MainScene.monsterInfoPanel.y = 265;
+        MainScene.monsterInfoPanel.y = MainScene.playerInfoPanel.y + MainScene.playerInfoPanel.height + 10;
     };
     MainScene.prototype.setPetInfo = function () {
         MainScene.petInfoPanel = new PetInfoPanel();
         this.addChildAt(MainScene.petInfoPanel, 0);
         MainScene.petInfoPanel.x = 330;
-        MainScene.petInfoPanel.y = 265;
+        MainScene.petInfoPanel.y = MainScene.playerInfoPanel.y + MainScene.playerInfoPanel.height + 10;
     };
     MainScene.prototype.setOther = function () {
         MainScene.otherPanel = new OtherPanel();
@@ -64,19 +64,19 @@ var MainScene = (function (_super) {
         MainScene.battleSkillPanel = new BattleSkillPanel();
         this.addChildAt(MainScene.battleSkillPanel, 0);
         MainScene.battleSkillPanel.x = 415;
-        MainScene.battleSkillPanel.y = 410;
+        MainScene.battleSkillPanel.y = MainScene.petInfoPanel.y + MainScene.petInfoPanel.height + 10;
     };
     MainScene.prototype.setAllInfoPanel = function () {
         MainScene.allInfoPanel = new AllInfoPanel();
         this.addChildAt(MainScene.allInfoPanel, 0);
         MainScene.allInfoPanel.x = 10;
-        MainScene.allInfoPanel.y = 410;
+        MainScene.allInfoPanel.y = MainScene.monsterInfoPanel.y + MainScene.monsterInfoPanel.height + 10;
     };
     MainScene.prototype.setLootPanel = function () {
         MainScene.lootPanel = new LootPanel();
         this.addChildAt(MainScene.lootPanel, 0);
         MainScene.lootPanel.x = 415;
-        MainScene.lootPanel.y = 720;
+        MainScene.lootPanel.y = MainScene.battleSkillPanel.y + MainScene.battleSkillPanel.height + 10;
     };
     /**添加到场景中*/
     MainScene.prototype.onEnable = function () {

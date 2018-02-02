@@ -45,10 +45,10 @@ class Bar extends egret.Sprite {
 
 	private updateMc() {
 		this.line.graphics.clear();
-		this.line.graphics.lineStyle(2, 15066597);
+		this.line.graphics.lineStyle(8, 15066597);
 		this.line.graphics.moveTo(0, 0);
 		this.line.graphics.lineTo(this.w, 0);
-		this.line.graphics.lineStyle(2, this.fcolor);
+		this.line.graphics.lineStyle(8, this.fcolor);
 		this.line.graphics.moveTo(0, 0);
 		if (this._value < 0) {
 			this.line.graphics.lineTo(0, 0);

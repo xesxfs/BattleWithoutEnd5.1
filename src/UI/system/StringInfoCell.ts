@@ -8,7 +8,7 @@ class StringInfoCell extends egret.Sprite {
 	public constructor(text: string, info: string, w: number = 100) {
 		super();
 		this.infoWindow = iGlobal.Global.stringInfoWindow;
-		this.textField = iGlobal.Global.getTextField(22);
+		this.textField = iGlobal.Global.getTextField(26);
 		this.info = info;
 		this.w = w;
 		this.addChild(this.textField);
