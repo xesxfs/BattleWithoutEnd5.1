@@ -33,7 +33,7 @@ iData.iMonster.MonsterTitleList.list = [
 ];
 /**boos称号 */
 iData.iMonster.MonsterTitleList.REGION_BOSS =
-    new iData.iMonster.MonsterTitle("<font color=\'#ff4040\'>区域BOSS</font>", [
+    new iData.iMonster.MonsterTitle("<font color=#ff4040>\u533A\u57DFBOSS</font>", [
         new iData.iMonster.StatMul(iData.iItem.Stat.ATTACK, 3, 50),
         new iData.iMonster.StatMul(iData.iItem.Stat.hp, 50, 100),
         new iData.iMonster.StatMul(iData.iItem.Stat.defence, 0, 0),

@@ -3,7 +3,7 @@ class LootPanel extends BasicCell {
 
 	private beginX: number = 10;
 	private beginY: number = 30;
-	private gap: number = 18;
+	private gap: number = 25;
 	private fontSize: number = 20;
 	private gapX: number = 100;
 	private money_c: StringCell;
@@ -24,7 +24,7 @@ class LootPanel extends BasicCell {
 	public legendary: number = 0;
 
 	public constructor() {
-		super(170, 185);
+		super(200, 230);
 		var cell: StringCell = new StringCell("当前地图掉落", 150, 24);
 		this.addChild(cell);
 		cell.x = 5;

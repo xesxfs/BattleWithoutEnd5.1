@@ -1,4 +1,4 @@
-class BattleSkillPanel extends egret.Sprite {
+class BattleSkillPanel extends BasicCell {
 
 	private att: StringCell;
 	private def: StringCell;
@@ -12,7 +12,7 @@ class BattleSkillPanel extends egret.Sprite {
 	private bg: egret.Sprite;
 
 	public constructor() {
-		super();
+		super(200,300);
 		this.init();
 	}
 

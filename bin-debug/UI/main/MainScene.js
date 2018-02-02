@@ -45,40 +45,38 @@ var MainScene = (function (_super) {
     MainScene.prototype.setMonsterInfo = function () {
         MainScene.monsterInfoPanel = new MonsterInfoPanel();
         this.addChildAt(MainScene.monsterInfoPanel, 0);
-        MainScene.monsterInfoPanel.x = 400;
-        MainScene.monsterInfoPanel.y = 10;
+        MainScene.monsterInfoPanel.x = 10;
+        MainScene.monsterInfoPanel.y = 265;
     };
     MainScene.prototype.setPetInfo = function () {
         MainScene.petInfoPanel = new PetInfoPanel();
         this.addChildAt(MainScene.petInfoPanel, 0);
-        MainScene.petInfoPanel.x = 400;
-        MainScene.petInfoPanel.y = 150;
+        MainScene.petInfoPanel.x = 330;
+        MainScene.petInfoPanel.y = 265;
     };
     MainScene.prototype.setOther = function () {
         MainScene.otherPanel = new OtherPanel();
         this.addChild(MainScene.otherPanel);
         MainScene.otherPanel.x = this.stage.stageWidth;
-        // this.stage.stageWidth
-        // this.stage.width;
         MainScene.otherPanel.y = (this.stage.height - MainScene.otherPanel.height) >> 1;
     };
     MainScene.prototype.setBattleSkillPanel = function () {
         MainScene.battleSkillPanel = new BattleSkillPanel();
         this.addChildAt(MainScene.battleSkillPanel, 0);
         MainScene.battleSkillPanel.x = 415;
-        MainScene.battleSkillPanel.y = 235;
+        MainScene.battleSkillPanel.y = 410;
     };
     MainScene.prototype.setAllInfoPanel = function () {
         MainScene.allInfoPanel = new AllInfoPanel();
         this.addChildAt(MainScene.allInfoPanel, 0);
         MainScene.allInfoPanel.x = 10;
-        MainScene.allInfoPanel.y = 235;
+        MainScene.allInfoPanel.y = 410;
     };
     MainScene.prototype.setLootPanel = function () {
         MainScene.lootPanel = new LootPanel();
         this.addChildAt(MainScene.lootPanel, 0);
         MainScene.lootPanel.x = 415;
-        MainScene.lootPanel.y = 405;
+        MainScene.lootPanel.y = 720;
     };
     /**添加到场景中*/
     MainScene.prototype.onEnable = function () {

@@ -1,9 +1,9 @@
 class PlayerInfoPanel extends BasicCell {
 	private beginX: number = 10;
 	private beginY: number = 10;
-	private sXGap: number = 40;
-	private bXGap: number = 120;
-	private yGap: number = 25;
+	private sXGap: number = 50;
+	private bXGap: number = 220;
+	private yGap: number = 30;
 	private _name: StringCell;
 	private race: StringCell;
 	private age: StringInfoCell;
@@ -28,7 +28,7 @@ class PlayerInfoPanel extends BasicCell {
 	private cp: StringCell;
 
 	public constructor() {
-		super(385, 220);
+		super(640, 250);
 		this.setPosition();
 		this.update();
 	}
@@ -99,15 +99,15 @@ class PlayerInfoPanel extends BasicCell {
 			cellList[i].y = this.beginY + this.yGap + this.yGap * (i % 14 / 2 >> 0);
 			i++;
 		}
-		this.hp.x = this.beginX + 30;
+		this.hp.x = this.beginX + 50;
 		this.hp.y = this.hp.y + 13;
-		this.mp.x = this.beginX + 30;
+		this.mp.x = this.beginX + 50;
 		this.mp.y = this.mp.y + 13;
-		this.exp.x = this.beginX + 30;
+		this.exp.x = this.beginX + 50;
 		this.exp.y = this.exp.y + 13;
-		this.crit_mul.x = this.crit_mul.x + 30;
-		this.pro_ignore.x = this.pro_ignore.x + 30;
-		this.cp.x = this.cp.x + 10;
+		this.crit_mul.x = this.crit_mul.x + 40;
+		this.pro_ignore.x = this.pro_ignore.x + 40;
+		this.cp.x = this.cp.x + 20;
 	}
 
 	public update() {

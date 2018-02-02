@@ -8,7 +8,7 @@ class StringInfoCell extends egret.Sprite {
 	public constructor(text: string, info: string, w: number = 100) {
 		super();
 		this.infoWindow = iGlobal.Global.stringInfoWindow;
-		this.textField = iGlobal.Global.getTextField(16);
+		this.textField = iGlobal.Global.getTextField(22);
 		this.info = info;
 		this.w = w;
 		this.addChild(this.textField);
@@ -46,25 +46,25 @@ class StringInfoCell extends egret.Sprite {
 	}
 
 	public setText(text: string) {
-		var i: number = 0;
-		this.textField.width = this.w + 100;
-		this.textField.text = text;
-		this.textField.width = this.textField.textWidth + 6;
-		if (this.textField.width > this.w) {
-			this.removeChild(this.textField);
-			i = 1;
-			while (i < this.size) {
-				this.textField = iGlobal.Global.getTextField(this.size - i);
-				this.textField.width = this.w + 100;
-				this.textField.text = text;
-				this.textField.width = this.textField.textWidth + 6;
-				if (this.textField.width < this.w) {
-					break;
-				}
-				i++;
-			}
-			this.addChild(this.textField);
-		}
+		// var i: number = 0;
+		// this.textField.width = this.w + 100;
+		this.textField.textFlow = iGlobal.Global.htmlParse.parser(text);
+		// this.textField.width = this.textField.textWidth + 6;
+		// if (this.textField.width > this.w) {
+		// 	this.removeChild(this.textField);
+		// 	i = 1;
+		// 	while (i < this.size) {
+		// 		this.textField = iGlobal.Global.getTextField(this.size - i);
+		// 		this.textField.width = this.w + 100;
+		// 		this.textField.text = text;
+		// 		this.textField.width = this.textField.textWidth + 6;
+		// 		if (this.textField.width < this.w) {
+		// 			break;
+		// 		}
+		// 		i++;
+		// 	}
+		// 	this.addChild(this.textField);
+		// }
 		this.graphics.clear();
 		this.graphics.beginFill(16777215, 0.95);
 		this.graphics.drawRoundRect(0, 0, this.textField.textWidth + 6, this.textField.textHeight + 2, 3);

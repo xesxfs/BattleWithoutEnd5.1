@@ -11,10 +11,10 @@ r.prototype = e.prototype, t.prototype = new r();
 var LootPanel = (function (_super) {
     __extends(LootPanel, _super);
     function LootPanel() {
-        var _this = _super.call(this, 170, 185) || this;
+        var _this = _super.call(this, 200, 230) || this;
         _this.beginX = 10;
         _this.beginY = 30;
-        _this.gap = 18;
+        _this.gap = 25;
         _this.fontSize = 20;
         _this.gapX = 100;
         _this.money = 0;

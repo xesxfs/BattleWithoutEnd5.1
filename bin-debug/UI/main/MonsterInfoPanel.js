@@ -11,7 +11,7 @@ r.prototype = e.prototype, t.prototype = new r();
 var MonsterInfoPanel = (function (_super) {
     __extends(MonsterInfoPanel, _super);
     function MonsterInfoPanel() {
-        var _this = _super.call(this, 185, 135) || this;
+        var _this = _super.call(this, 310, 140) || this;
         _this.beginX = 10;
         _this.beginY = 10;
         _this.yGap = 50;
@@ -39,33 +39,33 @@ var MonsterInfoPanel = (function (_super) {
         this.title = new StringInfoCell("the Tanker", "Default", 120);
         this.addChild(this.title);
         this.title.x = this.beginX + this.sXGap;
-        this.title.y = this.beginY + 20;
+        this.title.y = this.beginY + 35;
         var hpCell = new StringCell("HP");
         this.addChild(hpCell);
         hpCell.x = this.beginX;
         hpCell.y = this.beginY + this.yGap + 30;
         this.hp = new Bar(100, 100, 12522257);
         this.addChild(this.hp);
-        this.hp.x = this.beginX + 25;
+        this.hp.x = this.beginX + 35;
         this.hp.y = this.beginY + this.yGap + 43;
         var cpCell = new StringCell("战斗力");
         this.addChild(cpCell);
         cpCell.x = this.beginX;
-        cpCell.y = this.beginY + this.yGap * 2;
+        cpCell.y = this.beginY + this.yGap * 2 + 5;
         this.cp = new StringCell("100");
         this.addChild(this.cp);
-        this.cp.x = this.beginX + this.sXGap;
-        this.cp.y = this.beginY + this.yGap * 2;
+        this.cp.x = this.beginX + this.sXGap + 20;
+        this.cp.y = this.beginY + this.yGap * 2 + 5;
         this.buffSprite = new egret.Sprite();
     };
     MonsterInfoPanel.prototype.createBossIcon = function () {
         this.bossIcon = new egret.Bitmap(RES.getRes("boss_icon"));
         this.bossIcon.visible = false;
         this.addChild(this.bossIcon);
-        this.bossIcon.x = this.beginX + 30;
-        this.bossIcon.y = this.beginY + 22;
-        this.bossIcon.width = 15;
-        this.bossIcon.height = 15;
+        this.bossIcon.x = this.beginX + 10;
+        this.bossIcon.y = this.beginY + 30;
+        this.bossIcon.width = 30;
+        this.bossIcon.height = 30;
     };
     MonsterInfoPanel.prototype.update = function () {
         this.setCpRatioTitleAndName();
@@ -114,7 +114,7 @@ var MonsterInfoPanel = (function (_super) {
             color = this.RED;
             title = "BOSS";
         }
-        var showText = "<font color=\'" + color + "\'>" + title + "</font> " + MainScene.battle.monster.data.realName;
+        var showText = "<font color=" + color + ">" + title + "</font> " + MainScene.battle.monster.data.realName;
         this._name.setText(showText);
     };
     MonsterInfoPanel.prototype.setTitle = function () {

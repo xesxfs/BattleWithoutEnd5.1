@@ -29,7 +29,7 @@ module iData {
 				this.boss = iGlobal.Global.map.getBoss();
 			}
 			/**5%的概率生产一个Boss */
-			if (Math.random() < 0.05) {
+			if (Math.random() < 1) {
 				this.monster = this.boss;
 				this.monsterHp = this.boss.hpleft;
 			}

@@ -11,7 +11,7 @@ r.prototype = e.prototype, t.prototype = new r();
 var BattleSkillPanel = (function (_super) {
     __extends(BattleSkillPanel, _super);
     function BattleSkillPanel() {
-        var _this = _super.call(this) || this;
+        var _this = _super.call(this, 200, 300) || this;
         _this.GAP = 35;
         _this.yStart = 5;
         _this.xStart1 = 5;
@@ -98,5 +98,5 @@ var BattleSkillPanel = (function (_super) {
         this.bg.graphics.endFill();
     };
     return BattleSkillPanel;
-}(egret.Sprite));
+}(BasicCell));
 __reflect(BattleSkillPanel.prototype, "BattleSkillPanel");

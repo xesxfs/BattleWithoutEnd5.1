@@ -11,12 +11,12 @@ r.prototype = e.prototype, t.prototype = new r();
 var PlayerInfoPanel = (function (_super) {
     __extends(PlayerInfoPanel, _super);
     function PlayerInfoPanel() {
-        var _this = _super.call(this, 385, 220) || this;
+        var _this = _super.call(this, 640, 250) || this;
         _this.beginX = 10;
         _this.beginY = 10;
-        _this.sXGap = 40;
-        _this.bXGap = 120;
-        _this.yGap = 25;
+        _this.sXGap = 50;
+        _this.bXGap = 220;
+        _this.yGap = 30;
         _this.setPosition();
         _this.update();
         return _this;
@@ -87,15 +87,15 @@ var PlayerInfoPanel = (function (_super) {
             cellList[i].y = this.beginY + this.yGap + this.yGap * (i % 14 / 2 >> 0);
             i++;
         }
-        this.hp.x = this.beginX + 30;
+        this.hp.x = this.beginX + 50;
         this.hp.y = this.hp.y + 13;
-        this.mp.x = this.beginX + 30;
+        this.mp.x = this.beginX + 50;
         this.mp.y = this.mp.y + 13;
-        this.exp.x = this.beginX + 30;
+        this.exp.x = this.beginX + 50;
         this.exp.y = this.exp.y + 13;
-        this.crit_mul.x = this.crit_mul.x + 30;
-        this.pro_ignore.x = this.pro_ignore.x + 30;
-        this.cp.x = this.cp.x + 10;
+        this.crit_mul.x = this.crit_mul.x + 40;
+        this.pro_ignore.x = this.pro_ignore.x + 40;
+        this.cp.x = this.cp.x + 20;
     };
     PlayerInfoPanel.prototype.update = function () {
         if (iGlobal.Player.title) {

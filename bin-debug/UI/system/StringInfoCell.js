@@ -16,7 +16,7 @@ var StringInfoCell = (function (_super) {
         _this.w = 0;
         _this.size = 16;
         _this.infoWindow = iGlobal.Global.stringInfoWindow;
-        _this.textField = iGlobal.Global.getTextField(16);
+        _this.textField = iGlobal.Global.getTextField(22);
         _this.info = info;
         _this.w = w;
         _this.addChild(_this.textField);
@@ -50,25 +50,25 @@ var StringInfoCell = (function (_super) {
         this.info = info;
     };
     StringInfoCell.prototype.setText = function (text) {
-        var i = 0;
-        this.textField.width = this.w + 100;
-        this.textField.text = text;
-        this.textField.width = this.textField.textWidth + 6;
-        if (this.textField.width > this.w) {
-            this.removeChild(this.textField);
-            i = 1;
-            while (i < this.size) {
-                this.textField = iGlobal.Global.getTextField(this.size - i);
-                this.textField.width = this.w + 100;
-                this.textField.text = text;
-                this.textField.width = this.textField.textWidth + 6;
-                if (this.textField.width < this.w) {
-                    break;
-                }
-                i++;
-            }
-            this.addChild(this.textField);
-        }
+        // var i: number = 0;
+        // this.textField.width = this.w + 100;
+        this.textField.textFlow = iGlobal.Global.htmlParse.parser(text);
+        // this.textField.width = this.textField.textWidth + 6;
+        // if (this.textField.width > this.w) {
+        // 	this.removeChild(this.textField);
+        // 	i = 1;
+        // 	while (i < this.size) {
+        // 		this.textField = iGlobal.Global.getTextField(this.size - i);
+        // 		this.textField.width = this.w + 100;
+        // 		this.textField.text = text;
+        // 		this.textField.width = this.textField.textWidth + 6;
+        // 		if (this.textField.width < this.w) {
+        // 			break;
+        // 		}
+        // 		i++;
+        // 	}
+        // 	this.addChild(this.textField);
+        // }
         this.graphics.clear();
         this.graphics.beginFill(16777215, 0.95);
         this.graphics.drawRoundRect(0, 0, this.textField.textWidth + 6, this.textField.textHeight + 2, 3);

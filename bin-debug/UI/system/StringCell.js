@@ -12,7 +12,7 @@ var StringCell = (function (_super) {
     __extends(StringCell, _super);
     function StringCell(text, width, size) {
         if (width === void 0) { width = 100; }
-        if (size === void 0) { size = 16; }
+        if (size === void 0) { size = 22; }
         var _this = _super.call(this, 0, 0) || this;
         _this.size = 0;
         _this.w = 0;
@@ -26,31 +26,31 @@ var StringCell = (function (_super) {
         return _this;
     }
     StringCell.prototype.setText = function (text) {
-        var size = 0;
+        // var size: number = 0;
         this.graphics.clear();
-        if (this.contains(this.textField)) {
-            this.removeChild(this.textField);
-        }
-        this.textField = iGlobal.Global.getTextField(this.size);
-        this.addChild(this.textField);
-        this.textField.width = this.w + 100;
+        // if (this.contains(this.textField)) {
+        // 	this.removeChild(this.textField);
+        // }
+        // this.textField = iGlobal.Global.getTextField(this.size);
+        // this.addChild(this.textField);
+        // this.textField.width = this.w + 100;
         this.textField.textFlow = iGlobal.Global.htmlParse.parser(text);
-        this.textField.width = this.textField.textWidth + 6;
-        if (this.textField.width > this.w) {
-            this.removeChild(this.textField);
-            size = 1;
-            while (size < this.size) {
-                this.textField = iGlobal.Global.getTextField(this.size - size);
-                this.textField.width = this.w + 100;
-                this.textField.textFlow = iGlobal.Global.htmlParse.parser(text);
-                this.textField.width = this.textField.textWidth + 6;
-                if (this.textField.width < this.w) {
-                    break;
-                }
-                size++;
-            }
-            this.addChild(this.textField);
-        }
+        // this.textField.width = this.textField.textWidth + 6;
+        // if (this.textField.width > this.w) {
+        // 	this.removeChild(this.textField);
+        // 	size = 1;
+        // 	while (size < this.size) {
+        // 		this.textField = iGlobal.Global.getTextField(this.size - size);
+        // 		this.textField.width = this.w + 100;
+        // 		this.textField.textFlow = iGlobal.Global.htmlParse.parser(text);
+        // 		this.textField.width = this.textField.textWidth + 6;
+        // 		if (this.textField.width < this.w) {
+        // 			break;
+        // 		}
+        // 		size++;
+        // 	}
+        // 	this.addChild(this.textField);
+        // }
     };
     return StringCell;
 }(BasicCell));
