@@ -8,7 +8,7 @@ class FlickerButton extends ButtonCell {
 		super();
 		this.touchEnabled = true;
 		this.bg = new BasicCell(width, height);
-		this.addChild(this.bg);
+		// this.addChild(this.bg);
 		// this.bg.filters = [ColorTransform.colorTransform]
 		var beforeText = iGlobal.Global.getTextField(fontSize);
 		beforeText.text = text;

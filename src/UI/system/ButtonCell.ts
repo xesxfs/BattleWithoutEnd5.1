@@ -24,7 +24,7 @@ class ButtonCell extends egret.Sprite {
 	
 		if (!this.buttonDown) {
 
-			this.setAfter();
+			// this.setAfter();
 		}
 	}
 
