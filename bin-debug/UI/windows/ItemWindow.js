@@ -18,7 +18,6 @@ var ItemWindow = (function (_super) {
         _this.addChild(outterPanel);
         outterPanel.x = 0;
         outterPanel.y = 40;
-        outterPanel.setInner();
         _this.panel = outterPanel.innerPanel;
         _this.setForge();
         _this.onItemChange();

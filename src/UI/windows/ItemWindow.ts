@@ -16,7 +16,6 @@ class ItemWindow extends IWindow {
 		this.addChild(outterPanel);
 		outterPanel.x = 0;
 		outterPanel.y = 40;
-		outterPanel.setInner();
 		this.panel = outterPanel.innerPanel as ItemInnerPanel;
 		this.setForge();
 		this.onItemChange();

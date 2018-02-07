@@ -11,7 +11,7 @@ r.prototype = e.prototype, t.prototype = new r();
 var EquipmentCell = (function (_super) {
     __extends(EquipmentCell, _super);
     function EquipmentCell(equip) {
-        var _this = _super.call(this, 200, 50) || this;
+        var _this = _super.call(this, 400, 100) || this;
         _this.equip = equip;
         _this.touchEnabled = true;
         _this.init();
@@ -19,7 +19,7 @@ var EquipmentCell = (function (_super) {
     }
     EquipmentCell.prototype.init = function () {
         this.filter_mc = new egret.Sprite();
-        this.filter_mc.graphics.beginFill(16777215);
+        this.filter_mc.graphics.beginFill(0xFFFFFF);
         this.filter_mc.graphics.drawCircle(15, 15, 14);
         this.filter_mc.graphics.endFill();
         this.before.addChild(this.filter_mc);
@@ -32,8 +32,8 @@ var EquipmentCell = (function (_super) {
             this.be_mc = (new egret.Bitmap(RES.getRes("mc_" + this.equip.position + "_" + this.equip.type)));
         }
         this.before.addChild(this.be_mc);
-        this.be_mc.width = 30;
-        this.be_mc.height = 30;
+        this.be_mc.width = 60;
+        this.be_mc.height = 60;
         this.be_mc.x = 10;
         this.be_mc.y = 10;
         if ((this.equip instanceof iData.iItem.Weapon)) {
@@ -43,13 +43,13 @@ var EquipmentCell = (function (_super) {
             this.af_mc = (new egret.Bitmap(RES.getRes("mc_" + this.equip.position + "_" + this.equip.type)));
         }
         this.after.addChild(this.af_mc);
-        this.af_mc.width = 30;
-        this.af_mc.height = 30;
+        this.af_mc.width = 60;
+        this.af_mc.height = 60;
         this.af_mc.x = 10;
         this.af_mc.y = 10;
         // this.af_mc["transform"].colorTransform = new flash.ColorTransform(1,1,1,1,255,255,255,0);
-        this.text = iGlobal.Global.getTextField(24);
-        this.text.width = 110;
+        this.text = iGlobal.Global.getTextField(26);
+        // this.text.width = 110;
         this.text.textFlow = iGlobal.Global.htmlParse.parse(this.equip.getNameHTML());
         if (this.equip.level) {
             this.text.textFlow = iGlobal.Global.htmlParse.parse(this.text.text + (" +" + this.equip.level));

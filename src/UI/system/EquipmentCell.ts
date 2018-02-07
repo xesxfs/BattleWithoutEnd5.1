@@ -6,7 +6,7 @@ class EquipmentCell extends AdvancedCell {
 	protected equipedInfoWindow: ItemInfoWindow;
 
 	public constructor(equip: iData.iItem.Equipment) {
-		super(200, 50);
+		super(400, 100);
 		this.equip = equip;
 		this.touchEnabled = true;
 		this.init();
@@ -14,37 +14,37 @@ class EquipmentCell extends AdvancedCell {
 
 	private init() {
 		this.filter_mc = new egret.Sprite();
-		this.filter_mc.graphics.beginFill(16777215);
+		this.filter_mc.graphics.beginFill(0xFFFFFF);
 		this.filter_mc.graphics.drawCircle(15, 15, 14);
 		this.filter_mc.graphics.endFill();
 		this.before.addChild(this.filter_mc);
 		this.filter_mc.x = 10;
 		this.filter_mc.y = 10;
 		if (this.equip instanceof iData.iItem.Weapon) {
-			this.be_mc=(new egret.Bitmap(RES.getRes("mc_" + this.equip.type)));
+			this.be_mc = (new egret.Bitmap(RES.getRes("mc_" + this.equip.type)));
 		}
 		else {
-			this.be_mc=(new egret.Bitmap(RES.getRes("mc_" + this.equip.position + "_" + this.equip.type)));
+			this.be_mc = (new egret.Bitmap(RES.getRes("mc_" + this.equip.position + "_" + this.equip.type)));
 		}
 		this.before.addChild(this.be_mc);
-		this.be_mc.width = 30;
-		this.be_mc.height = 30;
+		this.be_mc.width = 60;
+		this.be_mc.height = 60;
 		this.be_mc.x = 10;
 		this.be_mc.y = 10;
 		if ((this.equip instanceof iData.iItem.Weapon)) {
-			this.af_mc=(new egret.Bitmap(RES.getRes("mc_" + this.equip.type)));
+			this.af_mc = (new egret.Bitmap(RES.getRes("mc_" + this.equip.type)));
 		}
 		else {
-			this.af_mc=(new egret.Bitmap(RES.getRes("mc_" + this.equip.position + "_" + this.equip.type)));
+			this.af_mc = (new egret.Bitmap(RES.getRes("mc_" + this.equip.position + "_" + this.equip.type)));
 		}
 		this.after.addChild(this.af_mc);
-		this.af_mc.width = 30;
-		this.af_mc.height = 30;
+		this.af_mc.width = 60;
+		this.af_mc.height = 60;
 		this.af_mc.x = 10;
 		this.af_mc.y = 10;
 		// this.af_mc["transform"].colorTransform = new flash.ColorTransform(1,1,1,1,255,255,255,0);
-		this.text = iGlobal.Global.getTextField(24);
-		this.text.width = 110;
+		this.text = iGlobal.Global.getTextField(26);
+		// this.text.width = 110;
 		this.text.textFlow = iGlobal.Global.htmlParse.parse(this.equip.getNameHTML());
 		if (this.equip.level) {
 			this.text.textFlow = iGlobal.Global.htmlParse.parse(this.text.text + (" +" + this.equip.level));
