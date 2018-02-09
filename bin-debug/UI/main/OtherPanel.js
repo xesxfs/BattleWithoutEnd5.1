@@ -29,7 +29,7 @@ var OtherPanel = (function (_super) {
         leftDown = function () {
             right.visible = true;
             left.visible = false;
-            b = _self__.stage.stageWidth - 200;
+            b = _self__.stage.stageWidth - 400;
             _self__.addEventListener(egret.Event.ENTER_FRAME, onEnterFrame, _self__);
         };
         rightDown = function () {
@@ -78,7 +78,7 @@ var OtherPanel = (function (_super) {
         this.systemWindow = new SystemWindow();
         this.otherWindow = new OtherWindow();
         this.setFunction();
-        var bg = new BasicCell(200, 540);
+        var bg = new BasicCell(400, 540);
         this.addChildAt(bg, 0);
     };
     OtherPanel.prototype.setFunction = function () {
