@@ -37,7 +37,7 @@ class AllInfoInnerPanel extends InnerPanel {
 		}
 		if (this.listSprite.height > this.height && this.list.length < 100) {
 			// this.y = this.y - 20;
-			this.scrollV += this.gap+5;
+			this.scrollV += this.gap;
 		}
 		this.drawBg();
 		this.contentH = this.listSprite.height;

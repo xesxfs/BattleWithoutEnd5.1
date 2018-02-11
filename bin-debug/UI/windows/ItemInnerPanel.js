@@ -12,7 +12,7 @@ var ItemInnerPanel = (function (_super) {
     __extends(ItemInnerPanel, _super);
     function ItemInnerPanel() {
         var _this = _super.call(this) || this;
-        _this.Gap = 50;
+        _this.Gap = 65;
         _this.text = iGlobal.Global.getTextField(32, 16777215);
         var topSp = new egret.Sprite();
         topSp.graphics.beginFill(0, 0);

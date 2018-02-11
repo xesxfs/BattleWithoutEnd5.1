@@ -1,5 +1,5 @@
 class ItemInnerPanel extends InnerPanel {
-	private Gap: number = 50;
+	private Gap: number = 65;
 	public selectCell: EquipmentCell;
 	public buttonGroup: ButtonGroup;
 	private listSprite: egret.Sprite;

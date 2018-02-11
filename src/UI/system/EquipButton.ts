@@ -1,25 +1,32 @@
 class EquipButton extends ButtonCell {
 
-	private FIX: number = 20;
+	private FIX: number = 40;
 	public constructor(param1: string) {
 		super();
 		this.touchEnabled = true;
-		var _loc2_: egret.Bitmap = new egret.Bitmap(RES.getRes("doubleCircle"));
-		_loc2_.width = this.FIX;
-		_loc2_.height = this.FIX;
-		// _loc2_["transform"].colorTransform = new flash.ColorTransform(1,1,1,1,255,255,255,0);
-		this.before.addChild(_loc2_);
-		var _loc3_: egret.Bitmap = new egret.Bitmap(RES.getRes("mc_" + param1));
-		this.before.addChild(_loc3_);
-		this.setMcPosition(_loc3_);
-		var _loc4_: egret.Bitmap = new egret.Bitmap(RES.getRes("doubleCircle"));
-		_loc4_.width = this.FIX;
-		_loc4_.height = this.FIX;
-		this.after.addChild(_loc4_);
-		var _loc5_: egret.Bitmap = new egret.Bitmap(RES.getRes("mc_" + param1));
-		// _loc5_["transform"].colorTransform = new flash.ColorTransform(1,1,1,1,255,255,255,0);
-		this.after.addChild(_loc5_);
-		this.setMcPosition(_loc5_);
+		var circle1: egret.Bitmap = new egret.Bitmap(RES.getRes("doubleCircle"));
+		circle1.width = this.FIX;
+		circle1.height = this.FIX;
+		this.before.addChild(circle1);
+
+		var icon1: egret.Bitmap = new egret.Bitmap(RES.getRes("mc_" + param1));
+		this.before.addChild(icon1);
+		// this.setMcPosition(_loc3_);
+		this.setCenter(icon1);
+
+		var circle2: egret.Bitmap = new egret.Bitmap(RES.getRes("doubleCircle"));
+		circle2.width = this.FIX;
+		circle2.height = this.FIX;
+		this.after.addChild(circle2);
+		var icon2: egret.Bitmap = new egret.Bitmap(RES.getRes("mc_" + param1));
+		this.after.addChild(icon2);
+		this.setCenter(icon2);
+		// this.setMcPosition(_loc5_);
+	}
+
+	private setCenter(dis: egret.DisplayObject) {
+		dis.y = (this.height - dis.height) >> 1;
+		dis.x = (this.width - dis.width) >> 1;
 	}
 
 	private setMcPosition(param1: egret.DisplayObject) {

@@ -374,11 +374,13 @@ class ItemWindow extends IWindow {
 		if (rate > 100 - level * 3) {
 			rate = 100 - level * 3;
 		}
+		rate = 100;
 		return rate;
 	}
 
 	private getMoney(): number {
 		var money: number = (this.panel.selectCell.equip.getMoney() * Math.pow(1.2, this.panel.selectCell.equip.level + 1));
+		money = 0;
 		return money;
 	}
 

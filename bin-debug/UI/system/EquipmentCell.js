@@ -11,7 +11,8 @@ r.prototype = e.prototype, t.prototype = new r();
 var EquipmentCell = (function (_super) {
     __extends(EquipmentCell, _super);
     function EquipmentCell(equip) {
-        var _this = _super.call(this, 400, 100) || this;
+        var _this = _super.call(this, 295, 60) || this;
+        _this.iconw = 50;
         _this.equip = equip;
         _this.touchEnabled = true;
         _this.init();
@@ -24,7 +25,7 @@ var EquipmentCell = (function (_super) {
         this.filter_mc.graphics.endFill();
         this.before.addChild(this.filter_mc);
         this.filter_mc.x = 10;
-        this.filter_mc.y = 10;
+        this.filter_mc.y = 5;
         if (this.equip instanceof iData.iItem.Weapon) {
             this.be_mc = (new egret.Bitmap(RES.getRes("mc_" + this.equip.type)));
         }
@@ -32,10 +33,10 @@ var EquipmentCell = (function (_super) {
             this.be_mc = (new egret.Bitmap(RES.getRes("mc_" + this.equip.position + "_" + this.equip.type)));
         }
         this.before.addChild(this.be_mc);
-        this.be_mc.width = 60;
-        this.be_mc.height = 60;
+        this.be_mc.width = this.iconw;
+        this.be_mc.height = this.iconw;
         this.be_mc.x = 10;
-        this.be_mc.y = 10;
+        this.be_mc.y = 5;
         if ((this.equip instanceof iData.iItem.Weapon)) {
             this.af_mc = (new egret.Bitmap(RES.getRes("mc_" + this.equip.type)));
         }
@@ -43,8 +44,8 @@ var EquipmentCell = (function (_super) {
             this.af_mc = (new egret.Bitmap(RES.getRes("mc_" + this.equip.position + "_" + this.equip.type)));
         }
         this.after.addChild(this.af_mc);
-        this.af_mc.width = 60;
-        this.af_mc.height = 60;
+        this.af_mc.width = this.iconw;
+        this.af_mc.height = this.iconw;
         this.af_mc.x = 10;
         this.af_mc.y = 10;
         // this.af_mc["transform"].colorTransform = new flash.ColorTransform(1,1,1,1,255,255,255,0);
@@ -55,8 +56,8 @@ var EquipmentCell = (function (_super) {
             this.text.textFlow = iGlobal.Global.htmlParse.parse(this.text.text + (" +" + this.equip.level));
         }
         this.addChild(this.text);
-        this.text.x = 50;
-        this.text.y = 10;
+        this.text.x = 70;
+        this.text.y = 15;
         this.setEquipButton();
         this.setMoneyButton();
         this.setFilter();
@@ -92,8 +93,8 @@ var EquipmentCell = (function (_super) {
         };
         var equipButton = new EquipButton("equip");
         this.addChild(equipButton);
-        equipButton.x = 150;
-        equipButton.y = 15;
+        equipButton.x = 185;
+        equipButton.y = 10;
         equipButton.downFunction = equipDown;
     };
     EquipmentCell.prototype.setMoneyButton = function () {
@@ -106,8 +107,8 @@ var EquipmentCell = (function (_super) {
         };
         var moneyButton = new EquipButton("money");
         this.addChild(moneyButton);
-        moneyButton.x = 172;
-        moneyButton.y = 15;
+        moneyButton.x = 240;
+        moneyButton.y = 10;
         moneyButton.downFunction = moneyDown;
     };
     EquipmentCell.prototype.addInfoWindow = function () {

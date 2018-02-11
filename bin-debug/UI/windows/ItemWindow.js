@@ -363,10 +363,12 @@ var ItemWindow = (function (_super) {
         if (rate > 100 - level * 3) {
             rate = 100 - level * 3;
         }
+        rate = 100;
         return rate;
     };
     ItemWindow.prototype.getMoney = function () {
         var money = (this.panel.selectCell.equip.getMoney() * Math.pow(1.2, this.panel.selectCell.equip.level + 1));
+        money = 0;
         return money;
     };
     return ItemWindow;
