@@ -7,3 +7,5 @@ bin-debug/UI/main/PetInfoPanel.js
 bin-debug/UI/system/EquipmentCell.js
 *.js
 *.js
+*.js
+*.js

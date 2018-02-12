@@ -13,7 +13,7 @@ class ButtonCell extends egret.Sprite {
 		this.after.visible = false;
 		this.addEventListener(egret.TouchEvent.TOUCH_BEGIN, this.onMouseOver, this);
 		this.addEventListener(egret.TouchEvent.TOUCH_RELEASE_OUTSIDE, this.onMouseOut, this);
-		this.addEventListener(egret.TouchEvent.TOUCH_END, this.onMouseDown, this);
+		this.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onMouseDown, this);
 	}
 
 

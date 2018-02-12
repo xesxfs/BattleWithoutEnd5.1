@@ -10,12 +10,19 @@ r.prototype = e.prototype, t.prototype = new r();
 };
 var MenuButton = (function (_super) {
     __extends(MenuButton, _super);
-    function MenuButton(bf, af, text) {
+    function MenuButton(bf, af, text, size) {
+        if (size === void 0) { size = 80; }
         var _this = _super.call(this) || this;
         _this.touchEnabled = true;
-        _this.bg = new BasicCell(40, 40);
-        _this.before.addChild(new egret.Bitmap(RES.getRes(bf)));
-        _this.after.addChild(new egret.Bitmap(RES.getRes(af)));
+        _this.bg = new BasicCell(size, size);
+        var bfm = new egret.Bitmap(RES.getRes(bf));
+        bfm.width = size;
+        bfm.height = size;
+        _this.before.addChild(bfm);
+        var afm = new egret.Bitmap(RES.getRes(af));
+        afm.width = size;
+        afm.height = size;
+        _this.after.addChild(afm);
         _this.infoWindow = iGlobal.Global.stringInfoWindow;
         _this.addChildAt(_this.bg, 0);
         _this.text = text;

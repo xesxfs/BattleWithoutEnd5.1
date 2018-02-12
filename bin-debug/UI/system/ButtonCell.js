@@ -20,7 +20,7 @@ var ButtonCell = (function (_super) {
         _this.after.visible = false;
         _this.addEventListener(egret.TouchEvent.TOUCH_BEGIN, _this.onMouseOver, _this);
         _this.addEventListener(egret.TouchEvent.TOUCH_RELEASE_OUTSIDE, _this.onMouseOut, _this);
-        _this.addEventListener(egret.TouchEvent.TOUCH_END, _this.onMouseDown, _this);
+        _this.addEventListener(egret.TouchEvent.TOUCH_TAP, _this.onMouseDown, _this);
         return _this;
     }
     ButtonCell.prototype.onMouseOver = function (e) {

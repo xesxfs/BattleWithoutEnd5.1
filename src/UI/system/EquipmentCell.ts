@@ -48,7 +48,7 @@ class EquipmentCell extends AdvancedCell {
 		// this.text.width = 110;
 		this.text.textFlow = iGlobal.Global.htmlParse.parse(this.equip.getNameHTML());
 		if (this.equip.level) {
-			this.text.textFlow = iGlobal.Global.htmlParse.parse(this.text.text + (" +" + this.equip.level));
+			this.text.textFlow = iGlobal.Global.htmlParse.parse(this.equip.getNameHTML() + (" +" + this.equip.level));
 		}
 		this.addChild(this.text);
 		this.text.x = 70;
@@ -64,7 +64,7 @@ class EquipmentCell extends AdvancedCell {
 		this.infoWindow = new ItemInfoWindow(this.equip.getDescription());
 		this.text.textFlow = iGlobal.Global.htmlParse.parse(this.equip.getNameHTML());
 		if (this.equip.level) {
-			this.text.textFlow = iGlobal.Global.htmlParse.parse(this.text.text + (" +" + this.equip.level));
+			this.text.textFlow = iGlobal.Global.htmlParse.parse(this.equip.getNameHTML() + (" +" + this.equip.level));
 		}
 		this.html = this.equip.getNameHTML() + " +" + this.equip.level;
 		if (this.buttonDown) {
@@ -82,7 +82,7 @@ class EquipmentCell extends AdvancedCell {
 	}
 
 	protected setEquipButton() {
-		var _self__: any = this;
+		var _self__ = this;
 		var equipDown: Function = null;
 		equipDown = function () {
 			iGlobal.Player.removeItem(_self__.equip);
@@ -97,7 +97,7 @@ class EquipmentCell extends AdvancedCell {
 	}
 
 	protected setMoneyButton() {
-		var _self__: any = this;
+		var _self__ = this;
 		var moneyDown: Function = null;
 		moneyDown = function () {
 			iGlobal.Player.removeItem(_self__.equip);

@@ -12,6 +12,8 @@ var OtherPanel = (function (_super) {
     __extends(OtherPanel, _super);
     function OtherPanel() {
         var _this = _super.call(this) || this;
+        _this.memuSize = 80;
+        _this.gap = 5;
         var _self__ = _this;
         _this.array = [];
         var buttonGroup = new ButtonGroup();
@@ -47,8 +49,8 @@ var OtherPanel = (function (_super) {
         };
         while (i < list.length) {
             cell = new MenuButton("before_" + list[i], "after_" + list[i], list2[i]);
-            cell.y = (i + 1) * 40;
-            cell.x = -40;
+            cell.y = (i + 1) * _this.memuSize + _this.gap;
+            cell.x = -_this.memuSize;
             _this.addChild(cell);
             buttonGroup.addButton(cell);
             _this.array.push(cell);
@@ -56,11 +58,11 @@ var OtherPanel = (function (_super) {
         }
         left = new MenuButton("after_arrow_left", "before_arrow_left", "向左");
         _this.addChild(left);
-        left.x = -40;
+        left.x = -_this.memuSize;
         left.downFunction = leftDown;
         right = new MenuButton("after_arrow_right", "before_arrow_right", "向右");
         _this.addChild(right);
-        right.x = -40;
+        right.x = -_this.memuSize;
         right.visible = false;
         right.downFunction = rightDown;
         buttonGroup.addButton(left);
@@ -78,7 +80,7 @@ var OtherPanel = (function (_super) {
         this.systemWindow = new SystemWindow();
         this.otherWindow = new OtherWindow();
         this.setFunction();
-        var bg = new BasicCell(300, 540);
+        var bg = new BasicCell(300, 800);
         this.addChildAt(bg, 0);
     };
     OtherPanel.prototype.setFunction = function () {

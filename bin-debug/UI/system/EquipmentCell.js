@@ -53,7 +53,7 @@ var EquipmentCell = (function (_super) {
         // this.text.width = 110;
         this.text.textFlow = iGlobal.Global.htmlParse.parse(this.equip.getNameHTML());
         if (this.equip.level) {
-            this.text.textFlow = iGlobal.Global.htmlParse.parse(this.text.text + (" +" + this.equip.level));
+            this.text.textFlow = iGlobal.Global.htmlParse.parse(this.equip.getNameHTML() + (" +" + this.equip.level));
         }
         this.addChild(this.text);
         this.text.x = 70;
@@ -68,7 +68,7 @@ var EquipmentCell = (function (_super) {
         this.infoWindow = new ItemInfoWindow(this.equip.getDescription());
         this.text.textFlow = iGlobal.Global.htmlParse.parse(this.equip.getNameHTML());
         if (this.equip.level) {
-            this.text.textFlow = iGlobal.Global.htmlParse.parse(this.text.text + (" +" + this.equip.level));
+            this.text.textFlow = iGlobal.Global.htmlParse.parse(this.equip.getNameHTML() + (" +" + this.equip.level));
         }
         this.html = this.equip.getNameHTML() + " +" + this.equip.level;
         if (this.buttonDown) {

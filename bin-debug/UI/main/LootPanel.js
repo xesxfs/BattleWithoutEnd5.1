@@ -11,7 +11,7 @@ r.prototype = e.prototype, t.prototype = new r();
 var LootPanel = (function (_super) {
     __extends(LootPanel, _super);
     function LootPanel() {
-        var _this = _super.call(this, 200, 230) || this;
+        var _this = _super.call(this, 250, 400) || this;
         _this.beginX = 10;
         _this.beginY = 30;
         _this.gap = 25;

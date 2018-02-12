@@ -9,7 +9,8 @@ class BasicCell extends egret.Sprite {
 	public draw(width: number, height: number) {
 		width = Math.round(width);
 		height = Math.round(height);
-		this.graphics.beginFill(0xFFFFFF,1);
+		this.graphics.lineStyle(1, 13487565, 0.8);
+		this.graphics.beginFill(0xFFFFFF, 1);
 		this.graphics.drawRect(0, 0, width, height);
 		this.graphics.endFill();
 	}
