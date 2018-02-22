@@ -1,6 +1,6 @@
 class EquipButton extends ButtonCell {
 
-	private FIX: number = 40;
+	private FIX: number = 50;
 	public constructor(param1: string) {
 		super();
 		this.touchEnabled = true;

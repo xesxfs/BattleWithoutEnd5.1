@@ -14,7 +14,6 @@ class MainScene extends BaseScene {
 	private gap: number = 1;
 
 
-
 	protected childrenCreated(): void {
 		this.init();
 	}

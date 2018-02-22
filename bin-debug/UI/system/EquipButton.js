@@ -12,7 +12,7 @@ var EquipButton = (function (_super) {
     __extends(EquipButton, _super);
     function EquipButton(param1) {
         var _this = _super.call(this) || this;
-        _this.FIX = 40;
+        _this.FIX = 50;
         _this.touchEnabled = true;
         var circle1 = new egret.Bitmap(RES.getRes("doubleCircle"));
         circle1.width = _this.FIX;

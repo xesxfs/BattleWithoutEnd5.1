@@ -1,6 +1,6 @@
 class CombatOutterPanel extends OutterPanel {
 	public constructor() {
-		super(200, 540);
+		super(390, 700);
 		this.setInner();
 	}
 	public setInner() {

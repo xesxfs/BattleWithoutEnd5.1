@@ -21,8 +21,8 @@ var EquipCell = (function (_super) {
         _this.position = pos;
         _this.equip = data;
         var bsp = new egret.Sprite();
-        bsp.graphics.beginFill(16777215);
-        bsp.graphics.drawCircle(40, 40, 39);
+        bsp.graphics.beginFill(0xFFFFFF);
+        bsp.graphics.drawCircle(40, 40, 40);
         bsp.graphics.endFill();
         _this.before.addChild(bsp);
         if (data == null) {
@@ -37,7 +37,7 @@ var EquipCell = (function (_super) {
             }
             // _loc4_["transform"].colorTransform = new egret.ColorTransform(0, 0, 0, 1, this.equip.getColorInHex() >> 16, this.equip.getColorInHex() >> 8 & 255, this.equip.getColorInHex() & 255);
             if (_this.equip.level >= 7) {
-                bsp.filters = [new egret.GlowFilter(16711680, 0.66, _this.equip.level + 3, _this.equip.level + 3)];
+                bsp.filters = [new egret.GlowFilter(0xFF0000, 0.66, _this.equip.level + 3, _this.equip.level + 3)];
             }
         }
         _this.before.addChild(icon);

@@ -14,17 +14,18 @@ var PetIconCell = (function (_super) {
         if (pet === void 0) { pet = null; }
         var _this = _super.call(this) || this;
         _this.SIZE = 80;
-        var _loc2_ = null;
-        var _loc3_ = null;
+        _this.touchEnabled = true;
+        var petIcon = null;
+        // var _loc3_: egret.Sprite = null;
         if (pet == null) {
-            _loc2_ = new egret.Bitmap(RES.getRes("mc_mode_png"));
+            petIcon = new egret.Bitmap(RES.getRes("mc_mode"));
         }
         else {
-            // _loc2_ = new (<any>flash.getDefinitionByName("pet_" + param1.mc_name))();
+            petIcon = new egret.Bitmap(RES.getRes("pet_" + pet.mc_name));
         }
-        _this.addChild(_loc2_);
-        _loc2_.width = _this.SIZE;
-        _loc2_.height = _this.SIZE;
+        _this.addChild(petIcon);
+        petIcon.width = _this.SIZE;
+        petIcon.height = _this.SIZE;
         if (pet == null) {
             // _loc3_ = new mc_mode();
         }

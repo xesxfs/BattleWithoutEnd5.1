@@ -4,17 +4,17 @@ class SkillCell extends BasicCell {
 	public skill: iData.iSkill.Skill;
 	protected bg: egret.Sprite;
 	protected mc: egret.Bitmap;
-	protected yellow: number = 14922250;
+	protected yellow: number = 0xE3B20A;
 	protected lvupButton: EquipButton;
 
 	public constructor(param1: iData.iSkill.Skill) {
-		super(200, 50);
+		super(390, 70);
 		this.touchEnabled = true;
 		this.skill = param1;
 		this.bg = new egret.Sprite();
 		this.bg.graphics.lineStyle(1, 13487565, 0.8);
 		this.bg.graphics.beginFill(16777215, 0.95);
-		this.bg.graphics.drawRect(0, 0, 200, 50);
+		this.bg.graphics.drawRect(0, 0, 390, 70);
 		this.bg.graphics.endFill();
 		this.addChildAt(this.bg, 0);
 		this.setInfo();
@@ -27,25 +27,25 @@ class SkillCell extends BasicCell {
 	private setInfo() {
 		this.mc = new egret.Bitmap(RES.getRes("mc_" + Tool.MyMath.StringFormChange(this.skill.skillData.name.toLowerCase(), " ", "_")));
 		this.addChild(this.mc);
-		this.mc.width = 30;
-		this.mc.height = 30;
+		this.mc.width = 50;
+		this.mc.height = 50;
 		this.mc.x = 10;
-		this.mc.y = 10;
-		this.text = iGlobal.Global.getTextField(24);
-		this.text.width = 140;
+		this.mc.y = (this.height - this.mc.height) >> 1;
+		this.text = iGlobal.Global.getTextField(32);
+		// this.text.width = 140;
 		this.text.text = this.skill.skillData.realName + " " + (15 - this.skill.level).toString(16).toUpperCase();
 		this.addChild(this.text);
-		this.text.x = 50;
-		this.text.y = 10;
+		this.text.x = this.mc.x + this.mc.width + 30;
+		this.text.y = (this.height - this.text.height) >> 1;
 		this.infoWindow = new ItemInfoWindow(this.skill.getDescription());
 	}
 
-	public onMouseOver(param1: egret.TouchEvent) {
+	public onMouseOver(e: egret.TouchEvent) {
 		// this.filters = [new flash.GlowFilter(5066061, 0.66, 13, 13)];
 		if (this.parent) {
 			this.parent.addChildAt(this, this.parent.numChildren - 1);
 		}
-		this.addInfoWindow();
+		// this.addInfoWindow();
 	}
 
 	public onMouseOut(param1: egret.TouchEvent) {
@@ -54,7 +54,7 @@ class SkillCell extends BasicCell {
 	}
 
 	private setLvupButton() {
-		var _self__: any = this;
+		var _self__ = this;
 		var lvupDown: Function = null;
 		lvupDown = function () {
 			this["setBefore"]();
@@ -63,8 +63,8 @@ class SkillCell extends BasicCell {
 		};
 		this.lvupButton = new EquipButton("lvup");
 		this.addChild(this.lvupButton);
-		this.lvupButton.x = 172;
-		this.lvupButton.y = 15;
+		this.lvupButton.x = 280;
+		this.lvupButton.y = (this.height - this.lvupButton.height) >> 1;
 		this.lvupButton.downFunction = lvupDown;
 	}
 

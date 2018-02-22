@@ -1,6 +1,6 @@
 class TitleOutterPanel extends OutterPanel {
 	public constructor() {
-		super(200, 540);
+		super(400, 700);
 		this.setInner();
 	}
 	public setInner() {

@@ -12,18 +12,18 @@ var EquipWindow = (function (_super) {
     __extends(EquipWindow, _super);
     function EquipWindow() {
         var _this = _super.call(this) || this;
-        _this.SC = 0.4;
-        _this.SY = 100;
-        var bgs = new BasicCell(200, 540);
-        _this.addChild(bgs);
-        var p1 = new egret.Bitmap(RES.getRes("people_use1"));
+        _this.SC = 0.8;
+        _this.SY = 50;
+        // var bgs: egret.Sprite = new BasicCell(300, 700);
+        // this.addChild(bgs);
+        var p1 = new egret.Bitmap(RES.getRes("people_use"));
         _this.addChild(p1);
         p1.scaleX = _this.SC;
         p1.scaleY = _this.SC;
         p1.y = _this.SY;
         _this.bg2 = new egret.Sprite();
         _this.addChild(_this.bg2);
-        _this.bg2.addChild(new egret.Bitmap(RES.getRes("people_use2")));
+        // this.bg2.addChild(new egret.Bitmap(RES.getRes("people_use2")));
         _this.bg2.scaleX = _this.SC;
         _this.bg2.scaleY = _this.SC;
         _this.bg2.y = _this.SY;
@@ -43,10 +43,10 @@ var EquipWindow = (function (_super) {
         i = (0);
         while (i < list.length) {
             var equipDown = function () {
-                this["setBefore"]();
-                if (this["equip"]) {
-                    if (iGlobal.Player.addItem(this["equip"])) {
-                        iGlobal.Player[this["position"]] = null;
+                this.setBefore();
+                if (this.equip) {
+                    if (iGlobal.Player.addItem(this.equip)) {
+                        iGlobal.Player[this.position] = null;
                         _self__.update();
                         iGlobal.Player.updateAllInfo();
                         iGlobal.Player.updateBattleSkillWindow();
@@ -63,21 +63,21 @@ var EquipWindow = (function (_super) {
         this.bg2.addChild(this.pet);
         this.spList.push(this.pet);
         this.pet.x = 60;
-        this.pet.y = 620;
-        this.head.x = 210;
-        this.head.y = -50;
-        this.feet.x = 210;
-        this.feet.y = 480;
-        this.body.x = 390;
-        this.body.y = 300;
-        this.necklace.x = 380;
-        this.necklace.y = 100;
+        this.pet.y = 600;
+        this.head.x = 205;
+        this.head.y = -70;
+        this.feet.x = 205;
+        this.feet.y = 455;
+        this.body.x = 385;
+        this.body.y = 280;
+        this.necklace.x = 375;
+        this.necklace.y = 80;
         this.ring.x = 10;
-        this.ring.y = 120;
+        this.ring.y = 100;
         this.leftHand.x = 5;
-        this.leftHand.y = 230;
-        this.rightHand.x = 415;
-        this.rightHand.y = 220;
+        this.leftHand.y = 210;
+        this.rightHand.x = 410;
+        this.rightHand.y = 200;
         this.setPetInfo();
     };
     EquipWindow.prototype.setPetInfo = function () {

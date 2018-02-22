@@ -1,6 +1,6 @@
 class ItemOutterPanel extends OutterPanel {
 	public constructor() {
-		super(300, 540);
+		super(410, 540);
 		this.setInner();
 	}
 

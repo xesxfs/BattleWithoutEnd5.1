@@ -1,5 +1,5 @@
 class TitleInnerPanel extends InnerPanel {
-	private Gap: number = 50;
+	private Gap: number = 55;
 	private listSprite: egret.Sprite;
 
 	public constructor() {

@@ -5,16 +5,16 @@ class TitleCell extends BasicCell {
 	protected bg: egret.Sprite;
 	protected yellow: number = 14922250;
 
-	public constructor(param1: iData.iPlayer.Title) {
-		super(200, 50);
+	public constructor(title: iData.iPlayer.Title) {
+		super(390, 50);
 		this.touchEnabled = true;
-		this.title = param1;
-		this.bg = new egret.Sprite();
-		this.bg.graphics.lineStyle(1, 13487565, 0.8);
-		this.bg.graphics.beginFill(16777215, 0.95);
-		this.bg.graphics.drawRect(0, 0, 200, 50);
-		this.bg.graphics.endFill();
-		this.addChild(this.bg);
+		this.title = title;
+		// this.bg = new egret.Sprite();
+		// this.bg.graphics.lineStyle(1, 13487565, 0.8);
+		// this.bg.graphics.beginFill(16777215, 0.95);
+		// this.bg.graphics.drawRect(0, 0, 295, 50);
+		// this.bg.graphics.endFill();
+		// this.addChild(this.bg);
 		this.setInfo();
 		this.setBg();
 		this.addEventListener(egret.TouchEvent.TOUCH_MOVE, this.onMouseOver, this);
@@ -22,8 +22,8 @@ class TitleCell extends BasicCell {
 		this.setListener();
 	}
 
-	private onMouseDown(param1: egret.Event) {
-		var _self__: any = this;
+	private onMouseDown(e: egret.Event) {
+		var _self__ = this;
 		iGlobal.Player.setTitle(this.title);
 		Emitter.dispatchEvent(Tool.MyEvent.Update);
 	}
@@ -56,7 +56,7 @@ class TitleCell extends BasicCell {
 	}
 
 	private setInfo() {
-		this.text = new StringCell(this.title.realName.toUpperCase(), 180, 24);
+		this.text = new StringCell(this.title.realName.toUpperCase(), 180, 32);
 		this.addChild(this.text);
 		this.text.x = 10;
 		this.text.y = 10;
@@ -65,10 +65,10 @@ class TitleCell extends BasicCell {
 
 	public onMouseOver(param1: egret.TouchEvent) {
 		// this.filters = [new egret.GlowFilter(5066061, 0.66, 13, 13)];
-		if (this.parent) {
-			this.parent.addChildAt(this, this.parent.numChildren - 1);
-		}
-		this.addInfoWindow();
+		// if (this.parent) {
+		// 	this.parent.addChildAt(this, this.parent.numChildren - 1);
+		// }
+		// this.addInfoWindow();
 	}
 
 	public onMouseOut(param1: egret.TouchEvent) {

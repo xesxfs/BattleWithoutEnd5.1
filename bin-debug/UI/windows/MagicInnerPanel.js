@@ -12,9 +12,10 @@ var MagicInnerPanel = (function (_super) {
     __extends(MagicInnerPanel, _super);
     function MagicInnerPanel() {
         var _this = _super.call(this) || this;
-        _this.Gap = 50;
+        _this.Gap = 80;
         _this.listSprite = new egret.Sprite();
         _this.addChild(_this.listSprite);
+        _this.init();
         return _this;
     }
     MagicInnerPanel.prototype.init = function () {

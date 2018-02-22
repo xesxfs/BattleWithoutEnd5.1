@@ -1,5 +1,5 @@
 class ItemInnerPanel extends InnerPanel {
-	private Gap: number = 65;
+	private Gap: number = 75;
 	public selectCell: EquipmentCell;
 	public buttonGroup: ButtonGroup;
 	private listSprite: egret.Sprite;
@@ -7,14 +7,14 @@ class ItemInnerPanel extends InnerPanel {
 	private text: egret.TextField;
 	public constructor() {
 		super();
-		this.text = iGlobal.Global.getTextField(32, 16777215);
-		var topSp: egret.Sprite = new egret.Sprite();
-		topSp.graphics.beginFill(0, 0);
-		topSp.graphics.drawRect(0, 0, 20, 20);
-		topSp.graphics.endFill();
-		this.addChild(topSp);
-		this.text.width = 200;
-		this.addChild(this.text);
+		// this.text = iGlobal.Global.getTextField(32, 0xFFFFFF);
+		// var topSp: egret.Sprite = new egret.Sprite();
+		// topSp.graphics.beginFill(0, 0);
+		// topSp.graphics.drawRect(0, 0, 20, 20);
+		// topSp.graphics.endFill();
+		// this.addChild(topSp);
+		// this.text.width = 200;
+		// this.addChild(this.text);
 		this.update();
 		Emitter.addEventListener(Tool.MyEvent.Update, this.onUpdate, this);
 	}
@@ -69,8 +69,8 @@ class ItemInnerPanel extends InnerPanel {
 	}
 
 	private updateText() {
-		this.text.textFlow = iGlobal.Global.htmlParse.parse("<p align=\'center\'>" + iGlobal.Player.itemList.length + "/" + iGlobal.Player.BAGMAX + "</p>");
-		this.text.y = iGlobal.Player.itemList.length * this.Gap;
+		// this.text.textFlow = iGlobal.Global.htmlParse.parse("<p align=\'center\'>" + iGlobal.Player.itemList.length + "/" + iGlobal.Player.BAGMAX + "</p>");
+		// this.text.y = iGlobal.Player.itemList.length * this.Gap;
 	}
 
 	public addOneCell() {

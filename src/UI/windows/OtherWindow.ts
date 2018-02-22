@@ -8,7 +8,7 @@ class OtherWindow extends IWindow {
 
 
 	private init() {
-		var bsp: egret.Sprite = new BasicCell(200, 540);
+		var bsp: egret.Sprite = new BasicCell(390, 700);
 		this.addChild(bsp);
 		this.setHelp();
 		this.setMap();
@@ -25,15 +25,15 @@ class OtherWindow extends IWindow {
 			iGlobal.Global.helpPanel.visible = true;
 			this.setBefore();
 		};
-		var help: ClickButton = new ClickButton("button_help", 50);
+		var help: ClickButton = new ClickButton("button_help", 80);
 		this.addChild(help);
-		help.x = 10;
-		help.y = 100;
+		help.x = 30;
+		help.y = 120;
 		help.downFunction = helpDown;
 		var help_text: StringCell = new StringCell("帮助", 100, 32);
 		this.addChild(help_text);
-		help_text.x = 100;
-		help_text.y = 100;
+		help_text.x = 150;
+		help_text.y = 150;
 	}
 
 
@@ -45,15 +45,15 @@ class OtherWindow extends IWindow {
 			_self__.mapPanel.visible = true;
 		};
 		this.mapPanel = new MapPanel();
-		var mapButton: ClickButton = new ClickButton("button_map", 50);
+		var mapButton: ClickButton = new ClickButton("button_map", 80);
 		this.addChild(mapButton);
-		mapButton.x = 10;
+		mapButton.x = 30;
 		mapButton.y = 10;
 		mapButton.downFunction = mapDown;
 		var text: StringCell = new StringCell("地图", 100, 32);
 		this.addChild(text);
-		text.x = 100;
-		text.y = 10;
+		text.x = 150;
+		text.y = 40;
 	}
 
 
@@ -65,15 +65,15 @@ class OtherWindow extends IWindow {
 			iGlobal.Global.shopPanel.visible = true;
 			this["setBefore"]();
 		};
-		var shop: ClickButton = new ClickButton("button_shop", 50);
+		var shop: ClickButton = new ClickButton("button_shop", 80);
 		this.addChild(shop);
-		shop.x = 10;
-		shop.y = 200;
+		shop.x = 30;
+		shop.y = 220;
 		shop.downFunction = shopDown;
 		var shop_text: StringCell = new StringCell("商店", 100, 32);
 		this.addChild(shop_text);
-		shop_text.x = 100;
-		shop_text.y = 200;
+		shop_text.x = 150;
+		shop_text.y = 250;
 	}
 
 
@@ -84,15 +84,15 @@ class OtherWindow extends IWindow {
 			iGlobal.Global.specialShopPanel.visible = true;
 			this["setBefore"]();
 		};
-		var specialShop: ClickButton = new ClickButton("button_shop", 50);
+		var specialShop: ClickButton = new ClickButton("button_shop", 80);
 		this.addChild(specialShop);
-		specialShop.x = 10;
-		specialShop.y = 280;
+		specialShop.x = 30;
+		specialShop.y = 350;
 		specialShop.downFunction = specialShopDown;
 		var specialShop_text: StringCell = new StringCell("特殊商店", 150, 32);
 		this.addChild(specialShop_text);
-		specialShop_text.x = 60;
-		specialShop_text.y = 280;
+		specialShop_text.x = 150;
+		specialShop_text.y = 360;
 	}
 
 
@@ -107,28 +107,28 @@ class OtherWindow extends IWindow {
 			iData.iPlayer.TitleList.updateTitleInfo("reborn");
 			iGlobal.Player.caculate = (0);
 		};
-		this.rebirth = new ClickButton("button_rebirth", 50);
+		this.rebirth = new ClickButton("button_rebirth", 80);
 		this.addChild(this.rebirth);
-		this.rebirth.x = 10;
-		this.rebirth.y = 350;
+		this.rebirth.x = 30;
+		this.rebirth.y = 400;
 		this.rebirth.downFunction = rebirthDown;
 		this.updateBirth();
 		var rebirth_text: StringCell = new StringCell("转生", 100, 32);
 		this.addChild(rebirth_text);
-		rebirth_text.x = 100;
-		rebirth_text.y = 350;
+		rebirth_text.x = 150;
+		rebirth_text.y = 410;
 		var intro: StringCell = new StringCell("当你达到20岁之后", 150, 16);
 		this.addChild(intro);
-		intro.x = 35;
-		intro.y = 400;
+		intro.x = 55;
+		intro.y = 500;
 		intro = new StringCell("可以选择转生", 150, 16);
 		this.addChild(intro);
-		intro.x = 40;
-		intro.y = 420;
+		intro.x = 60;
+		intro.y = 520;
 		intro = new StringCell("技能和装备会保留", 150, 16);
 		this.addChild(intro);
-		intro.x = 40;
-		intro.y = 440;
+		intro.x = 60;
+		intro.y = 540;
 	}
 
 	private setSave() {
@@ -137,19 +137,19 @@ class OtherWindow extends IWindow {
 			iGlobal.Player.save();
 			MainScene.allInfoPanel.addText("记录已经保存!");
 		};
-		var save: ClickButton = new ClickButton("button_save", 50);
+		var save: ClickButton = new ClickButton("button_save", 80);
 		this.addChild(save);
-		save.x = 10;
-		save.y = 470;
+		save.x = 30;
+		save.y = 590;
 		save.downFunction = saveDown;
 		var save_text: StringCell = new StringCell("保存", 100, 32);
 		this.addChild(save_text);
-		save_text.x = 100;
-		save_text.y = 470;
+		save_text.x = 150;
+		save_text.y = 600;
 		var s_t: StringCell = new StringCell("自动保存/30s", 100, 16);
 		this.addChild(s_t);
-		s_t.x = 80;
-		s_t.y = 510;
+		s_t.x = 100;
+		s_t.y = 610;
 	}
 
 	public updateBirth() {

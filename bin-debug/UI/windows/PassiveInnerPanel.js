@@ -12,7 +12,7 @@ var PassiveInnerPanel = (function (_super) {
     __extends(PassiveInnerPanel, _super);
     function PassiveInnerPanel() {
         var _this = _super.call(this) || this;
-        _this.Gap = 50;
+        _this.Gap = 80;
         _this.init();
         return _this;
     }

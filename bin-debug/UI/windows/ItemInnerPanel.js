@@ -12,15 +12,15 @@ var ItemInnerPanel = (function (_super) {
     __extends(ItemInnerPanel, _super);
     function ItemInnerPanel() {
         var _this = _super.call(this) || this;
-        _this.Gap = 65;
-        _this.text = iGlobal.Global.getTextField(32, 16777215);
-        var topSp = new egret.Sprite();
-        topSp.graphics.beginFill(0, 0);
-        topSp.graphics.drawRect(0, 0, 20, 20);
-        topSp.graphics.endFill();
-        _this.addChild(topSp);
-        _this.text.width = 200;
-        _this.addChild(_this.text);
+        _this.Gap = 75;
+        // this.text = iGlobal.Global.getTextField(32, 0xFFFFFF);
+        // var topSp: egret.Sprite = new egret.Sprite();
+        // topSp.graphics.beginFill(0, 0);
+        // topSp.graphics.drawRect(0, 0, 20, 20);
+        // topSp.graphics.endFill();
+        // this.addChild(topSp);
+        // this.text.width = 200;
+        // this.addChild(this.text);
         _this.update();
         Emitter.addEventListener(Tool.MyEvent.Update, _this.onUpdate, _this);
         return _this;
@@ -70,8 +70,8 @@ var ItemInnerPanel = (function (_super) {
         this.contentH = (length + 1) * this.Gap;
     };
     ItemInnerPanel.prototype.updateText = function () {
-        this.text.textFlow = iGlobal.Global.htmlParse.parse("<p align=\'center\'>" + iGlobal.Player.itemList.length + "/" + iGlobal.Player.BAGMAX + "</p>");
-        this.text.y = iGlobal.Player.itemList.length * this.Gap;
+        // this.text.textFlow = iGlobal.Global.htmlParse.parse("<p align=\'center\'>" + iGlobal.Player.itemList.length + "/" + iGlobal.Player.BAGMAX + "</p>");
+        // this.text.y = iGlobal.Player.itemList.length * this.Gap;
     };
     ItemInnerPanel.prototype.addOneCell = function () {
         var _self__ = this;

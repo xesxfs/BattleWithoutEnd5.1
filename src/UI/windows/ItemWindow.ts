@@ -148,23 +148,25 @@ class ItemWindow extends IWindow {
 			_self__.panel.update();
 			_self__.updateBagText();
 		};
-		var bag: egret.Sprite = new BasicCell(200, 40);
+		var bag: egret.Sprite = new BasicCell(400, 40);
 		this.addChild(bag);
 		bag.x = 0;
 		bag.y = 0;
 		this.textBag.width = 200;
 		this.textBag.textFlow = iGlobal.Global.htmlParse.parser("<p align=\'center\'>" + iGlobal.Player.itemList.length + "/" + iGlobal.Player.BAGMAX + "</p>");
 		this.textBag.textAlign = egret.HorizontalAlign.CENTER;
+		this.textBag.x = (bag.width - this.textBag.width) >> 1;
+		this.textBag.y = 10;
 		bag.addChild(this.textBag);
 		var value: StringInfoButton = new StringInfoButton("价值", "按价值排列");
 		bag.addChild(value);
-		value.x = 5;
-		value.y = 0;
+		value.x = 20;
+		value.y = 10;
 		value.downFunction = valueDown;
 		var type: StringInfoButton = new StringInfoButton("类型", "按类型排列");
 		bag.addChild(type);
-		type.x = 160;
-		type.y = 0;
+		type.x = bag.width - type.width - value.x;
+		type.y = 10;
 		type.downFunction = typeDown;
 	}
 
@@ -318,7 +320,7 @@ class ItemWindow extends IWindow {
 		var c: BasicCell = new BasicCell(this.width, 200);
 		this.addChild(c);
 		c.x = 0;
-		c.y = this.outterPanel.y + this.outterPanel.height+20;
+		c.y = this.outterPanel.y + this.outterPanel.height + 20;
 		this.autoBox = new ToggleBox("自动+7", 24, false);
 		c.addChild(this.autoBox);
 		this.autoBox.x = 70;

@@ -12,7 +12,7 @@ var TitleInnerPanel = (function (_super) {
     __extends(TitleInnerPanel, _super);
     function TitleInnerPanel() {
         var _this = _super.call(this) || this;
-        _this.Gap = 50;
+        _this.Gap = 55;
         var cell = null;
         _this.listSprite = new egret.Sprite();
         _this.addChild(_this.listSprite);

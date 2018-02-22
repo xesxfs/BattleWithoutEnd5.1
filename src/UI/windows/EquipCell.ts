@@ -12,8 +12,8 @@ class EquipCell extends ButtonCell {
 		this.position = pos;
 		this.equip = data;
 		var bsp: egret.Sprite = new egret.Sprite();
-		bsp.graphics.beginFill(16777215);
-		bsp.graphics.drawCircle(40, 40, 39);
+		bsp.graphics.beginFill(0xFFFFFF);
+		bsp.graphics.drawCircle(40, 40, 40);
 		bsp.graphics.endFill();
 		this.before.addChild(bsp);
 		if (data == null) {
@@ -28,7 +28,7 @@ class EquipCell extends ButtonCell {
 			}
 			// _loc4_["transform"].colorTransform = new egret.ColorTransform(0, 0, 0, 1, this.equip.getColorInHex() >> 16, this.equip.getColorInHex() >> 8 & 255, this.equip.getColorInHex() & 255);
 			if (this.equip.level >= 7) {
-				bsp.filters = [new egret.GlowFilter(16711680, 0.66, this.equip.level + 3, this.equip.level + 3)];
+				bsp.filters = [new egret.GlowFilter(0xFF0000, 0.66, this.equip.level + 3, this.equip.level + 3)];
 			}
 		}
 		this.before.addChild(icon);

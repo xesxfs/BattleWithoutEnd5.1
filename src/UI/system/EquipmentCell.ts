@@ -7,7 +7,7 @@ class EquipmentCell extends AdvancedCell {
 	private iconw: number = 50;
 
 	public constructor(equip: iData.iItem.Equipment) {
-		super(295, 60);
+		super(390, 70);
 		this.equip = equip;
 		this.touchEnabled = true;
 		this.init();
@@ -16,11 +16,11 @@ class EquipmentCell extends AdvancedCell {
 	private init() {
 		this.filter_mc = new egret.Sprite();
 		this.filter_mc.graphics.beginFill(0xFFFFFF);
-		this.filter_mc.graphics.drawCircle(15, 15, 14);
+		this.filter_mc.graphics.drawCircle(25, 25, 25);
 		this.filter_mc.graphics.endFill();
 		this.before.addChild(this.filter_mc);
 		this.filter_mc.x = 10;
-		this.filter_mc.y = 5;
+		this.filter_mc.y = 10;
 		if (this.equip instanceof iData.iItem.Weapon) {
 			this.be_mc = (new egret.Bitmap(RES.getRes("mc_" + this.equip.type)));
 		}
@@ -31,7 +31,7 @@ class EquipmentCell extends AdvancedCell {
 		this.be_mc.width = this.iconw;
 		this.be_mc.height = this.iconw;
 		this.be_mc.x = 10;
-		this.be_mc.y = 5;
+		this.be_mc.y = 10;
 		if ((this.equip instanceof iData.iItem.Weapon)) {
 			this.af_mc = (new egret.Bitmap(RES.getRes("mc_" + this.equip.type)));
 		}
@@ -44,15 +44,15 @@ class EquipmentCell extends AdvancedCell {
 		this.af_mc.x = 10;
 		this.af_mc.y = 10;
 		// this.af_mc["transform"].colorTransform = new flash.ColorTransform(1,1,1,1,255,255,255,0);
-		this.text = iGlobal.Global.getTextField(26);
+		this.text = iGlobal.Global.getTextField(30);
 		// this.text.width = 110;
 		this.text.textFlow = iGlobal.Global.htmlParse.parse(this.equip.getNameHTML());
 		if (this.equip.level) {
 			this.text.textFlow = iGlobal.Global.htmlParse.parse(this.equip.getNameHTML() + (" +" + this.equip.level));
 		}
 		this.addChild(this.text);
-		this.text.x = 70;
-		this.text.y = 15;
+		this.text.x = 80;
+		this.text.y = (this.height - this.text.height)>>1;
 		this.setEquipButton();
 		this.setMoneyButton();
 		this.setFilter();
@@ -91,8 +91,8 @@ class EquipmentCell extends AdvancedCell {
 		};
 		var equipButton: EquipButton = new EquipButton("equip");
 		this.addChild(equipButton);
-		equipButton.x = 185;
-		equipButton.y = 10;
+		equipButton.x = 225;
+		equipButton.y = (this.height - equipButton.height) >> 1;
 		equipButton.downFunction = equipDown;
 	}
 
@@ -106,8 +106,8 @@ class EquipmentCell extends AdvancedCell {
 		};
 		var moneyButton: EquipButton = new EquipButton("money");
 		this.addChild(moneyButton);
-		moneyButton.x = 240;
-		moneyButton.y = 10;
+		moneyButton.x = 300;
+		moneyButton.y = (this.height - moneyButton.height) >> 1;
 		moneyButton.downFunction = moneyDown;
 	}
 

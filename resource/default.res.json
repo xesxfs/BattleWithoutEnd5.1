@@ -1,6 +1,6 @@
 {
 	"groups":[{
-			"keys":"after_arrow_left,after_arrow_right,after_equip,after_info,after_item,after_pet,after_skil,after_system,after_title,before_arrow_left,before_arrow_right,before_dwarf,before_elf,before_equip,before_giant,before_human,before_item,before_skill,before_system,before_title,before_undeath,boss_icon,buff_burn,buff_corrosion,buff_frozen,button_bagSlot,button_gamble,button_map,button_petSlot,button_rebirth,button_save,button_shop,doubleCircle,map_icon,map_mc,mc_axe,mc_blacksmithing,mc_body_heavy,mc_body_light,mc_body_medium,mc_bow,mc_combat_mastery,mc_corrosive_shot,mc_counterattack,mc_critical_hit,mc_crossbow,mc_dagger,mc_defence,mc_equip,mc_feet_heavy,mc_feet_light,mc_feet_medium,mc_fireball,mc_firebolt,mc_forge,mc_head_heavy,mc_head_light,mc_head_medium,mc_ice_spear,mc_icebolt,mc_life_drain,mc_lightningbolt,mc_lvup,mc_magic_mastery,mc_mana_shield,mc_mirage_missile,mc_mode,mc_money,mc_necklace_accesory,mc_range_mastery,mc_ring_accesory,mc_sceptre,mc_shield,mc_smash,mc_staff,mc_sword,mc_tome,people_use1,people_use2,pet_attack,pet_balance,pet_bear,pet_defence,pet_dragon,pet_fox,pet_ghost,pet_goblin,pet_magic,pet_rat,pet_skeleton,pet_spider,pet_unicorn,pet_wolf,pet_zombie,pSkill_aggressive,pSkill_counterattack,pSkill_defensive,pSkill_dodge,pSkill_double_hit,pSkill_fireball,pSkill_good_or_evil,pSkill_heal,pSkill_ice_spear,pSkill_injury_resile,pSkill_life_drain,pSkill_meditation,pSkill_protective,pSkill_slayer,pSkill_strong,pSkill_taunt,pSkill_thunder,pSkill_wisdom,pSkill_wise,after_dwarf,after_elf,after_giant,after_human,after_undeath,before_info,before_pet",
+			"keys":"after_arrow_left,after_arrow_right,after_equip,after_info,after_item,after_pet,after_skil,after_system,after_title,before_arrow_left,before_arrow_right,before_dwarf,before_elf,before_equip,before_giant,before_human,before_item,before_skill,before_system,before_title,before_undeath,boss_icon,buff_burn,buff_corrosion,buff_frozen,button_bagSlot,button_gamble,button_map,button_petSlot,button_rebirth,button_save,button_shop,doubleCircle,map_icon,map_mc,mc_axe,mc_blacksmithing,mc_body_heavy,mc_body_light,mc_body_medium,mc_bow,mc_combat_mastery,mc_corrosive_shot,mc_counterattack,mc_critical_hit,mc_crossbow,mc_dagger,mc_defence,mc_equip,mc_feet_heavy,mc_feet_light,mc_feet_medium,mc_fireball,mc_firebolt,mc_forge,mc_head_heavy,mc_head_light,mc_head_medium,mc_ice_spear,mc_icebolt,mc_life_drain,mc_lightningbolt,mc_lvup,mc_magic_mastery,mc_mana_shield,mc_mirage_missile,mc_mode,mc_money,mc_necklace_accesory,mc_range_mastery,mc_ring_accesory,mc_sceptre,mc_shield,mc_smash,mc_staff,mc_sword,mc_tome,pet_attack,pet_balance,pet_bear,pet_defence,pet_dragon,pet_fox,pet_ghost,pet_goblin,pet_magic,pet_rat,pet_skeleton,pet_spider,pet_unicorn,pet_wolf,pet_zombie,pSkill_aggressive,pSkill_counterattack,pSkill_defensive,pSkill_dodge,pSkill_double_hit,pSkill_fireball,pSkill_good_or_evil,pSkill_heal,pSkill_ice_spear,pSkill_injury_resile,pSkill_life_drain,pSkill_meditation,pSkill_protective,pSkill_slayer,pSkill_strong,pSkill_taunt,pSkill_thunder,pSkill_wisdom,pSkill_wise,after_dwarf,after_elf,after_giant,after_human,after_undeath,before_info,before_pet,people_use,button_help",
 			"name":"preload"
 		}],
 	"resources":[
@@ -390,16 +390,6 @@
 			"url":"assets/game/mc_tome.png"
 		},
 		{
-			"name":"people_use1",
-			"type":"image",
-			"url":"assets/game/people_use1.png"
-		},
-		{
-			"name":"people_use2",
-			"type":"image",
-			"url":"assets/game/people_use2.png"
-		},
-		{
 			"name":"pet_attack",
 			"type":"image",
 			"url":"assets/game/pet_attack.png"
@@ -603,6 +593,16 @@
 			"name":"before_pet",
 			"type":"image",
 			"url":"assets/game/before_pet.png"
+		},
+		{
+			"name":"people_use",
+			"type":"image",
+			"url":"assets/game/people_use.png"
+		},
+		{
+			"name":"button_help",
+			"type":"image",
+			"url":"assets/game/button_help.png"
 		}
 	]
 }

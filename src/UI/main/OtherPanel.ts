@@ -30,7 +30,7 @@ class OtherPanel extends egret.Sprite {
 		leftDown = function () {
 			right.visible = true;
 			left.visible = false;
-			b = _self__.stage.stageWidth - 300
+			b = _self__.stage.stageWidth - 410
 			_self__.addEventListener(egret.Event.ENTER_FRAME, onEnterFrame, _self__);
 
 		};
@@ -84,7 +84,7 @@ class OtherPanel extends egret.Sprite {
 		this.systemWindow = new SystemWindow();
 		this.otherWindow = new OtherWindow();
 		this.setFunction();
-		var bg: egret.Sprite = new BasicCell(300, 800);
+		var bg: egret.Sprite = new BasicCell(410, 800);
 		this.addChildAt(bg, 0);
 	}
 
@@ -140,6 +140,7 @@ class OtherPanel extends egret.Sprite {
 		var addWindow: Function = function () {
 			_self__.addChild(_self__.window);
 			_self__.window.y = 40;
+			_self__.window.x = 10;
 		};
 		this.array[0].downFunction = addWindow0;
 		this.array[1].downFunction = addWindow1;

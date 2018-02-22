@@ -1,11 +1,11 @@
 class ActiveSkillCell extends SkillCell {
-	public constructor(param1: iData.iSkill.Skill) {
-		super(param1);
+	public constructor(skill: iData.iSkill.Skill) {
+		super(skill);
 		this.addEventListener(egret.TouchEvent.TOUCH_BEGIN, this.onMouseDown, this);
 	}
 
-	private onMouseDown(param1: egret.TouchEvent) {
-		if (!(param1.target instanceof ActiveSkillCell)) {
+	private onMouseDown(e: egret.TouchEvent) {
+		if (!(e.target instanceof ActiveSkillCell)) {
 			return;
 		}
 		if (iGlobal.Player.isSkillEquiped(this.skill)) {
