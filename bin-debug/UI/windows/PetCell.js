@@ -10,37 +10,39 @@ r.prototype = e.prototype, t.prototype = new r();
 };
 var PetCell = (function (_super) {
     __extends(PetCell, _super);
-    function PetCell(param1) {
-        var _this = _super.call(this, 200, 50) || this;
-        _this.pet = param1;
+    function PetCell(pet) {
+        var _this = _super.call(this, 385, 80) || this;
+        _this.Fix = 60;
+        _this.pet = pet;
         _this.init();
         return _this;
     }
     PetCell.prototype.init = function () {
         this.be_mc = new egret.Sprite();
-        this.be_mc.addChild(new egret.Bitmap(RES.getRes("pet_" + this.pet.mc_name)));
+        var icon1 = new egret.Bitmap(RES.getRes("pet_" + this.pet.mc_name));
+        this.be_mc.addChild(icon1);
         this.before.addChild(this.be_mc);
-        this.be_mc.width = 30;
-        this.be_mc.height = 30;
+        icon1.width = this.Fix;
+        icon1.height = this.Fix;
         this.be_mc.x = 10;
-        this.be_mc.y = 10;
+        this.be_mc.y = (this.height - this.be_mc.height) >> 1;
         this.af_mc = new egret.Sprite();
-        this.af_mc.addChild(new egret.Bitmap(RES.getRes("pet_" + this.pet.mc_name)));
+        var icon2 = new egret.Bitmap(RES.getRes("pet_" + this.pet.mc_name));
+        this.af_mc.addChild(icon2);
         this.after.addChild(this.af_mc);
-        this.af_mc.width = 30;
-        this.af_mc.height = 30;
+        icon2.width = this.Fix;
+        icon2.height = this.Fix;
         this.af_mc.x = 10;
-        this.af_mc.y = 10;
+        this.af_mc.y = (this.height - this.be_mc.height) >> 1;
         // this.af_mc["transform"].colorTransform = new flash.ColorTransform(1, 1, 1, 1, 255, 255, 255, 0);
-        this.text = iGlobal.Global.getTextField(20);
-        this.text.width = 120;
+        this.text = iGlobal.Global.getTextField(28);
         this.text.textFlow = iGlobal.Global.htmlParse.parser(this.pet.realName);
         if (this.pet.level) {
-            this.text.textFlow = iGlobal.Global.htmlParse.parser(this.text.textFlow + (" Lv." + this.pet.level));
+            this.text.textFlow = iGlobal.Global.htmlParse.parser(this.text.text + (" Lv." + this.pet.level));
         }
         this.addChild(this.text);
-        this.text.x = 50;
-        this.text.y = 10;
+        this.text.x = this.be_mc.x + this.be_mc.width + 10;
+        this.text.y = (this.height - this.text.height) >> 1;
         this.setEquipButton();
         this.setMoneyButton();
         // this.infoWindow = new PetInfoWindow(this.pet);
@@ -55,8 +57,8 @@ var PetCell = (function (_super) {
         };
         var equipButton = new EquipButton("equip");
         this.addChild(equipButton);
-        equipButton.x = 150;
-        equipButton.y = 15;
+        equipButton.x = 260;
+        equipButton.y = (this.height - equipButton.height) >> 1;
         equipButton.downFunction = equipDown;
     };
     PetCell.prototype.setMoneyButton = function () {
@@ -68,15 +70,15 @@ var PetCell = (function (_super) {
         };
         var moneyButton = new EquipButton("money");
         this.addChild(moneyButton);
-        moneyButton.x = 172;
-        moneyButton.y = 15;
+        moneyButton.x = 320;
+        moneyButton.y = (this.height - moneyButton.height) >> 1;
         moneyButton.downFunction = moneyDown;
     };
     PetCell.prototype.update = function () {
         this.infoWindow.draw(0, 0);
         this.text.textFlow = iGlobal.Global.htmlParse.parser(this.pet.realName);
         if (this.pet.level) {
-            this.text.textFlow = iGlobal.Global.htmlParse.parser(this.text.textFlow + (" Lv." + this.pet.level));
+            this.text.textFlow = iGlobal.Global.htmlParse.parser(this.text.text + (" Lv." + this.pet.level));
         }
     };
     return PetCell;

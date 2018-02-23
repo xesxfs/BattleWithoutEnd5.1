@@ -7,12 +7,13 @@ class ToggleBox extends egret.Sprite {
 	public upFunction: Function;
 	public constructor(text: string, size: number, bDown: boolean = true) {
 		super();
+		this.touchEnabled = true;
 		this.size = (size);
 		this.text = iGlobal.Global.getTextField(size);
 		this.addChild(this.text);
 		this.setText(text);
 		this.box = new egret.Sprite();
-		this.box.touchEnabled = true;
+		// this.box.touchEnabled = true;
 		this.addChild(this.box);
 		if (bDown) {
 			this.setDown();
@@ -20,7 +21,7 @@ class ToggleBox extends egret.Sprite {
 		else {
 			this.setUp();
 		}
-		this.box.addEventListener(egret.TouchEvent.TOUCH_BEGIN, this.onMouseDown, this);
+		this.addEventListener(egret.TouchEvent.TOUCH_BEGIN, this.onMouseDown, this);
 	}
 
 	public setText(html: string) {

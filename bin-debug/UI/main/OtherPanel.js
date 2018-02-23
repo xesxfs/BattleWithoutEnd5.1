@@ -80,7 +80,7 @@ var OtherPanel = (function (_super) {
         this.systemWindow = new SystemWindow();
         this.otherWindow = new OtherWindow();
         this.setFunction();
-        var bg = new BasicCell(410, 800);
+        var bg = new BasicCell(410, 1000);
         this.addChildAt(bg, 0);
     };
     OtherPanel.prototype.setFunction = function () {

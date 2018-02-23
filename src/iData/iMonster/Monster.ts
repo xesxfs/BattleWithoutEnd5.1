@@ -187,6 +187,10 @@ module iData {
 			}
 
 			public dropPet() {
+				var statusRate: number = 1;
+				var statusCount: number = 0;
+				statusCount = (1 + iGlobal.Global.map.mapData.modifier) * (1 + statusRate);
+				iGlobal.Player.addPet(new iData.iPet.Pet(iGlobal.Global.map.mapData.petList[iGlobal.Global.map.mapData.petList.length * Math.random() >> 0], statusCount));
 			}
 
 			public get nameHtml(): string {

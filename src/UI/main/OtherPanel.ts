@@ -84,7 +84,7 @@ class OtherPanel extends egret.Sprite {
 		this.systemWindow = new SystemWindow();
 		this.otherWindow = new OtherWindow();
 		this.setFunction();
-		var bg: egret.Sprite = new BasicCell(410, 800);
+		var bg: egret.Sprite = new BasicCell(410, 1000);
 		this.addChildAt(bg, 0);
 	}
 

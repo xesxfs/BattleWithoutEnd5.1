@@ -58,7 +58,7 @@ var OtherWindow = (function (_super) {
         var text = new StringCell("地图", 100, 32);
         this.addChild(text);
         text.x = 150;
-        text.y = 40;
+        text.y = 35;
     };
     OtherWindow.prototype.setShop = function () {
         var shopDown = null;

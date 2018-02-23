@@ -1,5 +1,5 @@
 class PetInnerPanel extends InnerPanel {
-	private Gap: number = 50;
+	private Gap: number = 85;
 	public selectCell: PetCell;
 	public buttonGroup: ButtonGroup;
 	private listSprite: egret.Sprite;

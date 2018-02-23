@@ -59,7 +59,7 @@ var MainScene = (function (_super) {
         MainScene.otherPanel = new OtherPanel();
         this.addChild(MainScene.otherPanel);
         MainScene.otherPanel.x = this.stage.stageWidth;
-        MainScene.otherPanel.y = (this.stage.height - MainScene.otherPanel.height) >> 1;
+        MainScene.otherPanel.y = (this.stage.height - MainScene.otherPanel.height);
     };
     MainScene.prototype.setBattleSkillPanel = function () {
         MainScene.battleSkillPanel = new BattleSkillPanel();

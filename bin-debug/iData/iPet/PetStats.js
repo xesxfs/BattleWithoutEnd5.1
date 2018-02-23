@@ -6,7 +6,7 @@ var iData;
     var iPet;
     (function (iPet) {
         var PetStats = (function () {
-            function PetStats(param1, param2, param3, param4, param5, param6, param7, param8, param9, param10) {
+            function PetStats(hp, mp, attmin, attmax, def, pro, balance, cri, criMul, magAtt) {
                 this._hp = 0;
                 this._mp = 0;
                 this._attmin = 0;
@@ -17,25 +17,25 @@ var iData;
                 this._cri = 0;
                 this._criMul = 0;
                 this._magAtt = 0;
-                this.hp = param1;
-                this.mp = param2;
-                this.attmin = param3;
-                this.attmax = param4;
-                this.def = param5;
-                this.pro = param6;
-                this.balance = param7;
-                this.cri = param8;
-                this.criMul = param9;
-                this.magAtt = param10;
+                this.hp = hp;
+                this.mp = mp;
+                this.attmin = attmin;
+                this.attmax = attmax;
+                this.def = def;
+                this.pro = pro;
+                this.balance = balance;
+                this.cri = cri;
+                this.criMul = criMul;
+                this.magAtt = magAtt;
             }
             PetStats.generatePetStats = function (param1, param2, param3) {
-                var _loc4_ = new iData.iPet.PetStats(0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-                var _loc5_ = 0;
-                while (_loc5_ < iData.iPet.PetStats.list.length) {
-                    _loc4_[iData.iPet.PetStats.list[_loc5_]] = iData.iPet.PetStats.formula(param1[iData.iPet.PetStats.list[_loc5_]], param2[iData.iPet.PetStats.list[_loc5_]], param3);
-                    _loc5_++;
+                var stats = new iData.iPet.PetStats(0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                var i = 0;
+                while (i < iData.iPet.PetStats.list.length) {
+                    stats[iData.iPet.PetStats.list[i]] = iData.iPet.PetStats.formula(param1[iData.iPet.PetStats.list[i]], param2[iData.iPet.PetStats.list[i]], param3);
+                    i++;
                 }
-                return _loc4_;
+                return stats;
             };
             PetStats.formula = function (param1, param2, param3) {
                 return param1 + param2 * param3 * Math.random();
