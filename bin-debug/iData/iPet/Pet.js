@@ -41,7 +41,7 @@ var iData;
                     }
                     i++;
                 }
-                pet.exp = strs2[2];
+                pet.exp = parseInt(strs2[2]);
                 pet.startStat = iData.iPet.PetStats.load(strs2[3]);
                 pet.growStat = iData.iPet.PetStats.load(strs2[4]);
                 pet.skillList = new Array();
@@ -55,7 +55,7 @@ var iData;
                         i++;
                     }
                 }
-                pet.setLevel(strs2[1]);
+                pet.setLevel(parseInt(strs2[1]));
                 return pet;
             };
             Pet.prototype.generateSkill = function () {
