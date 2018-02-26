@@ -6,28 +6,21 @@ class AdvancedCell extends ButtonCell {
 
 	public constructor(w: number, h: number) {
 		super();
-		// param1 = flash.checkInt(param1);
-		// param2 = flash.checkInt(param2);
 		this.before.graphics.lineStyle(1, 13487565, 0.8);
 		this.before.graphics.beginFill(16777215, 0.95);
 		this.before.graphics.drawRect(0, 0, w, h);
 		this.before.graphics.endFill();
-		
-		this.after.graphics.lineStyle(1, 13487565, 0.8);
-		this.after.graphics.beginFill(14922250, 0.95);
-		this.after.graphics.drawRect(0, 0, w, h);
-		this.after.graphics.endFill();
 	}
 
 	public setAfter() {
 		super.setAfter();
-		// this.filters = [new flash.GlowFilter(5066061,0.66,13,13)];
-		// if(this.parent)
-		// {
-		// 	this.parent.addChildAt(this,this.parent.numChildren - 1);
-		// }
+		this.filters = [new egret.GlowFilter(5066061, 0.66, 13, 13)];
+		if (this.parent) {
+			this.parent.addChildAt(this, this.parent.numChildren - 1);
+		}
 		this.addInfoWindow();
 		// this.text["transform"].colorTransform = new flash.ColorTransform(0,0,0,1,255,255,255,0);
+		this.text.filters = [ColorTransform.transform(0, 0, 0, 1, 255, 255, 255, 0)]
 	}
 
 	public setBefore() {
@@ -35,6 +28,7 @@ class AdvancedCell extends ButtonCell {
 		this.filters = [];
 		this.removeInfoWindow();
 		// this.text["transform"].colorTransform = new flash.ColorTransform();
+		this.text.filters = [];
 	}
 
 	protected addInfoWindow() {

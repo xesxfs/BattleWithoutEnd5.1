@@ -44,6 +44,7 @@ class EquipmentCell extends AdvancedCell {
 		this.af_mc.x = 10;
 		this.af_mc.y = 10;
 		// this.af_mc["transform"].colorTransform = new flash.ColorTransform(1,1,1,1,255,255,255,0);
+		this.af_mc.filters = [ColorTransform.transform(1, 1, 1, 1, 255, 255, 255, 0)];
 		this.text = iGlobal.Global.getTextField(30);
 		// this.text.width = 110;
 		this.text.textFlow = iGlobal.Global.htmlParse.parse(this.equip.getNameHTML());
@@ -52,7 +53,7 @@ class EquipmentCell extends AdvancedCell {
 		}
 		this.addChild(this.text);
 		this.text.x = 80;
-		this.text.y = (this.height - this.text.height)>>1;
+		this.text.y = (this.height - this.text.height) >> 1;
 		this.setEquipButton();
 		this.setMoneyButton();
 		this.setFilter();

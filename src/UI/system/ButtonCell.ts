@@ -18,23 +18,15 @@ class ButtonCell extends egret.Sprite {
 
 
 	public onMouseOver(e: egret.TouchEvent) {
-
-		// if (!this.buttonDown) {
-
 	
 		if (!this.buttonDown) {
-
-			// this.setAfter();
+			this.setAfter();
 		}
 	}
 
 	public onMouseOut(e: egret.TouchEvent) {
-
-		// if (!this.buttonDown) {
-
-
+	
 		if (!this.buttonDown) {
-
 			this.setBefore();
 		}
 	}
@@ -52,12 +44,10 @@ class ButtonCell extends egret.Sprite {
 
 	public setAfter() {
 		this.after.visible = true;
-		this.before.visible = false;
 	}
 
 	public setBefore() {
 		this.after.visible = false;
-		this.before.visible = true;
 		this.buttonDown = false;
 	}
 

@@ -49,6 +49,7 @@ var EquipmentCell = (function (_super) {
         this.af_mc.x = 10;
         this.af_mc.y = 10;
         // this.af_mc["transform"].colorTransform = new flash.ColorTransform(1,1,1,1,255,255,255,0);
+        this.af_mc.filters = [ColorTransform.transform(1, 1, 1, 1, 255, 255, 255, 0)];
         this.text = iGlobal.Global.getTextField(30);
         // this.text.width = 110;
         this.text.textFlow = iGlobal.Global.htmlParse.parse(this.equip.getNameHTML());
