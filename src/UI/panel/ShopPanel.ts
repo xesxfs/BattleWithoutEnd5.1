@@ -1,5 +1,5 @@
 class ShopPanel extends BasicCell {
-	private gap: number = 50;
+	private gap: number = 80;
 	private startX1: number = 50;
 	private startY1: number = 110;
 	private startX2: number = 250;
@@ -7,9 +7,9 @@ class ShopPanel extends BasicCell {
 	private time: StringCell;
 	private gold: StringCell;
 	public constructor() {
-		super(550, 500);
+		super(640, 1136);
 		this.graphics.lineStyle(2, 7631988);
-		this.graphics.drawRect(0, 0, 550, 500);
+		this.graphics.drawRect(0, 0, 600, 1130);
 		this.init();
 	}
 

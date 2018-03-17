@@ -11,13 +11,13 @@ r.prototype = e.prototype, t.prototype = new r();
 var ShopPanel = (function (_super) {
     __extends(ShopPanel, _super);
     function ShopPanel() {
-        var _this = _super.call(this, 550, 500) || this;
-        _this.gap = 50;
+        var _this = _super.call(this, 640, 1136) || this;
+        _this.gap = 80;
         _this.startX1 = 50;
         _this.startY1 = 110;
         _this.startX2 = 250;
         _this.graphics.lineStyle(2, 7631988);
-        _this.graphics.drawRect(0, 0, 550, 500);
+        _this.graphics.drawRect(0, 0, 600, 1130);
         _this.init();
         return _this;
     }
