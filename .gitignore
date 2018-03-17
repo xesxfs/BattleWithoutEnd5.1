@@ -4,3 +4,8 @@ resource/assets/game/.DS_Store
 *.js
 bin-debug/UI/main/PetInfoPanel.js
 *.js
+bin-debug/UI/system/EquipmentCell.js
+*.js
+*.js
+*.js
+*.js

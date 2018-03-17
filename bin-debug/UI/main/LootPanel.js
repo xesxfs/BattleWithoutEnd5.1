@@ -11,7 +11,7 @@ r.prototype = e.prototype, t.prototype = new r();
 var LootPanel = (function (_super) {
     __extends(LootPanel, _super);
     function LootPanel() {
-        var _this = _super.call(this, 225, 350) || this;
+        var _this = _super.call(this, 250, 400) || this;
         _this.beginX = 10;
         _this.beginY = 50;
         _this.gap = 35;
@@ -25,7 +25,7 @@ var LootPanel = (function (_super) {
         _this.perfect = 0;
         _this.epic = 0;
         _this.legendary = 0;
-        var cell = new StringCell("当前地图掉落", 150, 30);
+        var cell = new StringCell("当前地图掉落", 150, 24);
         _this.addChild(cell);
         cell.x = 5;
         cell.y = 5;

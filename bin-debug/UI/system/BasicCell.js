@@ -20,6 +20,7 @@ var BasicCell = (function (_super) {
     BasicCell.prototype.draw = function (width, height) {
         width = Math.round(width);
         height = Math.round(height);
+        this.graphics.lineStyle(1, 13487565, 0.8);
         this.graphics.beginFill(0xFFFFFF, 1);
         this.graphics.drawRect(0, 0, width, height);
         this.graphics.endFill();

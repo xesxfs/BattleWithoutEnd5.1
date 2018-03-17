@@ -1,5 +1,5 @@
 class ForgeButton extends ButtonCell {
-	private R: number = 50;
+	private R: number = 100;
 	public constructor() {
 		super();
 		this.touchEnabled = true;

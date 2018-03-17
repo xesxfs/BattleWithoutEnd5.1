@@ -10,15 +10,15 @@ r.prototype = e.prototype, t.prototype = new r();
 };
 var TitleCell = (function (_super) {
     __extends(TitleCell, _super);
-    function TitleCell(param1) {
-        var _this = _super.call(this, 200, 50) || this;
+    function TitleCell(title) {
+        var _this = _super.call(this, 390, 50) || this;
         _this.yellow = 14922250;
         _this.touchEnabled = true;
-        _this.title = param1;
+        _this.title = title;
         _this.bg = new egret.Sprite();
         _this.bg.graphics.lineStyle(1, 13487565, 0.8);
         _this.bg.graphics.beginFill(16777215, 0.95);
-        _this.bg.graphics.drawRect(0, 0, 200, 50);
+        _this.bg.graphics.drawRect(0, 0, 390, 50);
         _this.bg.graphics.endFill();
         _this.addChild(_this.bg);
         _this.setInfo();
@@ -28,7 +28,7 @@ var TitleCell = (function (_super) {
         _this.setListener();
         return _this;
     }
-    TitleCell.prototype.onMouseDown = function (param1) {
+    TitleCell.prototype.onMouseDown = function (e) {
         var _self__ = this;
         iGlobal.Player.setTitle(this.title);
         Emitter.dispatchEvent(Tool.MyEvent.Update);
@@ -40,25 +40,30 @@ var TitleCell = (function (_super) {
     };
     TitleCell.prototype.setBg = function () {
         if (this.title.isGot) {
-            // 	this.bg["transform"].colorTransform = new flash.ColorTransform();
+            //this.bg["transform"].colorTransform = new flash.ColorTransform();
+            this.bg.filters = [];
         }
         else {
-            // 	this.bg["transform"].colorTransform = new flash.ColorTransform(0, 0, 0, 0.8, 200, 200, 200);
+            //this.bg["transform"].colorTransform = new flash.ColorTransform(0, 0, 0, 0.8, 200, 200, 200);
+            this.bg.filters = [ColorTransform.transform(0, 0, 0, 0.8, 200, 200, 200)];
         }
     };
     TitleCell.prototype.update = function () {
         if (iGlobal.Player.title == this.title) {
             // this.bg["transform"].colorTransform = new flash.ColorTransform(0.9, 0.7, 0, 1, 0, 0, 0, 0);
+            this.bg.filters = [ColorTransform.transform(0.9, 0.7, 0, 1, 0, 0, 0, 0)];
             // this.text["transform"].colorTransform = new flash.ColorTransform(1, 1, 1, 1, 255, 255, 255, 0);
+            this.text.filters = [ColorTransform.transform(1, 1, 1, 1, 255, 255, 255, 0)];
         }
         else {
             this.setBg();
-            // this.text["transform"].colorTransform = new flash.ColorTransform();
+            //this.text["transform"].colorTransform = new flash.ColorTransform();
+            this.text.filters = [];
         }
         this.setListener();
     };
     TitleCell.prototype.setInfo = function () {
-        this.text = new StringCell(this.title.realName.toUpperCase(), 180, 24);
+        this.text = new StringCell(this.title.realName.toUpperCase(), 180, 32);
         this.addChild(this.text);
         this.text.x = 10;
         this.text.y = 10;
@@ -66,10 +71,10 @@ var TitleCell = (function (_super) {
     };
     TitleCell.prototype.onMouseOver = function (param1) {
         // this.filters = [new egret.GlowFilter(5066061, 0.66, 13, 13)];
-        if (this.parent) {
-            this.parent.addChildAt(this, this.parent.numChildren - 1);
-        }
-        this.addInfoWindow();
+        // if (this.parent) {
+        // 	this.parent.addChildAt(this, this.parent.numChildren - 1);
+        // }
+        // this.addInfoWindow();
     };
     TitleCell.prototype.onMouseOut = function (param1) {
         // this.filters = [];

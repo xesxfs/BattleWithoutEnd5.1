@@ -188,6 +188,10 @@ var iData;
                 }
             };
             Monster.prototype.dropPet = function () {
+                var statusRate = 1;
+                var statusCount = 0;
+                statusCount = (1 + iGlobal.Global.map.mapData.modifier) * (1 + statusRate);
+                iGlobal.Player.addPet(new iData.iPet.Pet(iGlobal.Global.map.mapData.petList[iGlobal.Global.map.mapData.petList.length * Math.random() >> 0], statusCount));
             };
             Object.defineProperty(Monster.prototype, "nameHtml", {
                 get: function () {

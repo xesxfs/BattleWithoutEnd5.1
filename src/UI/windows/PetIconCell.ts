@@ -3,17 +3,18 @@ class PetIconCell extends egret.Sprite {
 
 	public constructor(pet: iData.iPet.Pet = null) {
 		super();
-		var _loc2_: egret.Bitmap = null;
-		var _loc3_: egret.Sprite = null;
+		this.touchEnabled = true;
+		var petIcon: egret.Bitmap = null;
+		// var _loc3_: egret.Sprite = null;
 		if (pet == null) {
-			_loc2_ = new egret.Bitmap(RES.getRes("mc_mode_png"));
+			petIcon = new egret.Bitmap(RES.getRes("mc_mode"));
 		}
 		else {
-			// _loc2_ = new (<any>flash.getDefinitionByName("pet_" + param1.mc_name))();
+			petIcon = new egret.Bitmap(RES.getRes("pet_" + pet.mc_name));
 		}
-		this.addChild(_loc2_);
-		_loc2_.width = this.SIZE;
-		_loc2_.height = this.SIZE;
+		this.addChild(petIcon);
+		petIcon.width = this.SIZE;
+		petIcon.height = this.SIZE;
 		if (pet == null) {
 			// _loc3_ = new mc_mode();
 		}

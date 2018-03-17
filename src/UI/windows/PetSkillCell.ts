@@ -1,10 +1,9 @@
 class PetSkillCell extends ButtonCell {
 	public petSkill: iData.iPet.iPetSkill.PetSkill;
-	private SIZE: number = 30;
+	private SIZE: number = 60;
 	public constructor(petSkill: iData.iPet.iPetSkill.PetSkill) {
 		super();
 		this.touchEnabled = true;
-
 		this.petSkill = petSkill;
 		var bgsp: egret.Sprite = new egret.Sprite();
 		bgsp.graphics.beginFill(0, 0);
@@ -12,12 +11,13 @@ class PetSkillCell extends ButtonCell {
 		bgsp.graphics.endFill();
 		this.addChild(bgsp);
 		// var _loc3_: egret.Sprite = <any>new (<any>flash.getDefinitionByName("pSkill_" + tool.MyMath.StringFormChange(this.petSkill.skillData.name.toLowerCase(), " ", "_")))();
+		var icon = new egret.Bitmap(RES.getRes("pSkill_" + Tool.MyMath.StringFormChange(this.petSkill.skillData.name.toLowerCase(), " ", "_")));
 		if (this.petSkill.level) {
 			// _loc3_.filters = [new egret.GlowFilter(16711680, 0.66, 5, 5)];
 		}
-		// this.before.addChild(_loc3_);
-		// _loc3_.width = this.SIZE;
-		// _loc3_.height = this.SIZE;
+		this.before.addChild(icon);
+		icon.width = this.SIZE;
+		icon.height = this.SIZE;
 		// _loc3_ = new (<any>flash.getDefinitionByName("pSkill_" + tool.MyMath.StringFormChange(this.petSkill.skillData.name.toLowerCase(), " ", "_")))();
 		// this.after["transform"].colorTransform = new flash.ColorTransform(0, 0, 0, 1, 227, 178, 10, 5);
 		// this.after.addChild(_loc3_);

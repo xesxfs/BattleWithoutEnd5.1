@@ -127,14 +127,14 @@ class PlayerInfoPanel extends BasicCell {
 			ageOffsize = (1);
 		}
 		if (age < 25) {
-			str = str + ("Hp   +" + (race.ageupList[age - 10].hp + 1) + "<br/>");
-			str = str + ("Mp   +" + (race.ageupList[age - 10].mp + 1) + "<br/>");
-			str = str + ("力量 +" + race.ageupList[age - 10].str + "<br/>");
-			str = str + ("敏捷 +" + race.ageupList[age - 10].dex + "<br/>");
-			str = str + ("意志 +" + race.ageupList[age - 10].will + "<br/>");
-			str = str + ("智力 +" + race.ageupList[age - 10].intelligence + "<br/>");
-			str = str + ("幸运 +" + race.ageupList[age - 10].luck + "<br/>");
-			str = str + ("AP   +" + ageOffsize + "<br/>");
+			str = str + ("Hp   +" + ~~(race.ageupList[age - 10].hp + 1) + "<br/>");
+			str = str + ("Mp   +" + ~~(race.ageupList[age - 10].mp + 1) + "<br/>");
+			str = str + ("力量 +" + ~~race.ageupList[age - 10].str + "<br/>");
+			str = str + ("敏捷 +" + ~~race.ageupList[age - 10].dex + "<br/>");
+			str = str + ("意志 +" + ~~race.ageupList[age - 10].will + "<br/>");
+			str = str + ("智力 +" + ~~race.ageupList[age - 10].intelligence + "<br/>");
+			str = str + ("幸运 +" + ~~race.ageupList[age - 10].luck + "<br/>");
+			str = str + ("AP   +" + ~~ageOffsize + "<br/>");
 		}
 		else {
 			str = str + ("Hp   +" + 1 + "<br/>");
@@ -147,53 +147,53 @@ class PlayerInfoPanel extends BasicCell {
 			str = str + ("AP   +" + 0 + "<br/>");
 		}
 		this.age.setInfo("年龄增长时:<br/>" + str + "长大还剩:" + this.timeToGrowup());
-		this.lv.setText(iGlobal.Player.lv + "");
+		this.lv.setText(~~iGlobal.Player.lv + "");
 		if (iGlobal.Player.str < iGlobal.Player.basicStr) {
-			this.str.setText(this.redText(iGlobal.Player.str + "") + "<font size=\'12\'>(" + iGlobal.Player.basicStr + ")</font>");
+			this.str.setText(this.redText(~~iGlobal.Player.str + "") + "<font size=\'12\'>(" + ~~iGlobal.Player.basicStr + ")</font>");
 		}
 		else {
-			this.str.setText(this.greenText(iGlobal.Player.str + "") + "<font size=\'12\'>(" + iGlobal.Player.basicStr + ")</font>");
+			this.str.setText(this.greenText(~~iGlobal.Player.str + "") + "<font size=\'12\'>(" + ~~iGlobal.Player.basicStr + ")</font>");
 		}
 		if (iGlobal.Player.dex < iGlobal.Player.basicDex) {
-			this.dex.setText(this.redText(iGlobal.Player.dex + "") + "<font size=\'12\'>(" + iGlobal.Player.basicDex + ")</font>");
+			this.dex.setText(this.redText(~~iGlobal.Player.dex + "") + "<font size=\'12\'>(" + ~~iGlobal.Player.basicDex + ")</font>");
 		}
 		else {
-			this.dex.setText(this.greenText(iGlobal.Player.dex + "") + "<font size=\'12\'>(" + iGlobal.Player.basicDex + ")</font>");
+			this.dex.setText(this.greenText(~~iGlobal.Player.dex + "") + "<font size=\'12\'>(" + ~~iGlobal.Player.basicDex + ")</font>");
 		}
 		if (iGlobal.Player.intelligence < iGlobal.Player.basicInt) {
-			this.intelligence.setText(this.redText(iGlobal.Player.intelligence + "") + "<font size=\'12\'>(" + iGlobal.Player.basicInt + ")</font>");
+			this.intelligence.setText(this.redText(~~iGlobal.Player.intelligence + "") + "<font size=\'12\'>(" +~~ iGlobal.Player.basicInt + ")</font>");
 		}
 		else {
-			this.intelligence.setText(this.greenText(iGlobal.Player.intelligence + "") + "<font size=\'12\'>(" + iGlobal.Player.basicInt + ")</font>");
+			this.intelligence.setText(this.greenText(~~iGlobal.Player.intelligence + "") + "<font size=\'12\'>(" + ~~iGlobal.Player.basicInt + ")</font>");
 		}
 		if (iGlobal.Player.will < iGlobal.Player.basicWill) {
-			this.will.setText(this.redText(iGlobal.Player.will + "") + "<font size=\'12\'>(" + iGlobal.Player.basicWill + ")</font>");
+			this.will.setText(this.redText(~~iGlobal.Player.will + "") + "<font size=\'12\'>(" + ~~iGlobal.Player.basicWill + ")</font>");
 		}
 		else {
-			this.will.setText(this.greenText(iGlobal.Player.will + "") + "<font size=\'12\'>(" + iGlobal.Player.basicWill + ")</font>");
+			this.will.setText(this.greenText(~~iGlobal.Player.will + "") + "<font size=\'12\'>(" + ~~iGlobal.Player.basicWill + ")</font>");
 		}
 		if (iGlobal.Player.luck < iGlobal.Player.basicLuck) {
-			this.luck.setText(this.redText(iGlobal.Player.luck + "") + "<font size=\'12\'>(" + iGlobal.Player.basicLuck + ")</font>");
+			this.luck.setText(this.redText(~~iGlobal.Player.luck + "") + "<font size=\'12\'>(" + ~~iGlobal.Player.basicLuck + ")</font>");
 		}
 		else {
-			this.luck.setText(this.greenText(iGlobal.Player.luck + "") + "<font size=\'12\'>(" + iGlobal.Player.basicLuck + ")</font>");
+			this.luck.setText(this.greenText(~~iGlobal.Player.luck + "") + "<font size=\'12\'>(" + ~~iGlobal.Player.basicLuck + ")</font>");
 		}
 		if (iGlobal.Player.attMin > iGlobal.Player.attMax) {
-			this.attack.setText(iGlobal.Player.attMax + "~" + iGlobal.Player.attMin + "");
+			this.attack.setText(~~iGlobal.Player.attMax + "~" + ~~iGlobal.Player.attMin + "");
 		}
 		else {
-			this.attack.setText(iGlobal.Player.attMin + "~" + iGlobal.Player.attMax + "");
+			this.attack.setText(~~iGlobal.Player.attMin + "~" + ~~iGlobal.Player.attMax + "");
 		}
-		this.balance.setText(iGlobal.Player.balance + "");
-		this.crit.setText(iGlobal.Player.crit + "");
-		this.defence.setText(iGlobal.Player.defence + "");
-		this.protection.setText(iGlobal.Player.protection + "");
-		this.protection.setInfo(this.caculatePro() + "%");
-		this.gold.setText(iGlobal.Player.gold + "");
-		this.ap.setText(iGlobal.Player.ap + "");
-		this.cp.setText((iGlobal.Player.combatPower * 100 >> 0) / 100 + "");
-		this.crit_mul.setText(iGlobal.Player.crit_mul + "%");
-		this.pro_ignore.setText(iGlobal.Player.protectionIgnore + "");
+		this.balance.setText(~~iGlobal.Player.balance + "");
+		this.crit.setText(~~iGlobal.Player.crit + "");
+		this.defence.setText(~~iGlobal.Player.defence + "");
+		this.protection.setText(~~iGlobal.Player.protection + "");
+		this.protection.setInfo(~~this.caculatePro() + "%");
+		this.gold.setText(~~iGlobal.Player.gold + "");
+		this.ap.setText(~~iGlobal.Player.ap + "");
+		this.cp.setText(~~(iGlobal.Player.combatPower * 100 >> 0) / 100 + "");
+		this.crit_mul.setText(~~iGlobal.Player.crit_mul + "%");
+		this.pro_ignore.setText(~~iGlobal.Player.protectionIgnore + "");
 		this.upDateHpAndMp();
 	}
 

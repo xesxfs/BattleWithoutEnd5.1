@@ -14,12 +14,11 @@ var ItemWindow = (function (_super) {
         var _this = _super.call(this) || this;
         _this.autoEnhance = false;
         _this.textBag = iGlobal.Global.getTextField(32, 7631988);
-        var outterPanel = new ItemOutterPanel();
-        _this.addChild(outterPanel);
-        outterPanel.x = 0;
-        outterPanel.y = 40;
-        outterPanel.setInner();
-        _this.panel = outterPanel.innerPanel;
+        _this.outterPanel = new ItemOutterPanel();
+        _this.addChild(_this.outterPanel);
+        _this.outterPanel.x = 0;
+        _this.outterPanel.y = 40;
+        _this.panel = _this.outterPanel.innerPanel;
         _this.setForge();
         _this.onItemChange();
         _this.setBagText();
@@ -147,23 +146,25 @@ var ItemWindow = (function (_super) {
             _self__.panel.update();
             _self__.updateBagText();
         };
-        var bag = new BasicCell(200, 40);
+        var bag = new BasicCell(400, 40);
         this.addChild(bag);
         bag.x = 0;
         bag.y = 0;
         this.textBag.width = 200;
         this.textBag.textFlow = iGlobal.Global.htmlParse.parser("<p align=\'center\'>" + iGlobal.Player.itemList.length + "/" + iGlobal.Player.BAGMAX + "</p>");
         this.textBag.textAlign = egret.HorizontalAlign.CENTER;
+        this.textBag.x = (bag.width - this.textBag.width) >> 1;
+        this.textBag.y = 10;
         bag.addChild(this.textBag);
         var value = new StringInfoButton("价值", "按价值排列");
         bag.addChild(value);
-        value.x = 5;
-        value.y = 0;
+        value.x = 20;
+        value.y = 10;
         value.downFunction = valueDown;
         var type = new StringInfoButton("类型", "按类型排列");
         bag.addChild(type);
-        type.x = 160;
-        type.y = 0;
+        type.x = bag.width - type.width - value.x;
+        type.y = 10;
         type.downFunction = typeDown;
     };
     ItemWindow.prototype.updateBagText = function (param1) {
@@ -309,37 +310,37 @@ var ItemWindow = (function (_super) {
                 _self__.updateBagText();
             }
         };
-        var c = new BasicCell(200, 135);
+        var c = new BasicCell(this.width, 200);
         this.addChild(c);
         c.x = 0;
-        c.y = 405;
-        this.autoBox = new ToggleBox("自动+7", 16, false);
+        c.y = this.outterPanel.y + this.outterPanel.height + 20;
+        this.autoBox = new ToggleBox("自动+7", 24, false);
         c.addChild(this.autoBox);
         this.autoBox.x = 70;
-        this.autoBox.y = 100;
+        this.autoBox.y = 130;
         this.autoEnhance = false;
         this.setAutoInfo();
         this.autoBox.downFunction = autoDown;
         this.autoBox.upFunction = autoUp;
-        var soundsBox = new ToggleBox("音效", 16);
+        var soundsBox = new ToggleBox("音效", 24);
         c.addChild(soundsBox);
         soundsBox.x = 70;
-        soundsBox.y = 80;
+        soundsBox.y = 90;
         soundsBox.downFunction = soundsDown;
         soundsBox.upFunction = soundsUp;
         this.forgeButton = new ForgeButton();
         c.addChild(this.forgeButton);
-        this.forgeButton.x = 140;
+        this.forgeButton.x = 180;
         this.forgeButton.y = 75;
         this.forgeButton.downFunction = onDown;
         var s_text = new StringCell("成功率", 130, 24);
         c.addChild(s_text);
         s_text.x = 10;
-        s_text.y = 35;
+        s_text.y = 45;
         this.text = new StringCell("", 100, 24);
         c.addChild(this.text);
         this.text.x = 100;
-        this.text.y = 35;
+        this.text.y = 45;
         var m_text = new StringCell("费用", 130, 24);
         c.addChild(m_text);
         m_text.x = 10;
@@ -351,7 +352,7 @@ var ItemWindow = (function (_super) {
         this.item_mc = new egret.Sprite();
         c.addChild(this.item_mc);
         this.item_mc.x = 10;
-        this.item_mc.y = 75;
+        this.item_mc.y = 85;
     };
     ItemWindow.prototype.addOneItem = function () {
         this.panel.addOneCell();
@@ -364,10 +365,12 @@ var ItemWindow = (function (_super) {
         if (rate > 100 - level * 3) {
             rate = 100 - level * 3;
         }
+        rate = 100;
         return rate;
     };
     ItemWindow.prototype.getMoney = function () {
         var money = (this.panel.selectCell.equip.getMoney() * Math.pow(1.2, this.panel.selectCell.equip.level + 1));
+        money = 0;
         return money;
     };
     return ItemWindow;

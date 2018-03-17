@@ -4,9 +4,10 @@ class EquipmentCell extends AdvancedCell {
 	protected be_mc: egret.Bitmap;
 	protected af_mc: egret.Bitmap;
 	protected equipedInfoWindow: ItemInfoWindow;
+	private iconw: number = 50;
 
 	public constructor(equip: iData.iItem.Equipment) {
-		super(200, 50);
+		super(390, 70);
 		this.equip = equip;
 		this.touchEnabled = true;
 		this.init();
@@ -14,44 +15,45 @@ class EquipmentCell extends AdvancedCell {
 
 	private init() {
 		this.filter_mc = new egret.Sprite();
-		this.filter_mc.graphics.beginFill(16777215);
-		this.filter_mc.graphics.drawCircle(15, 15, 14);
+		this.filter_mc.graphics.beginFill(0xFFFFFF);
+		this.filter_mc.graphics.drawCircle(25, 25, 25);
 		this.filter_mc.graphics.endFill();
 		this.before.addChild(this.filter_mc);
 		this.filter_mc.x = 10;
 		this.filter_mc.y = 10;
 		if (this.equip instanceof iData.iItem.Weapon) {
-			this.be_mc=(new egret.Bitmap(RES.getRes("mc_" + this.equip.type)));
+			this.be_mc = (new egret.Bitmap(RES.getRes("mc_" + this.equip.type)));
 		}
 		else {
-			this.be_mc=(new egret.Bitmap(RES.getRes("mc_" + this.equip.position + "_" + this.equip.type)));
+			this.be_mc = (new egret.Bitmap(RES.getRes("mc_" + this.equip.position + "_" + this.equip.type)));
 		}
 		this.before.addChild(this.be_mc);
-		this.be_mc.width = 30;
-		this.be_mc.height = 30;
+		this.be_mc.width = this.iconw;
+		this.be_mc.height = this.iconw;
 		this.be_mc.x = 10;
 		this.be_mc.y = 10;
 		if ((this.equip instanceof iData.iItem.Weapon)) {
-			this.af_mc=(new egret.Bitmap(RES.getRes("mc_" + this.equip.type)));
+			this.af_mc = (new egret.Bitmap(RES.getRes("mc_" + this.equip.type)));
 		}
 		else {
-			this.af_mc=(new egret.Bitmap(RES.getRes("mc_" + this.equip.position + "_" + this.equip.type)));
+			this.af_mc = (new egret.Bitmap(RES.getRes("mc_" + this.equip.position + "_" + this.equip.type)));
 		}
 		this.after.addChild(this.af_mc);
-		this.af_mc.width = 30;
-		this.af_mc.height = 30;
+		this.af_mc.width = this.iconw;
+		this.af_mc.height = this.iconw;
 		this.af_mc.x = 10;
 		this.af_mc.y = 10;
 		// this.af_mc["transform"].colorTransform = new flash.ColorTransform(1,1,1,1,255,255,255,0);
-		this.text = iGlobal.Global.getTextField(24);
-		this.text.width = 110;
+		this.af_mc.filters = [ColorTransform.transform(1, 1, 1, 1, 255, 255, 255, 0)];
+		this.text = iGlobal.Global.getTextField(30);
+		// this.text.width = 110;
 		this.text.textFlow = iGlobal.Global.htmlParse.parse(this.equip.getNameHTML());
 		if (this.equip.level) {
-			this.text.textFlow = iGlobal.Global.htmlParse.parse(this.text.text + (" +" + this.equip.level));
+			this.text.textFlow = iGlobal.Global.htmlParse.parse(this.equip.getNameHTML() + (" +" + this.equip.level));
 		}
 		this.addChild(this.text);
-		this.text.x = 50;
-		this.text.y = 10;
+		this.text.x = 80;
+		this.text.y = (this.height - this.text.height) >> 1;
 		this.setEquipButton();
 		this.setMoneyButton();
 		this.setFilter();
@@ -63,7 +65,7 @@ class EquipmentCell extends AdvancedCell {
 		this.infoWindow = new ItemInfoWindow(this.equip.getDescription());
 		this.text.textFlow = iGlobal.Global.htmlParse.parse(this.equip.getNameHTML());
 		if (this.equip.level) {
-			this.text.textFlow = iGlobal.Global.htmlParse.parse(this.text.text + (" +" + this.equip.level));
+			this.text.textFlow = iGlobal.Global.htmlParse.parse(this.equip.getNameHTML() + (" +" + this.equip.level));
 		}
 		this.html = this.equip.getNameHTML() + " +" + this.equip.level;
 		if (this.buttonDown) {
@@ -81,7 +83,7 @@ class EquipmentCell extends AdvancedCell {
 	}
 
 	protected setEquipButton() {
-		var _self__: any = this;
+		var _self__ = this;
 		var equipDown: Function = null;
 		equipDown = function () {
 			iGlobal.Player.removeItem(_self__.equip);
@@ -90,13 +92,13 @@ class EquipmentCell extends AdvancedCell {
 		};
 		var equipButton: EquipButton = new EquipButton("equip");
 		this.addChild(equipButton);
-		equipButton.x = 150;
-		equipButton.y = 15;
+		equipButton.x = 225;
+		equipButton.y = (this.height - equipButton.height) >> 1;
 		equipButton.downFunction = equipDown;
 	}
 
 	protected setMoneyButton() {
-		var _self__: any = this;
+		var _self__ = this;
 		var moneyDown: Function = null;
 		moneyDown = function () {
 			iGlobal.Player.removeItem(_self__.equip);
@@ -105,8 +107,8 @@ class EquipmentCell extends AdvancedCell {
 		};
 		var moneyButton: EquipButton = new EquipButton("money");
 		this.addChild(moneyButton);
-		moneyButton.x = 172;
-		moneyButton.y = 15;
+		moneyButton.x = 300;
+		moneyButton.y = (this.height - moneyButton.height) >> 1;
 		moneyButton.downFunction = moneyDown;
 	}
 

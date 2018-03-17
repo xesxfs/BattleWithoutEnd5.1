@@ -11,7 +11,7 @@ r.prototype = e.prototype, t.prototype = new r();
 var TitleOutterPanel = (function (_super) {
     __extends(TitleOutterPanel, _super);
     function TitleOutterPanel() {
-        var _this = _super.call(this, 200, 540) || this;
+        var _this = _super.call(this, 400, 700) || this;
         _this.setInner();
         return _this;
     }

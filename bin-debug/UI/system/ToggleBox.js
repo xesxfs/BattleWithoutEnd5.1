@@ -15,12 +15,13 @@ var ToggleBox = (function (_super) {
         var _this = _super.call(this) || this;
         _this.size = 0;
         _this.isDown = false;
+        _this.touchEnabled = true;
         _this.size = (size);
         _this.text = iGlobal.Global.getTextField(size);
         _this.addChild(_this.text);
         _this.setText(text);
         _this.box = new egret.Sprite();
-        _this.box.touchEnabled = true;
+        // this.box.touchEnabled = true;
         _this.addChild(_this.box);
         if (bDown) {
             _this.setDown();
@@ -28,7 +29,7 @@ var ToggleBox = (function (_super) {
         else {
             _this.setUp();
         }
-        _this.box.addEventListener(egret.TouchEvent.TOUCH_BEGIN, _this.onMouseDown, _this);
+        _this.addEventListener(egret.TouchEvent.TOUCH_BEGIN, _this.onMouseDown, _this);
         return _this;
     }
     ToggleBox.prototype.setText = function (html) {

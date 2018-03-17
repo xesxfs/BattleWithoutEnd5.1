@@ -9,6 +9,8 @@ class OtherPanel extends egret.Sprite {
 	public otherWindow: OtherWindow;
 	public window: egret.DisplayObjectContainer;
 	private array: Array<MenuButton>;
+	private memuSize: number = 80;
+	private gap: number = 5;
 	public constructor() {
 		super();
 		var _self__ = this;
@@ -28,7 +30,7 @@ class OtherPanel extends egret.Sprite {
 		leftDown = function () {
 			right.visible = true;
 			left.visible = false;
-			b = _self__.stage.stageWidth-200
+			b = _self__.stage.stageWidth - 410
 			_self__.addEventListener(egret.Event.ENTER_FRAME, onEnterFrame, _self__);
 
 		};
@@ -49,8 +51,8 @@ class OtherPanel extends egret.Sprite {
 
 		while (i < list.length) {
 			cell = new MenuButton("before_" + list[i], "after_" + list[i], list2[i]);
-			cell.y = (i + 1) * 40;
-			cell.x = -40;
+			cell.y = (i + 1) * this.memuSize+this.gap;
+			cell.x = -this.memuSize;
 			this.addChild(cell);
 			buttonGroup.addButton(cell);
 			this.array.push(cell);
@@ -59,11 +61,11 @@ class OtherPanel extends egret.Sprite {
 
 		left = new MenuButton("after_arrow_left", "before_arrow_left", "向左");
 		this.addChild(left);
-		left.x = -40;
+		left.x = -this.memuSize;
 		left.downFunction = leftDown;
 		right = new MenuButton("after_arrow_right", "before_arrow_right", "向右");
 		this.addChild(right);
-		right.x = -40;
+		right.x = -this.memuSize;
 		right.visible = false;
 		right.downFunction = rightDown;
 		buttonGroup.addButton(left);
@@ -82,7 +84,7 @@ class OtherPanel extends egret.Sprite {
 		this.systemWindow = new SystemWindow();
 		this.otherWindow = new OtherWindow();
 		this.setFunction();
-		var bg: egret.Sprite = new BasicCell(200, 540);
+		var bg: egret.Sprite = new BasicCell(410, 1000);
 		this.addChildAt(bg, 0);
 	}
 
@@ -138,6 +140,7 @@ class OtherPanel extends egret.Sprite {
 		var addWindow: Function = function () {
 			_self__.addChild(_self__.window);
 			_self__.window.y = 40;
+			_self__.window.x = 10;
 		};
 		this.array[0].downFunction = addWindow0;
 		this.array[1].downFunction = addWindow1;

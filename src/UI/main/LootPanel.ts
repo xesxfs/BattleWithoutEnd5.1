@@ -24,8 +24,9 @@ class LootPanel extends BasicCell {
 	public legendary: number = 0;
 
 	public constructor() {
-		super(225, 350);
-		var cell: StringCell = new StringCell("当前地图掉落", 150,30);
+		super(250, 400);
+		var cell: StringCell = new StringCell("当前地图掉落", 150, 24);
+
 		this.addChild(cell);
 		cell.x = 5;
 		cell.y = 5;

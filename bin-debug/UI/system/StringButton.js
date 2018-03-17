@@ -14,24 +14,24 @@ var StringButton = (function (_super) {
         var _this = _super.call(this) || this;
         _this.color = 0;
         _this.touchEnabled = true;
-        _this.bg = new BasicCell(66, 25);
-        _this.addChildAt(_this.bg, 0);
+        // this.bg = new BasicCell(66, 25);
+        // this.addChildAt(this.bg, 0);
         _this.text = text;
         _this.color = (color);
         _this.init();
         return _this;
     }
     StringButton.prototype.init = function () {
-        var text = iGlobal.Global.getTextField(18);
+        var text = iGlobal.Global.getTextField(32);
         text.textFlow = iGlobal.Global.htmlParse.parse("<p align=\'center\'>" + this.text + "</p>");
-        text.width = 60;
+        // text.width = 60;
         this.before.addChild(text);
         text.x = 2;
         text.y = 2;
         text.textColor = this.color;
-        var atext = iGlobal.Global.getTextField(18);
+        var atext = iGlobal.Global.getTextField(32);
         atext.textFlow = iGlobal.Global.htmlParse.parse("<p align=\'center\'>" + this.text + "</p>");
-        atext.width = 60;
+        // atext.width = 60;
         this.after.addChild(atext);
         atext.x = 2;
         atext.y = 2;

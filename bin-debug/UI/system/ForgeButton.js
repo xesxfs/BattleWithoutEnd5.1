@@ -12,7 +12,7 @@ var ForgeButton = (function (_super) {
     __extends(ForgeButton, _super);
     function ForgeButton() {
         var _this = _super.call(this) || this;
-        _this.R = 50;
+        _this.R = 100;
         _this.touchEnabled = true;
         var bitmapData = RES.getRes("mc_forge");
         var bf = new egret.Bitmap(bitmapData);

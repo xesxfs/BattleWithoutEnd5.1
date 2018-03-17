@@ -5,7 +5,7 @@ class PassiveInnerPanel extends InnerPanel {
 	}
 
 	public listSprite: egret.Sprite;
-	private Gap: number = 50;
+	private Gap: number = 80;
 
 	private init() {
 		this.listSprite = new egret.Sprite();

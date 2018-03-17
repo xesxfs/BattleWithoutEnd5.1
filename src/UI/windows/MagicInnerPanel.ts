@@ -1,14 +1,13 @@
 class MagicInnerPanel extends InnerPanel {
+
+	public listSprite: egret.Sprite;
+	public Gap: number = 80;
 	public constructor() {
 		super();
 		this.listSprite = new egret.Sprite();
 		this.addChild(this.listSprite);
+		this.init();
 	}
-
-
-	public listSprite: egret.Sprite;
-	public Gap: number = 50;
-
 	private init() {
 		var cell: ActiveSkillCell = null;
 		var mIdx: number = (0);

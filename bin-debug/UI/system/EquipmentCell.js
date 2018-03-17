@@ -11,7 +11,8 @@ r.prototype = e.prototype, t.prototype = new r();
 var EquipmentCell = (function (_super) {
     __extends(EquipmentCell, _super);
     function EquipmentCell(equip) {
-        var _this = _super.call(this, 200, 50) || this;
+        var _this = _super.call(this, 390, 70) || this;
+        _this.iconw = 50;
         _this.equip = equip;
         _this.touchEnabled = true;
         _this.init();
@@ -19,8 +20,8 @@ var EquipmentCell = (function (_super) {
     }
     EquipmentCell.prototype.init = function () {
         this.filter_mc = new egret.Sprite();
-        this.filter_mc.graphics.beginFill(16777215);
-        this.filter_mc.graphics.drawCircle(15, 15, 14);
+        this.filter_mc.graphics.beginFill(0xFFFFFF);
+        this.filter_mc.graphics.drawCircle(25, 25, 25);
         this.filter_mc.graphics.endFill();
         this.before.addChild(this.filter_mc);
         this.filter_mc.x = 10;
@@ -32,8 +33,8 @@ var EquipmentCell = (function (_super) {
             this.be_mc = (new egret.Bitmap(RES.getRes("mc_" + this.equip.position + "_" + this.equip.type)));
         }
         this.before.addChild(this.be_mc);
-        this.be_mc.width = 30;
-        this.be_mc.height = 30;
+        this.be_mc.width = this.iconw;
+        this.be_mc.height = this.iconw;
         this.be_mc.x = 10;
         this.be_mc.y = 10;
         if ((this.equip instanceof iData.iItem.Weapon)) {
@@ -43,20 +44,21 @@ var EquipmentCell = (function (_super) {
             this.af_mc = (new egret.Bitmap(RES.getRes("mc_" + this.equip.position + "_" + this.equip.type)));
         }
         this.after.addChild(this.af_mc);
-        this.af_mc.width = 30;
-        this.af_mc.height = 30;
+        this.af_mc.width = this.iconw;
+        this.af_mc.height = this.iconw;
         this.af_mc.x = 10;
         this.af_mc.y = 10;
         // this.af_mc["transform"].colorTransform = new flash.ColorTransform(1,1,1,1,255,255,255,0);
-        this.text = iGlobal.Global.getTextField(24);
-        this.text.width = 110;
+        this.af_mc.filters = [ColorTransform.transform(1, 1, 1, 1, 255, 255, 255, 0)];
+        this.text = iGlobal.Global.getTextField(30);
+        // this.text.width = 110;
         this.text.textFlow = iGlobal.Global.htmlParse.parse(this.equip.getNameHTML());
         if (this.equip.level) {
-            this.text.textFlow = iGlobal.Global.htmlParse.parse(this.text.text + (" +" + this.equip.level));
+            this.text.textFlow = iGlobal.Global.htmlParse.parse(this.equip.getNameHTML() + (" +" + this.equip.level));
         }
         this.addChild(this.text);
-        this.text.x = 50;
-        this.text.y = 10;
+        this.text.x = 80;
+        this.text.y = (this.height - this.text.height) >> 1;
         this.setEquipButton();
         this.setMoneyButton();
         this.setFilter();
@@ -67,7 +69,7 @@ var EquipmentCell = (function (_super) {
         this.infoWindow = new ItemInfoWindow(this.equip.getDescription());
         this.text.textFlow = iGlobal.Global.htmlParse.parse(this.equip.getNameHTML());
         if (this.equip.level) {
-            this.text.textFlow = iGlobal.Global.htmlParse.parse(this.text.text + (" +" + this.equip.level));
+            this.text.textFlow = iGlobal.Global.htmlParse.parse(this.equip.getNameHTML() + (" +" + this.equip.level));
         }
         this.html = this.equip.getNameHTML() + " +" + this.equip.level;
         if (this.buttonDown) {
@@ -92,8 +94,8 @@ var EquipmentCell = (function (_super) {
         };
         var equipButton = new EquipButton("equip");
         this.addChild(equipButton);
-        equipButton.x = 150;
-        equipButton.y = 15;
+        equipButton.x = 225;
+        equipButton.y = (this.height - equipButton.height) >> 1;
         equipButton.downFunction = equipDown;
     };
     EquipmentCell.prototype.setMoneyButton = function () {
@@ -106,8 +108,8 @@ var EquipmentCell = (function (_super) {
         };
         var moneyButton = new EquipButton("money");
         this.addChild(moneyButton);
-        moneyButton.x = 172;
-        moneyButton.y = 15;
+        moneyButton.x = 300;
+        moneyButton.y = (this.height - moneyButton.height) >> 1;
         moneyButton.downFunction = moneyDown;
     };
     EquipmentCell.prototype.addInfoWindow = function () {

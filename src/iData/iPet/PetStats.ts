@@ -13,28 +13,27 @@ module iData {
 			private _criMul: number = 0;
 			private _magAtt: number = 0;
 
-			public constructor(param1: number, param2: number, param3: number, param4: number, param5: number, param6: number, param7: number, param8: number, param9: number, param10: number) {
-
-				this.hp = param1;
-				this.mp = param2;
-				this.attmin = param3;
-				this.attmax = param4;
-				this.def = param5;
-				this.pro = param6;
-				this.balance = param7;
-				this.cri = param8;
-				this.criMul = param9;
-				this.magAtt = param10;
+			public constructor(hp: number, mp: number, attmin: number, attmax: number, def: number, pro: number, balance: number, cri: number, criMul: number, magAtt: number) {
+				this.hp = hp;
+				this.mp = mp;
+				this.attmin = attmin;
+				this.attmax = attmax;
+				this.def = def;
+				this.pro = pro;
+				this.balance = balance;
+				this.cri = cri;
+				this.criMul = criMul;
+				this.magAtt = magAtt;
 			}
 
 			public static generatePetStats(param1: iData.iPet.PetStats, param2: iData.iPet.PetStats, param3: number): iData.iPet.PetStats {
-				var _loc4_: iData.iPet.PetStats = new iData.iPet.PetStats(0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-				var _loc5_: number = 0;
-				while (_loc5_ < iData.iPet.PetStats.list.length) {
-					_loc4_[iData.iPet.PetStats.list[_loc5_]] = iData.iPet.PetStats.formula(param1[iData.iPet.PetStats.list[_loc5_]], param2[iData.iPet.PetStats.list[_loc5_]], param3);
-					_loc5_++;
+				var stats: iData.iPet.PetStats = new iData.iPet.PetStats(0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+				var i: number = 0;
+				while (i < iData.iPet.PetStats.list.length) {
+					stats[iData.iPet.PetStats.list[i]] = iData.iPet.PetStats.formula(param1[iData.iPet.PetStats.list[i]], param2[iData.iPet.PetStats.list[i]], param3);
+					i++;
 				}
-				return _loc4_;
+				return stats;
 			}
 
 			private static formula(param1: number, param2: number, param3: number): number {

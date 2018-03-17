@@ -12,7 +12,7 @@ var PetWindow = (function (_super) {
     __extends(PetWindow, _super);
     function PetWindow() {
         var _this = _super.call(this) || this;
-        _this.textBag = iGlobal.Global.getTextField(32, 7631988);
+        _this.textBag = iGlobal.Global.getTextField(32, 0x747474);
         var outterPanel = new PetOutterPanel();
         _this.addChild(outterPanel);
         outterPanel.x = 0;
@@ -30,11 +30,12 @@ var PetWindow = (function (_super) {
         this.textBag.width = 200;
         this.textBag.textFlow = iGlobal.Global.htmlParse.parse("<p align=\'center\'>" + iGlobal.Player.petList.length + "/" + iGlobal.Player.PETMAX + "</p>");
         this.textBag.textAlign = egret.HorizontalAlign.CENTER;
-        var tbg = new BasicCell(200, 40);
+        var tbg = new BasicCell(390, 40);
         this.addChild(tbg);
         tbg.x = 0;
         tbg.y = 0;
-        this.textBag.width = 200;
+        this.textBag.x = (tbg.width - this.textBag.width) / 2;
+        this.textBag.y = (tbg.height - this.textBag.height) / 2;
         tbg.addChild(this.textBag);
     };
     PetWindow.prototype.update = function () {

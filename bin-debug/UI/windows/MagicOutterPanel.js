@@ -11,7 +11,7 @@ r.prototype = e.prototype, t.prototype = new r();
 var MagicOutterPanel = (function (_super) {
     __extends(MagicOutterPanel, _super);
     function MagicOutterPanel() {
-        var _this = _super.call(this, 200, 540) || this;
+        var _this = _super.call(this, 390, 700) || this;
         _this.setInner();
         return _this;
     }

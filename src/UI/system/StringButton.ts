@@ -6,24 +6,24 @@ class StringButton extends ButtonCell {
 	public constructor(text: string, color: number) {
 		super();
 		this.touchEnabled = true;
-		this.bg = new BasicCell(66, 25);
-		this.addChildAt(this.bg, 0);
+		// this.bg = new BasicCell(66, 25);
+		// this.addChildAt(this.bg, 0);
 		this.text = text;
 		this.color = (color);
 		this.init();
 	}
 
 	private init() {
-		var text: egret.TextField = iGlobal.Global.getTextField(18);
+		var text: egret.TextField = iGlobal.Global.getTextField(32);
 		text.textFlow = iGlobal.Global.htmlParse.parse("<p align=\'center\'>" + this.text + "</p>");
-		text.width = 60;
+		// text.width = 60;
 		this.before.addChild(text);
 		text.x = 2;
 		text.y = 2;
 		text.textColor = this.color;
-		var atext: egret.TextField = iGlobal.Global.getTextField(18);
+		var atext: egret.TextField = iGlobal.Global.getTextField(32);
 		atext.textFlow = iGlobal.Global.htmlParse.parse("<p align=\'center\'>" + this.text + "</p>");
-		atext.width = 60;
+		// atext.width = 60;
 		this.after.addChild(atext);
 		atext.x = 2;
 		atext.y = 2;

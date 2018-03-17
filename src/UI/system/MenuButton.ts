@@ -3,12 +3,20 @@ class MenuButton extends ButtonCell {
 	private text: string;
 	private infoWindow: StringInfoWindow;
 
-	public constructor(bf: string, af: string, text: string) {
+	public constructor(bf: string, af: string, text: string, size: number = 80) {
 		super();
 		this.touchEnabled = true;
-		this.bg = new BasicCell(40, 40);
-		this.before.addChild(new egret.Bitmap(RES.getRes(bf)));
-		this.after.addChild(new egret.Bitmap(RES.getRes(af)));
+		this.bg = new BasicCell(size, size);
+		let bfm = new egret.Bitmap(RES.getRes(bf))
+		bfm.width = size;
+		bfm.height = size;
+		this.before.addChild(bfm);
+
+		let afm = new egret.Bitmap(RES.getRes(af));
+		afm.width = size;
+		afm.height = size;
+		this.after.addChild(afm);
+
 		this.infoWindow = iGlobal.Global.stringInfoWindow;
 		this.addChildAt(this.bg, 0);
 		this.text = text;

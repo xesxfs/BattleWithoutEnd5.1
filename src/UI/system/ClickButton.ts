@@ -5,18 +5,18 @@ class ClickButton extends ButtonCell {
 		this.touchEnabled = true;
 		fix = (fix);
 		this.FIX = (fix);
-		var _loc3_ = new egret.Bitmap(RES.getRes("doubleCircle"));
-		_loc3_.width = this.FIX;
-		_loc3_.height = this.FIX;
+		var bcircle = new egret.Bitmap(RES.getRes("doubleCircle"));
+		bcircle.width = this.FIX;
+		bcircle.height = this.FIX;
 		// _loc3_["transform"].colorTransform = new egret.ColorTransform(1, 1, 1, 1, 255, 255, 255, 0);
-		this.before.addChild(_loc3_);
+		this.before.addChild(bcircle);
 		var bf = new egret.Bitmap(RES.getRes(icon));
-		// this.before.addChild(bf);
-		// this.setMcPosition(bf);
-		var _loc5_ = new egret.Bitmap(RES.getRes("doubleCircle"));;
-		_loc5_.width = this.FIX;
-		_loc5_.height = this.FIX;
-		this.after.addChild(_loc5_);
+		this.before.addChild(bf);
+		this.setMcPosition(bf);
+		var acircle = new egret.Bitmap(RES.getRes("doubleCircle"));;
+		acircle.width = this.FIX;
+		acircle.height = this.FIX;
+		this.after.addChild(acircle);
 		var af = new egret.Bitmap(RES.getRes(icon));
 		// _loc6_["transform"].colorTransform = new egret.ColorTransform(1, 1, 1, 1, 255, 255, 255, 0);	
 		egret.ColorMatrixFilter
@@ -33,18 +33,18 @@ class ClickButton extends ButtonCell {
 
 
 	}
-	private setMcPosition(param1: egret.DisplayObject) {
-		var _loc2_: number = 0;
-		if (param1.width > param1.height) {
-			_loc2_ = this.FIX / 2 / param1.width;
+	private setMcPosition(dis: egret.DisplayObject) {
+		var scale: number = 0;
+		if (dis.width > dis.height) {
+			scale = this.FIX / 2 / dis.width;
 		}
 		else {
-			_loc2_ = this.FIX / 2 / param1.height;
+			scale = this.FIX / 2 / dis.height;
 		}
-		param1.scaleX = _loc2_;
-		param1.scaleY = _loc2_;
-		param1.x = this.FIX / 2 - param1.width / 2;
-		param1.y = this.FIX / 2 - param1.height / 2;
+		dis.scaleX = scale;
+		dis.scaleY = scale;
+		dis.x = (this.FIX - dis.width * scale) >> 1;
+		dis.y = (this.FIX - dis.height * scale) >> 1;
 	}
 
 	public setDown() {

@@ -11,7 +11,7 @@ r.prototype = e.prototype, t.prototype = new r();
 var PetOutterPanel = (function (_super) {
     __extends(PetOutterPanel, _super);
     function PetOutterPanel() {
-        var _this = _super.call(this, 200, 495) || this;
+        var _this = _super.call(this, 390, 700) || this;
         _this.setInner();
         return _this;
     }

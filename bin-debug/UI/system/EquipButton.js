@@ -12,26 +12,30 @@ var EquipButton = (function (_super) {
     __extends(EquipButton, _super);
     function EquipButton(param1) {
         var _this = _super.call(this) || this;
-        _this.FIX = 20;
+        _this.FIX = 50;
         _this.touchEnabled = true;
-        var _loc2_ = new egret.Bitmap(RES.getRes("doubleCircle"));
-        _loc2_.width = _this.FIX;
-        _loc2_.height = _this.FIX;
-        // _loc2_["transform"].colorTransform = new flash.ColorTransform(1,1,1,1,255,255,255,0);
-        _this.before.addChild(_loc2_);
-        var _loc3_ = new egret.Bitmap(RES.getRes("mc_" + param1));
-        _this.before.addChild(_loc3_);
-        _this.setMcPosition(_loc3_);
-        var _loc4_ = new egret.Bitmap(RES.getRes("doubleCircle"));
-        _loc4_.width = _this.FIX;
-        _loc4_.height = _this.FIX;
-        _this.after.addChild(_loc4_);
-        var _loc5_ = new egret.Bitmap(RES.getRes("mc_" + param1));
-        // _loc5_["transform"].colorTransform = new flash.ColorTransform(1,1,1,1,255,255,255,0);
-        _this.after.addChild(_loc5_);
-        _this.setMcPosition(_loc5_);
+        var circle1 = new egret.Bitmap(RES.getRes("doubleCircle"));
+        circle1.width = _this.FIX;
+        circle1.height = _this.FIX;
+        _this.before.addChild(circle1);
+        var icon1 = new egret.Bitmap(RES.getRes("mc_" + param1));
+        _this.before.addChild(icon1);
+        // this.setMcPosition(_loc3_);
+        _this.setCenter(icon1);
+        var circle2 = new egret.Bitmap(RES.getRes("doubleCircle"));
+        circle2.width = _this.FIX;
+        circle2.height = _this.FIX;
+        _this.after.addChild(circle2);
+        var icon2 = new egret.Bitmap(RES.getRes("mc_" + param1));
+        _this.after.addChild(icon2);
+        _this.setCenter(icon2);
         return _this;
+        // this.setMcPosition(_loc5_);
     }
+    EquipButton.prototype.setCenter = function (dis) {
+        dis.y = (this.height - dis.height) >> 1;
+        dis.x = (this.width - dis.width) >> 1;
+    };
     EquipButton.prototype.setMcPosition = function (param1) {
         var _loc2_ = 0;
         if (param1.width > param1.height) {

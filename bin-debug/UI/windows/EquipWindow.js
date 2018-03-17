@@ -12,18 +12,18 @@ var EquipWindow = (function (_super) {
     __extends(EquipWindow, _super);
     function EquipWindow() {
         var _this = _super.call(this) || this;
-        _this.SC = 0.4;
-        _this.SY = 100;
-        var bgs = new BasicCell(200, 540);
-        _this.addChild(bgs);
-        var p1 = new egret.Bitmap(RES.getRes("people_use1"));
+        _this.SC = 0.8;
+        _this.SY = 30;
+        // var bgs: egret.Sprite = new BasicCell(300, 700);
+        // this.addChild(bgs);
+        var p1 = new egret.Bitmap(RES.getRes("people_use"));
         _this.addChild(p1);
         p1.scaleX = _this.SC;
         p1.scaleY = _this.SC;
         p1.y = _this.SY;
         _this.bg2 = new egret.Sprite();
         _this.addChild(_this.bg2);
-        _this.bg2.addChild(new egret.Bitmap(RES.getRes("people_use2")));
+        // this.bg2.addChild(new egret.Bitmap(RES.getRes("people_use2")));
         _this.bg2.scaleX = _this.SC;
         _this.bg2.scaleY = _this.SC;
         _this.bg2.y = _this.SY;
@@ -43,10 +43,10 @@ var EquipWindow = (function (_super) {
         i = (0);
         while (i < list.length) {
             var equipDown = function () {
-                this["setBefore"]();
-                if (this["equip"]) {
-                    if (iGlobal.Player.addItem(this["equip"])) {
-                        iGlobal.Player[this["position"]] = null;
+                this.setBefore();
+                if (this.equip) {
+                    if (iGlobal.Player.addItem(this.equip)) {
+                        iGlobal.Player[this.position] = null;
                         _self__.update();
                         iGlobal.Player.updateAllInfo();
                         iGlobal.Player.updateBattleSkillWindow();
@@ -63,21 +63,21 @@ var EquipWindow = (function (_super) {
         this.bg2.addChild(this.pet);
         this.spList.push(this.pet);
         this.pet.x = 60;
-        this.pet.y = 620;
-        this.head.x = 210;
-        this.head.y = -50;
-        this.feet.x = 210;
-        this.feet.y = 480;
-        this.body.x = 390;
-        this.body.y = 300;
-        this.necklace.x = 380;
-        this.necklace.y = 100;
+        this.pet.y = 600;
+        this.head.x = 205;
+        this.head.y = -70;
+        this.feet.x = 205;
+        this.feet.y = 455;
+        this.body.x = 385;
+        this.body.y = 280;
+        this.necklace.x = 375;
+        this.necklace.y = 80;
         this.ring.x = 10;
-        this.ring.y = 120;
+        this.ring.y = 100;
         this.leftHand.x = 5;
-        this.leftHand.y = 230;
-        this.rightHand.x = 415;
-        this.rightHand.y = 220;
+        this.leftHand.y = 210;
+        this.rightHand.x = 410;
+        this.rightHand.y = 200;
         this.setPetInfo();
     };
     EquipWindow.prototype.setPetInfo = function () {
@@ -91,49 +91,49 @@ var EquipWindow = (function (_super) {
                 this.removeChild(this.petSkillSp);
             }
         }
-        var _loc1_ = (20);
-        var _loc2_ = (380);
-        var _loc3_ = (35);
-        var _loc4_ = (100);
-        var _loc5_ = (20);
+        var petX = (20);
+        var petY = (560);
+        var xGap = (50);
+        var xGap2 = (170);
+        var yGap = (30);
         this.petSp = new egret.Sprite();
-        this.petSp.x = _loc1_;
-        this.petSp.y = _loc2_;
+        this.petSp.x = petX;
+        this.petSp.y = petY;
         this.addChild(this.petSp);
-        var _loc6_ = new Array();
-        var _loc7_ = new StringCell("宠物", 100, 16);
-        _loc6_.push(_loc7_);
-        this._name = new StringCell("Fox", 150);
-        _loc6_.push(this._name);
-        _loc6_.push(new StringCell("Hp"));
-        _loc6_.push(this.hp = new StringCell("100"));
-        _loc6_.push(new StringCell("Mp"));
-        _loc6_.push(this.mp = new StringCell("100"));
-        _loc6_.push(new StringCell("攻击"));
-        _loc6_.push(this.attack = new StringCell("20~30", 65));
-        _loc6_.push(new StringCell("平衡"));
-        _loc6_.push(this.balance = new StringCell("50"));
-        _loc6_.push(new StringCell("暴击"));
-        _loc6_.push(this.cri = new StringCell("50"));
-        _loc6_.push(new StringCell("暴倍"));
-        _loc6_.push(this.cri_mul = new StringCell("200%"));
-        _loc6_.push(new StringCell("防御"));
-        _loc6_.push(this.def = new StringCell("10"));
-        _loc6_.push(new StringCell("护甲"));
-        _loc6_.push(this.pro = new StringCell("10"));
-        _loc6_.push(new StringCell("魔攻"));
-        _loc6_.push(this.magatt = new StringCell("100%"));
-        var length = (_loc6_.length);
+        var cellList = new Array();
+        var petCell = new StringCell("宠物", 100, 22);
+        cellList.push(petCell);
+        this._name = new StringCell("Fox", 150, 22);
+        cellList.push(this._name);
+        cellList.push(new StringCell("Hp", 100, 22));
+        cellList.push(this.hp = new StringCell("100", 100, 22));
+        cellList.push(new StringCell("Mp", 100, 22));
+        cellList.push(this.mp = new StringCell("100", 100, 22));
+        cellList.push(new StringCell("攻击", 100, 22));
+        cellList.push(this.attack = new StringCell("20~30", 100, 22));
+        cellList.push(new StringCell("平衡", 100, 22));
+        cellList.push(this.balance = new StringCell("50", 100, 22));
+        cellList.push(new StringCell("暴击", 100, 22));
+        cellList.push(this.cri = new StringCell("50", 100, 22));
+        cellList.push(new StringCell("暴倍", 100, 22));
+        cellList.push(this.cri_mul = new StringCell("200%", 100, 22));
+        cellList.push(new StringCell("防御", 100, 22));
+        cellList.push(this.def = new StringCell("10", 100, 22));
+        cellList.push(new StringCell("护甲", 100, 22));
+        cellList.push(this.pro = new StringCell("10", 100, 22));
+        cellList.push(new StringCell("魔攻", 100, 22));
+        cellList.push(this.magatt = new StringCell("100%", 100, 22));
+        var length = (cellList.length);
         var i = (0);
         while (i < length) {
-            this.petSp.addChild(_loc6_[i]);
-            _loc6_[i].x = _loc3_ * (i % 2) + _loc4_ * (i / 10 >> 0);
-            _loc6_[i].y = _loc5_ + _loc5_ * (i % 10 / 2 >> 0);
+            this.petSp.addChild(cellList[i]);
+            cellList[i].x = xGap * (i % 2) + xGap2 * (i / 10 >> 0);
+            cellList[i].y = yGap + yGap * (i % 10 / 2 >> 0);
             i++;
         }
         this.petSkillSp = new egret.Sprite();
-        this.petSkillSp.x = 10;
-        this.petSkillSp.y = 500;
+        this.petSkillSp.x = 20;
+        this.petSkillSp.y = 760;
         this.addChild(this.petSkillSp);
         this.updatePetInfo();
     };
@@ -148,15 +148,15 @@ var EquipWindow = (function (_super) {
         this.petSp.visible = true;
         this.petSkillSp.visible = true;
         this._name.setText(iGlobal.Player.pet.realName);
-        this.hp.setText(iGlobal.Player.pet.hp + "");
-        this.mp.setText(iGlobal.Player.pet.mp + "");
-        this.attack.setText(iGlobal.Player.pet.attmin + "~" + iGlobal.Player.pet.attmax + "");
-        this.balance.setText(iGlobal.Player.pet.balance + "");
-        this.cri.setText(iGlobal.Player.pet.cri + "");
-        this.def.setText(iGlobal.Player.pet.defence + "");
-        this.pro.setText(iGlobal.Player.pet.pro + "");
-        this.magatt.setText(iGlobal.Player.pet.magicatt + "%");
-        this.cri_mul.setText(iGlobal.Player.pet.crimul + "%");
+        this.hp.setText(~~iGlobal.Player.pet.hp + "");
+        this.mp.setText(~~iGlobal.Player.pet.mp + "");
+        this.attack.setText(~~iGlobal.Player.pet.attmin + "~" + ~~iGlobal.Player.pet.attmax + "");
+        this.balance.setText(~~iGlobal.Player.pet.balance + "");
+        this.cri.setText(~~iGlobal.Player.pet.cri + "");
+        this.def.setText(~~iGlobal.Player.pet.defence + "");
+        this.pro.setText(~~iGlobal.Player.pet.pro + "");
+        this.magatt.setText(~~iGlobal.Player.pet.magicatt + "%");
+        this.cri_mul.setText(~~iGlobal.Player.pet.crimul + "%");
         i = (this.petSkillSp.numChildren - 1);
         while (i >= 0) {
             this.petSkillSp.removeChildAt(i);
@@ -166,7 +166,7 @@ var EquipWindow = (function (_super) {
         while (i < iGlobal.Player.pet.skillList.length) {
             pCell = new PetSkillCell(iGlobal.Player.pet.skillList[i]);
             this.petSkillSp.addChild(pCell);
-            pCell.x = i * 30 + 2 + i * 10;
+            pCell.x = i * 60 + 2 + i * 20;
             i++;
         }
     };

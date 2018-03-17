@@ -12,7 +12,7 @@ var PetInnerPanel = (function (_super) {
     __extends(PetInnerPanel, _super);
     function PetInnerPanel() {
         var _this = _super.call(this) || this;
-        _this.Gap = 50;
+        _this.Gap = 85;
         _this.update();
         Emitter.addEventListener(Tool.MyEvent.Update, _this.onUpdate, _this);
         return _this;

@@ -16,19 +16,19 @@ var ClickButton = (function (_super) {
         _this.touchEnabled = true;
         fix = (fix);
         _this.FIX = (fix);
-        var _loc3_ = new egret.Bitmap(RES.getRes("doubleCircle"));
-        _loc3_.width = _this.FIX;
-        _loc3_.height = _this.FIX;
+        var bcircle = new egret.Bitmap(RES.getRes("doubleCircle"));
+        bcircle.width = _this.FIX;
+        bcircle.height = _this.FIX;
         // _loc3_["transform"].colorTransform = new egret.ColorTransform(1, 1, 1, 1, 255, 255, 255, 0);
-        _this.before.addChild(_loc3_);
+        _this.before.addChild(bcircle);
         var bf = new egret.Bitmap(RES.getRes(icon));
-        // this.before.addChild(bf);
-        // this.setMcPosition(bf);
-        var _loc5_ = new egret.Bitmap(RES.getRes("doubleCircle"));
+        _this.before.addChild(bf);
+        _this.setMcPosition(bf);
+        var acircle = new egret.Bitmap(RES.getRes("doubleCircle"));
         ;
-        _loc5_.width = _this.FIX;
-        _loc5_.height = _this.FIX;
-        _this.after.addChild(_loc5_);
+        acircle.width = _this.FIX;
+        acircle.height = _this.FIX;
+        _this.after.addChild(acircle);
         var af = new egret.Bitmap(RES.getRes(icon));
         // _loc6_["transform"].colorTransform = new egret.ColorTransform(1, 1, 1, 1, 255, 255, 255, 0);	
         egret.ColorMatrixFilter;
@@ -44,18 +44,18 @@ var ClickButton = (function (_super) {
         return _this;
         // this.after.filters = [colorFlilter];
     }
-    ClickButton.prototype.setMcPosition = function (param1) {
-        var _loc2_ = 0;
-        if (param1.width > param1.height) {
-            _loc2_ = this.FIX / 2 / param1.width;
+    ClickButton.prototype.setMcPosition = function (dis) {
+        var scale = 0;
+        if (dis.width > dis.height) {
+            scale = this.FIX / 2 / dis.width;
         }
         else {
-            _loc2_ = this.FIX / 2 / param1.height;
+            scale = this.FIX / 2 / dis.height;
         }
-        param1.scaleX = _loc2_;
-        param1.scaleY = _loc2_;
-        param1.x = this.FIX / 2 - param1.width / 2;
-        param1.y = this.FIX / 2 - param1.height / 2;
+        dis.scaleX = scale;
+        dis.scaleY = scale;
+        dis.x = (this.FIX - dis.width * scale) >> 1;
+        dis.y = (this.FIX - dis.height * scale) >> 1;
     };
     ClickButton.prototype.setDown = function () {
         _super.prototype.setDown.call(this);

@@ -4,9 +4,7 @@ class TitleWindow extends IWindow {
 		super();
 		var outter: TitleOutterPanel = new TitleOutterPanel();
 		this.panel = (outter.innerPanel as TitleInnerPanel);
-		this.addChild(outter);
-		outter.x = 0;
-		outter.y = 0;
+		this.addChild(outter);		
 	}
 
 	public update() {

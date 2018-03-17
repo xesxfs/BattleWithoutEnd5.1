@@ -15,8 +15,6 @@ var TitleWindow = (function (_super) {
         var outter = new TitleOutterPanel();
         _this.panel = outter.innerPanel;
         _this.addChild(outter);
-        outter.x = 0;
-        outter.y = 0;
         return _this;
     }
     TitleWindow.prototype.update = function () {

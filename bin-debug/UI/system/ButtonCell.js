@@ -20,17 +20,15 @@ var ButtonCell = (function (_super) {
         _this.after.visible = false;
         _this.addEventListener(egret.TouchEvent.TOUCH_BEGIN, _this.onMouseOver, _this);
         _this.addEventListener(egret.TouchEvent.TOUCH_RELEASE_OUTSIDE, _this.onMouseOut, _this);
-        _this.addEventListener(egret.TouchEvent.TOUCH_END, _this.onMouseDown, _this);
+        _this.addEventListener(egret.TouchEvent.TOUCH_TAP, _this.onMouseDown, _this);
         return _this;
     }
     ButtonCell.prototype.onMouseOver = function (e) {
-        // if (!this.buttonDown) {
         if (!this.buttonDown) {
-            // this.setAfter();
+            this.setAfter();
         }
     };
     ButtonCell.prototype.onMouseOut = function (e) {
-        // if (!this.buttonDown) {
         if (!this.buttonDown) {
             this.setBefore();
         }
@@ -45,11 +43,9 @@ var ButtonCell = (function (_super) {
     };
     ButtonCell.prototype.setAfter = function () {
         this.after.visible = true;
-        this.before.visible = false;
     };
     ButtonCell.prototype.setBefore = function () {
         this.after.visible = false;
-        this.before.visible = true;
         this.buttonDown = false;
     };
     ButtonCell.prototype.setDown = function () {

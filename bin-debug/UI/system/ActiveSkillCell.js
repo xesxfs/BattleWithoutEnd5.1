@@ -10,13 +10,13 @@ r.prototype = e.prototype, t.prototype = new r();
 };
 var ActiveSkillCell = (function (_super) {
     __extends(ActiveSkillCell, _super);
-    function ActiveSkillCell(param1) {
-        var _this = _super.call(this, param1) || this;
+    function ActiveSkillCell(skill) {
+        var _this = _super.call(this, skill) || this;
         _this.addEventListener(egret.TouchEvent.TOUCH_BEGIN, _this.onMouseDown, _this);
         return _this;
     }
-    ActiveSkillCell.prototype.onMouseDown = function (param1) {
-        if (!(param1.target instanceof ActiveSkillCell)) {
+    ActiveSkillCell.prototype.onMouseDown = function (e) {
+        if (!(e.target instanceof ActiveSkillCell)) {
             return;
         }
         if (iGlobal.Player.isSkillEquiped(this.skill)) {

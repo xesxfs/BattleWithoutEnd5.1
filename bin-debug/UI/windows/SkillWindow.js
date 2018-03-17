@@ -21,19 +21,19 @@ var SkillWindow = (function (_super) {
             removePanel();
             _self__.panel = _self__.combatPanel;
             _self__.addChild(_self__.panel);
-            _self__.panel.y = 25;
+            _self__.panel.y = 55;
         };
         magicDown = function () {
             removePanel();
             _self__.panel = _self__.magicPanel;
             _self__.addChild(_self__.panel);
-            _self__.panel.y = 25;
+            _self__.panel.y = 55;
         };
         passiveDown = function () {
             removePanel();
             _self__.panel = _self__.passivePanel;
             _self__.addChild(_self__.panel);
-            _self__.panel.y = 25;
+            _self__.panel.y = 55;
         };
         var removePanel = function () {
             if (_self__.panel) {
@@ -43,13 +43,14 @@ var SkillWindow = (function (_super) {
         var buttonSprite = new egret.Sprite();
         _this.addChild(buttonSprite);
         var combat = new StringButton("战斗", iGlobal.Global.RED);
+        combat.x = 20;
         buttonSprite.addChild(combat);
         var magic = new StringButton("魔法", iGlobal.Global.BLUE);
         buttonSprite.addChild(magic);
-        magic.x = 67;
+        magic.x = 130 + combat.x;
         passive = new StringButton("被动", iGlobal.Global.YELLOW);
         buttonSprite.addChild(passive);
-        passive.x = 134;
+        passive.x = 130 * 2 + combat.x;
         var buttonGroup = new ButtonGroup();
         buttonGroup.addButton(combat);
         buttonGroup.addButton(magic);
@@ -63,8 +64,8 @@ var SkillWindow = (function (_super) {
         passive.downFunction = passiveDown;
         return _this;
     }
-    SkillWindow.prototype.onUpdate = function (param1) {
-        if (param1 === void 0) { param1 = null; }
+    SkillWindow.prototype.onUpdate = function (e) {
+        if (e === void 0) { e = null; }
         (this.combatPanel.innerPanel).update();
         (this.magicPanel.innerPanel).update();
         (this.passivePanel.innerPanel).update();

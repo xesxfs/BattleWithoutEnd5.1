@@ -5,14 +5,14 @@ class TitleCell extends BasicCell {
 	protected bg: egret.Sprite;
 	protected yellow: number = 14922250;
 
-	public constructor(param1: iData.iPlayer.Title) {
-		super(200, 50);
+	public constructor(title: iData.iPlayer.Title) {
+		super(390, 50);
 		this.touchEnabled = true;
-		this.title = param1;
+		this.title = title;
 		this.bg = new egret.Sprite();
 		this.bg.graphics.lineStyle(1, 13487565, 0.8);
 		this.bg.graphics.beginFill(16777215, 0.95);
-		this.bg.graphics.drawRect(0, 0, 200, 50);
+		this.bg.graphics.drawRect(0, 0, 390, 50);
 		this.bg.graphics.endFill();
 		this.addChild(this.bg);
 		this.setInfo();
@@ -22,8 +22,8 @@ class TitleCell extends BasicCell {
 		this.setListener();
 	}
 
-	private onMouseDown(param1: egret.Event) {
-		var _self__: any = this;
+	private onMouseDown(e: egret.Event) {
+		var _self__ = this;
 		iGlobal.Player.setTitle(this.title);
 		Emitter.dispatchEvent(Tool.MyEvent.Update);
 	}
@@ -36,27 +36,33 @@ class TitleCell extends BasicCell {
 
 	private setBg() {
 		if (this.title.isGot) {
-			// 	this.bg["transform"].colorTransform = new flash.ColorTransform();
+			//this.bg["transform"].colorTransform = new flash.ColorTransform();
+			this.bg.filters = [];
 		}
 		else {
-			// 	this.bg["transform"].colorTransform = new flash.ColorTransform(0, 0, 0, 0.8, 200, 200, 200);
+			//this.bg["transform"].colorTransform = new flash.ColorTransform(0, 0, 0, 0.8, 200, 200, 200);
+			this.bg.filters = [ColorTransform.transform(0, 0, 0, 0.8, 200, 200, 200)]
+
 		}
 	}
 
 	public update() {
 		if (iGlobal.Player.title == this.title) {
 			// this.bg["transform"].colorTransform = new flash.ColorTransform(0.9, 0.7, 0, 1, 0, 0, 0, 0);
+			this.bg.filters = [ColorTransform.transform(0.9, 0.7, 0, 1, 0, 0, 0, 0)];
 			// this.text["transform"].colorTransform = new flash.ColorTransform(1, 1, 1, 1, 255, 255, 255, 0);
+			this.text.filters = [ColorTransform.transform(1, 1, 1, 1, 255, 255, 255, 0)];
 		}
 		else {
 			this.setBg();
-			// this.text["transform"].colorTransform = new flash.ColorTransform();
+			//this.text["transform"].colorTransform = new flash.ColorTransform();
+			this.text.filters = [];
 		}
 		this.setListener();
 	}
 
 	private setInfo() {
-		this.text = new StringCell(this.title.realName.toUpperCase(), 180, 24);
+		this.text = new StringCell(this.title.realName.toUpperCase(), 180, 32);
 		this.addChild(this.text);
 		this.text.x = 10;
 		this.text.y = 10;
@@ -65,10 +71,10 @@ class TitleCell extends BasicCell {
 
 	public onMouseOver(param1: egret.TouchEvent) {
 		// this.filters = [new egret.GlowFilter(5066061, 0.66, 13, 13)];
-		if (this.parent) {
-			this.parent.addChildAt(this, this.parent.numChildren - 1);
-		}
-		this.addInfoWindow();
+		// if (this.parent) {
+		// 	this.parent.addChildAt(this, this.parent.numChildren - 1);
+		// }
+		// this.addInfoWindow();
 	}
 
 	public onMouseOut(param1: egret.TouchEvent) {

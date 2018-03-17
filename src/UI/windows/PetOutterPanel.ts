@@ -1,6 +1,6 @@
 class PetOutterPanel extends OutterPanel {
 	public constructor() {
-		super(200, 495)
+		super(390, 700)
 		this.setInner();
 	}
 	public setInner() {

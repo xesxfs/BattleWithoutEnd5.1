@@ -12,7 +12,7 @@ var CombatInnerPanel = (function (_super) {
     __extends(CombatInnerPanel, _super);
     function CombatInnerPanel() {
         var _this = _super.call(this) || this;
-        _this.Gap = 50;
+        _this.Gap = 80;
         _this.init();
         return _this;
     }

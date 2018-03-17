@@ -11,14 +11,14 @@ r.prototype = e.prototype, t.prototype = new r();
 var SkillCell = (function (_super) {
     __extends(SkillCell, _super);
     function SkillCell(param1) {
-        var _this = _super.call(this, 200, 50) || this;
-        _this.yellow = 14922250;
+        var _this = _super.call(this, 390, 70) || this;
+        _this.yellow = 0xE3B20A;
         _this.touchEnabled = true;
         _this.skill = param1;
         _this.bg = new egret.Sprite();
         _this.bg.graphics.lineStyle(1, 13487565, 0.8);
         _this.bg.graphics.beginFill(16777215, 0.95);
-        _this.bg.graphics.drawRect(0, 0, 200, 50);
+        _this.bg.graphics.drawRect(0, 0, 390, 70);
         _this.bg.graphics.endFill();
         _this.addChildAt(_this.bg, 0);
         _this.setInfo();
@@ -31,24 +31,24 @@ var SkillCell = (function (_super) {
     SkillCell.prototype.setInfo = function () {
         this.mc = new egret.Bitmap(RES.getRes("mc_" + Tool.MyMath.StringFormChange(this.skill.skillData.name.toLowerCase(), " ", "_")));
         this.addChild(this.mc);
-        this.mc.width = 30;
-        this.mc.height = 30;
+        this.mc.width = 50;
+        this.mc.height = 50;
         this.mc.x = 10;
-        this.mc.y = 10;
-        this.text = iGlobal.Global.getTextField(24);
-        this.text.width = 140;
+        this.mc.y = (this.height - this.mc.height) >> 1;
+        this.text = iGlobal.Global.getTextField(32);
+        // this.text.width = 140;
         this.text.text = this.skill.skillData.realName + " " + (15 - this.skill.level).toString(16).toUpperCase();
         this.addChild(this.text);
-        this.text.x = 50;
-        this.text.y = 10;
+        this.text.x = this.mc.x + this.mc.width + 30;
+        this.text.y = (this.height - this.text.height) >> 1;
         this.infoWindow = new ItemInfoWindow(this.skill.getDescription());
     };
-    SkillCell.prototype.onMouseOver = function (param1) {
+    SkillCell.prototype.onMouseOver = function (e) {
         // this.filters = [new flash.GlowFilter(5066061, 0.66, 13, 13)];
         if (this.parent) {
             this.parent.addChildAt(this, this.parent.numChildren - 1);
         }
-        this.addInfoWindow();
+        // this.addInfoWindow();
     };
     SkillCell.prototype.onMouseOut = function (param1) {
         // this.filters = [];
@@ -64,8 +64,8 @@ var SkillCell = (function (_super) {
         };
         this.lvupButton = new EquipButton("lvup");
         this.addChild(this.lvupButton);
-        this.lvupButton.x = 172;
-        this.lvupButton.y = 15;
+        this.lvupButton.x = 280;
+        this.lvupButton.y = (this.height - this.lvupButton.height) >> 1;
         this.lvupButton.downFunction = lvupDown;
     };
     SkillCell.prototype.update = function () {

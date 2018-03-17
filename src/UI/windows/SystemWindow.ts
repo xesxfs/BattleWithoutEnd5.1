@@ -4,19 +4,19 @@ class SystemWindow extends IWindow {
 	private gapY: number = 30;
 	private gapX: number = 70;
 	private gapBigY: number = 60;
-	private fontSize_small: number = 16;
-	private fontSize_meddle: number = 24;
+	private fontSize_small: number = 24;
+	private fontSize_meddle: number = 28;
 	private fontSize_big: number = 32;
-	private lootStartX: number = 10;
-	private lootStartY: number = 110;
-	private lootGapSmallY: number = 20;
-	private lootGapY: number = 25;
-	private lootGapMidY: number = 45;
-	private lootGapBitY: number = 65;
-	private lootGapX: number = 65;
+	private lootStartX: number = 20;
+	private lootStartY: number = 140;
+	private lootGapSmallY: number = 32;
+	private lootGapY: number = 34;
+	private lootGapMidY: number = 42;
+	private lootGapBitY: number = 75;
+	private lootGapX: number = 120;
 	public constructor() {
 		super();
-		var bgs: egret.Sprite = new BasicCell(200, 540);
+		var bgs: egret.Sprite = new BasicCell(390, 750);
 		this.addChild(bgs);
 		this.init();
 	}
@@ -91,14 +91,14 @@ class SystemWindow extends IWindow {
 
 		var battle = new ToggleBox("战况", this.fontSize_small, iGlobal.Global.battle_toggle);
 		this.addChild(battle);
-		battle.x = 10;
+		battle.x = 20;
 		battle.y = 60;
 		battle.downFunction = battleDown;
 		battle.upFunction = battleUp;
 
 		var battleIntro = new ToggleBox("战果", this.fontSize_small, iGlobal.Global.battleIntro_toggle);
 		this.addChild(battleIntro);
-		battleIntro.x = 70;
+		battleIntro.x = 140;
 		battleIntro.y = 60;
 		battleIntro.downFunction = battleIntroDown;
 		battleIntro.upFunction = battleIntroUp;
@@ -106,22 +106,22 @@ class SystemWindow extends IWindow {
 
 		var money = new ToggleBox("$", this.fontSize_small, iGlobal.Global.money_toggle);
 		this.addChild(money);
-		money.x = 140;
+		money.x = 260;
 		money.y = 60;
 		money["downFunction"] = moneyDown;
 		money["upFunction"] = moneyUp;
 
 		var exp = new ToggleBox("Exp", this.fontSize_small, iGlobal.Global.exp_toggle);
 		this.addChild(exp);
-		exp.x = 10;
-		exp.y = 90;
+		exp.x = 20;
+		exp.y = 100;
 		exp.downFunction = expDown;
 		exp.upFunction = expUp;
 
 		var item = new ToggleBox("道具", this.fontSize_small, iGlobal.Global.item_toggle);
 		this.addChild(item);
-		item.x = 70;
-		item.y = 90;
+		item.x = 140;
+		item.y = 100;
 		item.downFunction = itemDown;
 		item.upFunction = itemUp;
 	}
@@ -280,7 +280,7 @@ class SystemWindow extends IWindow {
 		var text = new StringCell("武器拾取", 150, 20);
 		this.addChild(text);
 		text.x = this.lootStartX + this.lootGapX * 0;
-		text.y = this.lootStartY + this.lootGapMidY * 1 + this.lootGapSmallY * 1 + this.lootGapY * 1;
+		text.y = this.lootStartY + this.lootGapMidY * 1 + this.lootGapSmallY * 1 + this.lootGapY * 1 + 8;
 		var sword = new ToggleBox("剑", this.fontSize_small, iGlobal.Global.sword_toggle);
 		this.addChild(sword);
 		sword.x = this.lootStartX + this.lootGapX * 0;
@@ -348,7 +348,7 @@ class SystemWindow extends IWindow {
 		var text = new StringCell("副手拾取", 150, 20);
 		this.addChild(text);
 		text.x = this.lootStartX + this.lootGapX * 0;
-		text.y = this.lootStartY + this.lootGapMidY * 1 + this.lootGapSmallY * 2 + this.lootGapY * 3;
+		text.y = this.lootStartY + this.lootGapMidY * 1 + this.lootGapSmallY * 2 + this.lootGapY * 3 + 8;
 		var dagger = new ToggleBox("匕首", this.fontSize_small, iGlobal.Global.dagger_toggle);
 		this.addChild(dagger);
 		dagger.x = this.lootStartX + this.lootGapX * 0;
@@ -399,7 +399,7 @@ class SystemWindow extends IWindow {
 		var text: StringCell = new StringCell("头部拾取", 150, 20);
 		this.addChild(text);
 		text.x = this.lootStartX + this.lootGapX * 0;
-		text.y = this.lootStartY + this.lootGapMidY * 1 + this.lootGapSmallY * 3 + this.lootGapY * 4;
+		text.y = this.lootStartY + this.lootGapMidY * 1 + this.lootGapSmallY * 3 + this.lootGapY * 4 + 8;
 		var headLight: ToggleBox = new ToggleBox("轻甲", this.fontSize_small, iGlobal.Global.head_light_toggle);
 		this.addChild(headLight);
 		headLight.x = this.lootStartX + this.lootGapX * 0;
@@ -450,7 +450,7 @@ class SystemWindow extends IWindow {
 		var text: StringCell = new StringCell("身体拾取", 150, 20);
 		this.addChild(text);
 		text.x = this.lootStartX + this.lootGapX * 0;
-		text.y = this.lootStartY + this.lootGapMidY * 1 + this.lootGapSmallY * 4 + this.lootGapY * 5;
+		text.y = this.lootStartY + this.lootGapMidY * 1 + this.lootGapSmallY * 4 + this.lootGapY * 5 + 8;
 		var bodyLight: ToggleBox = new ToggleBox("轻甲", this.fontSize_small, iGlobal.Global.body_light_toggle);
 		this.addChild(bodyLight);
 		bodyLight.x = this.lootStartX + this.lootGapX * 0;
@@ -500,7 +500,7 @@ class SystemWindow extends IWindow {
 		var text: StringCell = new StringCell("足部拾取", 150, 20);
 		this.addChild(text);
 		text.x = this.lootStartX + this.lootGapX * 0;
-		text.y = this.lootStartY + this.lootGapMidY * 1 + this.lootGapSmallY * 5 + this.lootGapY * 6;
+		text.y = this.lootStartY + this.lootGapMidY * 1 + this.lootGapSmallY * 5 + this.lootGapY * 6 + 8;
 		var feetLight: ToggleBox = new ToggleBox("轻甲", this.fontSize_small, iGlobal.Global.feet_light_toggle);
 		this.addChild(feetLight);
 		feetLight.x = this.lootStartX + this.lootGapX * 0;
@@ -541,7 +541,7 @@ class SystemWindow extends IWindow {
 		var text: StringCell = new StringCell("饰品拾取", 150, 20);
 		this.addChild(text);
 		text.x = this.lootStartX + this.lootGapX * 0;
-		text.y = this.lootStartY + this.lootGapMidY * 1 + this.lootGapSmallY * 6 + this.lootGapY * 7;
+		text.y = this.lootStartY + this.lootGapMidY * 1 + this.lootGapSmallY * 6 + this.lootGapY * 7 + 8;
 		var ring: ToggleBox = new ToggleBox("戒指", this.fontSize_small, iGlobal.Global.ring_toggle);
 		this.addChild(ring);
 		ring.x = this.lootStartX + this.lootGapX * 0;
@@ -565,10 +565,10 @@ class SystemWindow extends IWindow {
 		autoSellUp = function () {
 			iGlobal.Global.autoSell_toggle = false;
 		};
-		var autoSell: ToggleBox = new ToggleBox("背包满的是自动卖出价值最低的", this.fontSize_small, iGlobal.Global.autoSell_toggle);
+		var autoSell: ToggleBox = new ToggleBox("背包满时自动卖出价值最低", 22, iGlobal.Global.autoSell_toggle);
 		this.addChild(autoSell);
 		autoSell.x = this.lootStartX + this.lootGapX * 0;
-		autoSell.y = this.lootStartY + this.lootGapMidY * 1 + this.lootGapSmallY * 7 + this.lootGapY * 8 + 10;
+		autoSell.y = this.lootStartY + this.lootGapMidY * 1 + this.lootGapSmallY * 7 + this.lootGapY * 8 + 12;
 		autoSell.downFunction = autoSellDown;
 		autoSell.upFunction = autoSellUp;
 	}

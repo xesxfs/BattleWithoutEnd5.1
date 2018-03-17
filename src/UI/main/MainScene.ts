@@ -11,7 +11,7 @@ class MainScene extends BaseScene {
 	public static lootPanel: LootPanel;
 	public static otherPanel: OtherPanel;
 	public static battle: iData.Battle;
-	private gap: number = 5;
+	private gap: number = 1;
 
 
 
@@ -27,7 +27,6 @@ class MainScene extends BaseScene {
 		this.setPetInfo();
 		this.setAllInfoPanel();
 		this.setBattleSkillPanel();
-
 		this.setLootPanel();
 		this.setBattle();
 		this.setOther();
@@ -67,7 +66,7 @@ class MainScene extends BaseScene {
 		MainScene.otherPanel = new OtherPanel();
 		this.addChild(MainScene.otherPanel);
 		MainScene.otherPanel.x = this.stage.stageWidth;
-		MainScene.otherPanel.y = (this.stage.height - MainScene.otherPanel.height) >> 1;
+		MainScene.otherPanel.y = (this.stage.height - MainScene.otherPanel.height);
 	}
 
 	private setBattleSkillPanel() {
