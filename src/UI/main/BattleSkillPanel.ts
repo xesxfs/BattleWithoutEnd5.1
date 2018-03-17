@@ -12,7 +12,7 @@ class BattleSkillPanel extends BasicCell {
 	private bg: egret.Sprite;
 
 	public constructor() {
-		super(200,300);
+		super(225,300);
 		this.init();
 	}
 

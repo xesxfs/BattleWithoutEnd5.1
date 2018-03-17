@@ -1,19 +1,17 @@
 var __reflect = (this && this.__reflect) || function (p, c, t) {
     p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
 };
-var __extends = this && this.__extends || function __extends(t, e) { 
- function r() { 
- this.constructor = t;
-}
-for (var i in e) e.hasOwnProperty(i) && (t[i] = e[i]);
-r.prototype = e.prototype, t.prototype = new r();
-};
-var App = (function (_super) {
-    __extends(App, _super);
+var App = (function () {
     function App() {
-        return _super.call(this) || this;
     }
+    App.getInstance = function () {
+        if (App.instance == null) {
+            App.instance = new App();
+        }
+        return App.instance;
+    };
     App.prototype.startUp = function () {
+        console.log("++++++++++++++++++++++++startUp");
         this.registAllScene();
         App.SceneManager.runScene(SceneConst.BeginScene);
     };
@@ -42,5 +40,5 @@ var App = (function (_super) {
         configurable: true
     });
     return App;
-}(SingleClass));
+}());
 __reflect(App.prototype, "App");

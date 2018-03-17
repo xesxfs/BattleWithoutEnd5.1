@@ -11,7 +11,7 @@ r.prototype = e.prototype, t.prototype = new r();
 var AllInfoPanel = (function (_super) {
     __extends(AllInfoPanel, _super);
     function AllInfoPanel() {
-        var _this = _super.call(this, 400, 655) || this;
+        var _this = _super.call(this, 405, 655) || this;
         var out = new AllInfoOutterPanel();
         _this.addChild(out);
         out.y = 10;

@@ -127,11 +127,11 @@ class RaceScene extends BaseScene {
 	private setInfoPanel() {
 		var _self__: any = this;
 		var _this_: any = undefined;
-		var okDown: Function = <any>null;
+		var okDown: Function = null;
 		okDown = function () {
-			var addMain: Function = <any>null;
-			addMain = function (): any {
-				var _loc1_: MainScene = <any>null;
+			var addMain: Function = null;
+			addMain = function () {
+				var _loc1_: MainScene = null;
 				if (iGlobal.Global.sound_toggle) {
 					// iGlobal.Global.soundOut();
 				}

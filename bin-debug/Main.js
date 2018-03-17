@@ -154,6 +154,7 @@ var Main = (function (_super) {
      * Create scene interface
      */
     Main.prototype.createGameScene = function () {
+        console.log("++++++++++++++++++++++++createGameScene");
         App.getInstance().startUp();
     };
     return Main;

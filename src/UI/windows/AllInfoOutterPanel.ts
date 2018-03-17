@@ -1,6 +1,6 @@
 class AllInfoOutterPanel extends OutterPanel {
 	public constructor() {
-		super(400, 655);
+		super(405, 655);
 		this.setInnerPanel();
 	}
 

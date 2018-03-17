@@ -22,7 +22,7 @@ class FlickerButton extends ButtonCell {
 		this.after.addChild(afterText);
 		this.after.x = width / 2 - afterText.textWidth / 2;
 		this.after.y = height / 2 - afterText.textHeight / 2;
-		this.addEventListener(egret.Event.ENTER_FRAME, this.overAnimation, this);
+		// this.addEventListener(egret.Event.ENTER_FRAME, this.overAnimation, this);
 	}
 
 	private overAnimation(e: egret.Event) {	
@@ -47,7 +47,7 @@ class FlickerButton extends ButtonCell {
 	}
 
 	public setBefore() {
-		// super.setBefore();
+		super.setBefore();
 		// this.removeEventListener(egret.Event.ENTER_FRAME, this.overAnimation, this);
 		// this.count = (0);
 		// this.bg.filters = [];

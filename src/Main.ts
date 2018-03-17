@@ -100,6 +100,7 @@ class Main extends eui.UILayer {
      * Create scene interface
      */
     protected createGameScene(): void {
+        console.log("++++++++++++++++++++++++createGameScene");
         App.getInstance().startUp();
     }
 

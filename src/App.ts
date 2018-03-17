@@ -1,9 +1,19 @@
-class App extends SingleClass {
+class App {
 	public constructor() {
-		super();
+
+	}
+
+	private static instance: App
+	public static getInstance(): App {
+	
+		if (App.instance == null) {
+			App.instance = new App();
+		}
+		return App.instance;
 	}
 
 	public startUp(): void {
+		console.log("++++++++++++++++++++++++startUp");
 		this.registAllScene();
 		App.SceneManager.runScene(SceneConst.BeginScene);
 	}

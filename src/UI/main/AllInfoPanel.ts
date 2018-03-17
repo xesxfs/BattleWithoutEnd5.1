@@ -2,7 +2,7 @@ class AllInfoPanel extends BasicCell {
 	public panel:AllInfoInnerPanel;
 
 	public constructor() {
-		super(400, 655);
+		super(405, 655);
 		var out: AllInfoOutterPanel = new AllInfoOutterPanel();
 		this.addChild(out);
 		out.y = 10;

@@ -10,7 +10,9 @@ class BeginScene extends BaseScene {
 	private beginBtn: eui.Button;
 
 	/**添加到场景中*/
-	protected onEnable() {
+	protected onEnable() { 
+		console.log("++++++++++++++++++++++++onEnable");
+		
 		this.beginBtn.addEventListener("touchTap", () => {
 			App.SceneManager.runScene(SceneConst.SaveScene);
 		}, this);

@@ -20,6 +20,7 @@ var BeginScene = (function (_super) {
     };
     /**添加到场景中*/
     BeginScene.prototype.onEnable = function () {
+        console.log("++++++++++++++++++++++++onEnable");
         this.beginBtn.addEventListener("touchTap", function () {
             App.SceneManager.runScene(SceneConst.SaveScene);
         }, this);

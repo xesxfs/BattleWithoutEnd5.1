@@ -31,8 +31,8 @@ var FlickerButton = (function (_super) {
         _this.after.addChild(afterText);
         _this.after.x = width / 2 - afterText.textWidth / 2;
         _this.after.y = height / 2 - afterText.textHeight / 2;
-        _this.addEventListener(egret.Event.ENTER_FRAME, _this.overAnimation, _this);
         return _this;
+        // this.addEventListener(egret.Event.ENTER_FRAME, this.overAnimation, this);
     }
     FlickerButton.prototype.overAnimation = function (e) {
         this.before.visible = false;
@@ -55,7 +55,7 @@ var FlickerButton = (function (_super) {
         }
     };
     FlickerButton.prototype.setBefore = function () {
-        // super.setBefore();
+        _super.prototype.setBefore.call(this);
         // this.removeEventListener(egret.Event.ENTER_FRAME, this.overAnimation, this);
         // this.count = (0);
         // this.bg.filters = [];
